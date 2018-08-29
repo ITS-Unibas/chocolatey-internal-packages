@@ -4,4 +4,4 @@
 [![](http://transparent-favicon.info/favicon.ico)](#)
 [Update status](https://gist.github.com/MaxBurgert/dddd183fae34b7f07585422765dee87b)
 
-This repository contains automatic chocolatey packages which created by IT-Services of the University of Basel.
+This repository contains automatic chocolatey packages which are created by the IT-Services of the University of Basel.
