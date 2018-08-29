@@ -39,7 +39,7 @@ environment:
 
   # Chocolatey API key - to push updated packages
   api_key:
-    secure: avnz/v4KCUqIS/4qwcXFSlwAQd1+NdSeJyxrHKfjAZGqSkrEbf/147Wwze1CbuT6
+    secure: FCPd6jETgCvTYJu3zVSyGpTrEqbQJislfPojDELHAJSLTm0laWki3cRFStPdVD2J
 
 install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
