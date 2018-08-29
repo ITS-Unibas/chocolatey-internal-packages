@@ -16,6 +16,30 @@ environment:
   au_push: true
   # Force test: use 1 to test all, or N to split testing into N groups
   au_test_groups: 1
+  
+  # Github token to commit pushed packages to repository
+  github_user_repo: ITS-Unibas/chocolatey-automatic-packages
+  github_api_key:
+    secure: mBB1Zd8HELjUQFNeaQ2UqSe7rzXX93mnyNm830mFMBT1SAfgISY4EhiYSM1U7V32
+
+  # Mail credentials - for error notifications
+  mail_user: max.burgert@unibas.ch
+  mail_pass:
+    secure: OZlC4EH6tEy7UXhUzNK3KndNz0ngD9CiTXsJFn0nVsM=
+  mail_server: smtp-ext.unibas.ch
+  mail_port: 587
+  mail_enablessl: true
+
+  # ID of the gist used to save run results - create a gist under the github_user (secret or not) and grab the id - https://gist.github.com/name/id
+  # Optional, leave empty to create anonymous gist
+  gist_id: dddd183fae34b7f07585422765dee87b
+
+  # Force test: gist id for test results
+  gist_id_test: f91fc4cb6f43050845a38a7dcd5b7eb7
+
+  # Chocolatey API key - to push updated packages
+  api_key:
+secure: avnz/v4KCUqIS/4qwcXFSlwAQd1+NdSeJyxrHKfjAZGqSkrEbf/147Wwze1CbuT6
 
 install:
 - ps: 'Get-CimInstance win32_operatingsystem -Property Caption, OSArchitecture, Version | fl Caption, OSArchitecture, Version'
