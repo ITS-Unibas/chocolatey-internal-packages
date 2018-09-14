@@ -4,7 +4,6 @@
   <metadata>
     <id>thunderbird</id>
     <version>0.0</version>
-    <packageSourceUrl></packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <title>thunderbird (Install)</title>
     <authors>Mozilla</authors>
