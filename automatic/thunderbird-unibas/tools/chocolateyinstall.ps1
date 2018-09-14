@@ -2,7 +2,7 @@
 $ErrorActionPreference = 'Stop';
  
 
-$packageName= 'thunderbird'
+$packageName= 'thunderbird-unibas'
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
  
 $packageArgs = @{

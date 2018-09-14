@@ -1,6 +1,6 @@
 ﻿$ErrorActionPreference = 'Stop';
 
-$packageName = 'thunderbird'
+$packageName = 'thunderbird-unibas'
 $softwareName = 'Mozilla Thunderbird*'
 $installerType = 'EXE'
 

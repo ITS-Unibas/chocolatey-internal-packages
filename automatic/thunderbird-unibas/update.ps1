@@ -4,7 +4,7 @@
 $releases = 'https://www.thunderbird.net/en-US/thunderbird/all/'
 
 function global:au_BeforeUpdate() {
-    Get-RemoteFiles -Purge -FileNameBase 'thunderbird'
+    Get-RemoteFiles -Purge -FileNameBase 'thunderbird-unibas'
     $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'md5'
  }
 function global:au_SearchReplace {
