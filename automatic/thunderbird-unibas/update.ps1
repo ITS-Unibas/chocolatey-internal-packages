@@ -18,7 +18,7 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing 
     $re = "download.mozilla.*product=thunderbird.*(&amp;|&)os=win(&amp;|&)lang=de"
-    $url = $download_page.links | ? href -match $re | select -First 1 -expand href
+    $url = $download_page.links | Where-Object href -match $re | Select-Object -First 1 -expand href
     $arr = $url -split '-|-'
     $version = $arr[1]
     return @{ Version = $version; URL = $url }

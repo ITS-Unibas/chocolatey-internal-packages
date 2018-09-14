@@ -10,7 +10,7 @@ $Options = [ordered]@{
     Timeout       = 100                                     #Connection timeout in seconds
     UpdateTimeout = 1200                                    #Update timeout in seconds
     Threads       = 10                                      #Number of background jobs to use
-    Push          = $Env:au_Push -eq 'true'                 #Push to chocolatey
+    Push          = $Env:au_Push -eq 'false'                 #Push to chocolatey
     PushAll       = $true                                   #Allow to push multiple packages at once
     PluginPath    = ''                                      #Path to user plugins
     IgnoreOn      = @(                                      #Error message parts to set the package ignore status
@@ -99,12 +99,12 @@ $Options = [ordered]@{
     ModulePaths = @("$PSScriptRoot\scripts\au_extensions.psm1"; "Wormies-AU-Helpers")
     BeforeEach = {
         param($PackageName, $Options )
-        $Options.ModulePaths | % { Import-Module $_ }
+        $Options.ModulePaths | ForEach-Object { Import-Module $_ }
         . $Options.UpdateIconScript $PackageName.ToLowerInvariant() -Quiet -ThrowErrorOnIconNotFound
         if (Test-Path tools) { Expand-Aliases -Directory tools }
 
         $pattern = "^${PackageName}(?:\\(?<stream>[^:]+))?(?:\:(?<version>.+))?$"
-        $p = $Options.ForcedPackages | ? { $_ -match $pattern }
+        $p = $Options.ForcedPackages | Where-Object { $_ -match $pattern }
         if (!$p) { return }
 
         $global:au_Force   = $true
