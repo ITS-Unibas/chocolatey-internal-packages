@@ -1,4 +1,3 @@
-﻿
 $ErrorActionPreference = 'Stop';
  
 
@@ -19,6 +18,4 @@ $packageArgs = @{
   checksumType  = 'md5'
 }
 
-&(Join-path $PSScriptRoot InitialScript.ps1)
 Install-ChocolateyPackage @packageArgs
-&(Join-path $PSScriptRoot FinalScript.ps1)
