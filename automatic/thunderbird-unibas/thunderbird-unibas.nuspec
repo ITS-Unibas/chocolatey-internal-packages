@@ -8,7 +8,7 @@
     <title>Mozilla Thunderbird</title>
     <authors>Mozilla</authors>
     <projectUrl>https://www.mozilla.org/en/thunderbird/</projectUrl>
-    <iconUrl>http://cdn.rawgit.com/ITS-Unibas/chocolatey-automatic-packages/master/icons/thunderbird.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-automatic-packages/icons/thunderbird.png</iconUrl>
     <licenseUrl>http://www.mozilla.org/en-US/legal/eula/thunderbird.html</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
     <projectSourceUrl>https://dxr.mozilla.org/comm-central/source/</projectSourceUrl>
