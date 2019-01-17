@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop';
+﻿$ErrorActionPreference = 'Stop';
  
 
 $packageName= 'thunderbird-unibas'
@@ -8,13 +8,13 @@ $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
   fileType      = 'EXE'
-  url           = ''
+  url           = 'https://download.mozilla.org/?product=thunderbird-60.4.0-SSL&os=win&lang=de'
   
   silentArgs   = '/S'
   validExitCodes= @(0) 
 
   softwareName  = 'Mozilla Thunderbird*'
-  checksum      = ''
+  checksum      = 'adbc92ed04bea3d80d8d588fec422f6f'
   checksumType  = 'md5'
 }
 
