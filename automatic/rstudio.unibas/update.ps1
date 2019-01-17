@@ -4,7 +4,7 @@ import-module au
 $releases = 'https://www.rstudio.com/products/rstudio/download/'
 
 function global:au_BeforeUpdate() {
-    Get-RemoteFiles -Purge -FileNameBase 'rstudio'
+    Get-RemoteFiles -Purge -FileNameBase 'rstudio.unibas'
     $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'md5'
  }
 function global:au_SearchReplace {
