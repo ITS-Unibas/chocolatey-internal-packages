@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>thunderbird.unibas</id>
-    <version>60.4.0</version>
+    <version>60.4.0.20190117</version>
     <owners>ITS-Unibas</owners>
     <title>Mozilla Thunderbird</title>
     <authors>Mozilla</authors>

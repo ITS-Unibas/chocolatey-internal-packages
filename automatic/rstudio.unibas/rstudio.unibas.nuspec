@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>rstudio.unibas</id>
-    <version>1.1.456</version>
+    <version>1.1.463</version>
     <owners>ITS Unibasel</owners>
     <title>rstudio (Install)</title>
     <authors>RStudio</authors>
@@ -13,6 +13,7 @@
     <description><![CDATA[RStudio is an integrated development environment (IDE) for the R programming language.
 
 ## Features
+
 - Customizable workbench with all of the tools required to work with R in one place (console, source, plots, workspace, help, history, etc.).
 - Syntax highlighting editor with code completion.
 - Execute code directly from the source editor (line, selection, or file).
