@@ -1,5 +1,4 @@
 ﻿import-module au
-. $PSScriptRoot\..\_scripts\all.ps1
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releases = 'https://www.thunderbird.net/en-US/thunderbird/all/'
