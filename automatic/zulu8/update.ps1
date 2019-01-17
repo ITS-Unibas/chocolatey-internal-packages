@@ -1,7 +1,6 @@
 import-module au
 . $PSScriptRoot\..\_scripts\all.ps1
 
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releases = 'https://www.azul.com/downloads/zulu/zulu-windows/'
 
 function global:au_SearchReplace {
