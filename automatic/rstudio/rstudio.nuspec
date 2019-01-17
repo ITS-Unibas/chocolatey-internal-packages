@@ -22,7 +22,7 @@
     <packageSourceUrl>https://github.com/MaxBurgert/its-unibas-automatic-packages/tree/master/automatic/rstudio</packageSourceUrl>
     <licenseUrl>http://www.gnu.org/licenses/agpl-3.0-standalone.html</licenseUrl>
     <releaseNotes>https://www.rstudio.com/products/rstudio/release-notes/</releaseNotes>
-    <iconUrl>https://cdn.rawgit.com/chocolatey/chocolatey-coreteampackages/60bd8b84101277ca9574ed575f97381151a37a13/icons/rstudio.png</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-automatic-packages/icons/rstudio.png</iconUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
