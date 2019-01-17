@@ -1,5 +1,4 @@
 import-module au
-. $PSScriptRoot\..\_scripts\all.ps1
 
 $releases = 'https://www.azul.com/downloads/zulu/zulu-windows/'
 
