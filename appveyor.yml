@@ -40,6 +40,7 @@ environment:
 
   # Chocolatey API key - to push updated packages
   api_key:
+    secure: QVSDrGGYrGTLj4fvMJIydp1jpRbVfWEFj8/lIsJ4Z8VRCRZ1VZ7aD9bIjHrAlm0x
 
 init:
 - git config --global user.email "chocolatey@realdimensions.net"
