@@ -21,10 +21,10 @@ function global:au_GetLatest {
   $homepage_content = Invoke-WebRequest -UseBasicParsing -Uri $download_page_url
 
   # Get Version
-  $homepage_content -match '(Version \d+.\d+.\d (\(.\d+.\d+\)))' | Out-Null
+  $homepage_content -match '(Version \d+.\d+.\d+ (\(.\d+.\d+\)))' | Out-Null
   $recodeversion = $matches[1] -replace "Version ", ""
-  $version = $recodeversion.Substring(0, 4) + $recodeversion.Substring(7, 10)
-  Write-Host $version
+  $recodeversion = $recodeversion -replace "\d+ \(",""
+  $version = $recodeversion -replace "\)",""
   $url = $url_part1 + $version + $url_part2
 
   $Latest = @{ URL = $url; Version = $version }
