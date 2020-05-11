@@ -4,11 +4,11 @@ $packageArgs = @{
   packageName    = 'zoom'
   unzipLocation  = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
   fileType       = 'msi'
-  url            = 'https://zoom.us/client/5.0.23502.0430/ZoomInstallerFull.msi'
+  url            = 'https://zoom.us/client/5.0.24046.0510/ZoomInstallerFull.msi'
   silentArgs     = '/quiet /norestart'
   validExitCodes = @(0)
   softwareName   = 'zoom*'
-  checksum       = '22e7b461a20c1f35f96b3e3a687f5845'
+  checksum       = '7b215399b936128b45d241be7095327a'
   checksumType   = 'md5'
 }
 
