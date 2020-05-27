@@ -23,7 +23,7 @@ function global:au_GetLatest {
 
   $ExecutableName = "firefox-${Version}esr"
   $allChecksums = Invoke-WebRequest -UseBasicParsing -Uri "https://releases.mozilla.org/pub/firefox/releases/${Version}esr/SHA512SUMS"
-  $allChecksums -match "(\w*)  update\/win64\/en-US\/$ExecutableName"
+  $allChecksums -match "(\w*)  win64\/en-US\/$ExecutableName"
   $checksum = $matches[1]
 
   $Latest = @{ URL64 = $url; Version = $version; Checksum = $checksum }
