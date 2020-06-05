@@ -32,7 +32,7 @@ if ($key.Count -eq 1) {
     $packageArgs = @{
       packageName = $packageName
       fileType    = 'msi'
-      silentArgs  = '/QN REBOOT=ReallySuppress /L*v `"$Logfile`'
+      silentArgs  = '/QN REBOOT=ReallySuppress /L*v `"$Logfile`"'
       validExitCodes= @(0)
       file          = "$($_.UninstallString.Trim('"'))"
     }
