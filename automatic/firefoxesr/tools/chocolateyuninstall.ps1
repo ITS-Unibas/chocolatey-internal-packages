@@ -19,6 +19,10 @@ function GetUninstallPath() {
 }
 
 $packageName = 'Firefox'
+$TimeStamp = Get-Date -Format yyyyMMdd-HHmmss
+$LogPath = "$env:SWP\"
+$LogFileName = "Uninstall_$($PackageName)_$($TimeStamp).log"
+$Logfile = Join-Path $LogPath $LogFileName
 
 $uninstalled = $false
 [array]$key = Get-UninstallRegistryKey -SoftwareName 'Mozilla Firefox*' | Where-Object { $_.DisplayName -notmatch "ESR" }
@@ -28,7 +32,7 @@ if ($key.Count -eq 1) {
     $packageArgs = @{
       packageName = $packageName
       fileType    = 'msi'
-      silentArgs  = '-ms'
+      silentArgs  = '/QN REBOOT=ReallySuppress /L*v `"$Logfile`'
       validExitCodes= @(0)
       file          = "$($_.UninstallString.Trim('"'))"
     }
