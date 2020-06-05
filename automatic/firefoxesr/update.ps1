@@ -18,7 +18,7 @@ function global:au_GetLatest {
   $download_page.Content -match 'Version \d+.\d+.\d+'
   $version = $matches[0] -replace "Version ", ""
 
-  $url = "https://ftp.mozilla.org/pub/firefox/releases/$($version)esr/win64/en-US/Firefox%20Setup%20$($version)esr.exe"
+  $url = "https://ftp.mozilla.org/pub/firefox/releases/$($version)esr/win64/en-US/Firefox%20Setup%20$($version)esr.msi"
 
   $ExecutableName = "Firefox Setup ${Version}esr.exe"
   $allChecksums = Invoke-WebRequest -UseBasicParsing -Uri "https://releases.mozilla.org/pub/firefox/releases/${Version}esr/SHA512SUMS"
