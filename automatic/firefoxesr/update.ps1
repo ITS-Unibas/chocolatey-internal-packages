@@ -20,7 +20,7 @@ function global:au_GetLatest {
 
   $url = "https://ftp.mozilla.org/pub/firefox/releases/$($version)esr/win64/en-US/Firefox%20Setup%20$($version)esr.msi"
 
-  $ExecutableName = "Firefox Setup ${Version}esr.exe"
+  $ExecutableName = "Firefox Setup ${Version}esr.msi"
   $allChecksums = Invoke-WebRequest -UseBasicParsing -Uri "https://releases.mozilla.org/pub/firefox/releases/${Version}esr/SHA512SUMS"
   $allChecksums -match "(\w*)  win64\/en-US\/$ExecutableName"
   $checksum = $matches[1]
