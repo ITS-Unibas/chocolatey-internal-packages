@@ -9,7 +9,7 @@ $packageArgs = @{
   fileType      = 'EXE'
   unzipLocation = $toolsDir
   url           = 'https://ftp.mozilla.org/pub/firefox/releases/68.9.0esr/win64/en-US/Firefox%20Setup%2068.9.0esr.msi'
-  checksum      = '6aa15b94ced00ef675da069ac55103045e8c4047dae75a3137e9d7fb6538295c313d95d634b35d61659bce1fd3f774ca80a03c1d7c6785f0da2dae5f49ddc297'
+  checksum      = 'b1046e2949861784901329d3b2b9a93f5f6286fffaef182d352c2a69eb59301a4562a3915ce81a78c79f04bdd6b09842c6c495cdc9049b24ab9fe6f75887e8a1'
   checksumType  = 'sha512'
   silentArgs    = "/S"
 }
