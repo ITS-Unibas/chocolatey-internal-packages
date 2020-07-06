@@ -7,12 +7,12 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'msi'
-  url            = 'https://download.to.switch.ch/59.exe'
+  url            = 'https://misc.www.switch.ch/drive/SWITCHdrive-2_5_4_1832.msi'
   silentArgs     = '/S'
   validExitCodes = @(0)
 
   softwareName   = 'SWITCHdrive*'
-  checksum       = 'dd4f6f4ddcf09494b5134d90bc40bb59'
+  checksum       = '195723a33ba2624cc87ddffc76525428'
   checksumType   = 'md5'
 }
 
