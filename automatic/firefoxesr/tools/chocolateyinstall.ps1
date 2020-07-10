@@ -8,8 +8,8 @@ $packageArgs = @{
   softwareName  = 'Mozilla Firefox*'
   fileType      = 'EXE'
   unzipLocation = $toolsDir
-  url           = 'https://ftp.mozilla.org/pub/firefox/releases/78.0.1esr/win64/en-US/Firefox%20Setup%2078.0.1esr.msi'
-  checksum      = 'f490435d11608d00856be63dc5f0f6c62d37146a5bf4242cdd468d00ba0015126227db8fb7b184e73fb6f1f70b196ec7d8eab9e3238722134d8519c520003bf2'
+  url           = 'https://ftp.mozilla.org/pub/firefox/releases/78.0.2esr/win64/en-US/Firefox%20Setup%2078.0.2esr.msi'
+  checksum      = '4e01b48ae8158ed5d7fd6e1a1cc2106337a18b4b6b41c4c7aee7a2f6743b5bdb604712e214373380aeded5427d25941b7d721712883a7929cf4dafccd5d44f0b'
   checksumType  = 'sha512'
   silentArgs    = "/S"
 }
