@@ -20,7 +20,7 @@ function global:au_GetLatest {
   $homepage_content = Invoke-WebRequest -UseBasicParsing -Uri $details_url
 
   # Get Version
-  $homepage_content -match 'Version:(.*?)((\d)\.(\d))' | Out-Null
+  $homepage_content -match 'Version:(.*?)((\d+)\.(\d+))' | Out-Null
   $version = $Matches[2]
 
   # Get URL
