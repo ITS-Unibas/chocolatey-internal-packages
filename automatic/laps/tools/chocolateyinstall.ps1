@@ -8,7 +8,7 @@ $packageArgs = @{
   silentArgs     = '/quiet /norestart'
   validExitCodes = @(0, 3010)
   softwareName   = 'Local Administrator Password Solution*'
-  checksum       = '077bd456389f3f51633a1f26f1dbfd5f'
+  checksum       = ''
   checksumType   = 'md5'
 }
 
