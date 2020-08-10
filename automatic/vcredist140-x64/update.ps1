@@ -19,7 +19,7 @@ function GetResultInformation([string]$url) {
   $url = Get-RedirectedUrl $url
   $dest = "$env:TEMP\vcredist140.exe"
 
-  Get-WebFile $url $dest
+  Get-WebFile $url $dest | Out-Null
   $checksumType = 'sha256'
   $version = Get-Version (Get-Item $dest | % { $_.VersionInfo.ProductVersion })
   $checksum = Get-FileHash $dest -Algorithm $checksumType | % { $_.Hash.ToLowerInvariant() }
