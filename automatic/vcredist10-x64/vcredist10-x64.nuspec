@@ -6,7 +6,7 @@
     <version>10.0.30319.1</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages</packageSourceUrl>
     <owners>Microsoft</owners>
-    <title>Microsoft Visual C++ Redistributable for Visual Studio 2010 (x86)</title>
+    <title>Microsoft Visual C++ Redistributable for Visual Studio 2010 (x64)</title>
     <authors>Microsoft</authors>
     <projectUrl>https://visualstudio.microsoft.com/vs/</projectUrl>
     <copyright>https://www.microsoft.com/en-us/legal/intellectualproperty/permissions</copyright>
