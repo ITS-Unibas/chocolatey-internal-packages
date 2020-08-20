@@ -17,7 +17,7 @@ function global:au_SearchReplace {
 
 function GetResultInformation([string]$url) {
   $url = Get-RedirectedUrl $url
-  $dest = "$env:TEMP\vcredist_x64.exe"
+  $dest = "$env:TEMP\vcredist2010_x64.exe"
 
   Get-WebFile $url $dest | Out-Null
   $checksumType = 'sha256'
