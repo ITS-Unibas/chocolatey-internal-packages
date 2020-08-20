@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>vcredist13-x86</id>
+    <version>12.0.40649.5</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages</packageSourceUrl>
+    <owners>Microsoft</owners>
+    <title>Microsoft Visual C++ Redistributable for Visual Studio 2013 (x86)</title>
+    <authors>Microsoft</authors>
+    <projectUrl>https://visualstudio.microsoft.com/vs/</projectUrl>
+    <copyright>https://www.microsoft.com/en-us/legal/intellectualproperty/permissions</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>microsoft visual c++ redistributable 2013</tags>
+    <description>
+      The Microsoft Visual C++ 2013 Redistributable Package installs runtime
+      components of Visual C++ Libraries required to run applications developed
+      with Visual C++ on a computer that does not have Visual C++ 2013
+      installed.
+    </description>
+    <summary>Run-time components that are required to run C++ applications that are built by using Visual Studio 2013</summary>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-automatic-packages/icons/vcredist140.png</iconUrl>
+    <docsUrl>https://docs.microsoft.com/en-us/visualstudio/ide/getting-started-with-cpp-in-visual-studio</docsUrl>
+    <licenseUrl>https://visualstudio.microsoft.com/license-terms/mlt031619/</licenseUrl>
+    <bugTrackerUrl>https://developercommunity.visualstudio.com/</bugTrackerUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
