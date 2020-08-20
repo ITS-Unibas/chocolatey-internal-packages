@@ -8,7 +8,7 @@ $packageArgs = @{
   silentArgs     = '/quiet /norestart'
   validExitCodes = @(0, 1638, 3010)
   softwareName   = 'Microsoft Visual C++ 2013 Redistributable (x64)*'
-  checksum       = ''
+  checksum       = '8588eb697eb2049344e6206d2b66ff63104f1c55e553621ab8ecc504d6b9e9d4'
   checksumType   = 'sha256'
 }
 
