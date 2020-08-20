@@ -20,7 +20,7 @@ environment:
   # Github token to commit pushed packages to repository
   github_user_repo: ITS-Unibas/chocolatey-automatic-packages
   github_api_key:
-    secure: 631eff7de6ff73156de954e9d899552881ef2109
+    secure: 37fa762d6579bc1cb6cfc0e5e390a6c670ea428f
 
   # Mail credentials - for error notifications
   mail_user:
