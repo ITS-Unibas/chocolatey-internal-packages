@@ -1,5 +1,5 @@
 ﻿import-module au
-
+Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $releases = "https://support.apple.com/en-us/HT204283"
@@ -44,8 +44,9 @@ function global:au_GetLatest {
   $re = "iCloudSetup.exe"
 
   $url32 = $download_page.Links | Where-Object href -match $re | Select-Object -first 1 -expand href
+  Write-Host $url32
 
   GetResultInformation $url32
 }
 
-update -ChecksumFor none
+update -ChecksumFor none -NoCheckChocoVersion
