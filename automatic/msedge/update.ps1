@@ -17,13 +17,13 @@ function global:au_GetLatest {
   # Get Version
   $homepage_content -match 'Version (\d+)\.(\d+)\.(\d+)\.(\d+)' | Out-Null
   $version = $matches[0] -replace "Version ", ""
-  $download_content = Invoke-WebRequest -UseBasicParsing -Uri $download_page_url
-  $download_content.Content.Replace('&quot;', '') -match "Platform:Windows,Architecture:x64,ProductVersion:$Version(.*?)]" | Out-Null
-  $MatchContent = $matches[0]
-  $MatchContent -match 'Location:(.*?),'
-  $Url = $matches[1]
-  $MatchContent -match 'Hash:(.*?),'
-  $Checksum = $matches[1]
+  $download_content = Invoke-WebRequest -Uri $download_page_url
+  $DataDiv = $download_content.ParsedHtml.getElementById("commercial-json-data")
+  $Json = ConvertFrom-Json $DataDiv.getAttribute("data-whole-json")
+  $StableObjects = $Json | Where-Object Product -eq Stable | Select-Object -ExpandProperty Releases
+  $StableWinObject = $StableObjects | Where-Object {$_.ProductVersion -eq $version -and $_.Architecture -eq "x64" -and $_.Platform -eq "Windows"}
+  $Url = $StableWinObject.Artifacts.Location
+  $Checksum = $StableWinObject.Artifacts.Hash
   $Latest = @{ URL = $Url; Version = $version; Checksum = $Checksum }
   return $Latest
 }
