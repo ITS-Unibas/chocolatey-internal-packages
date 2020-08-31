@@ -2,9 +2,9 @@
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
-$urljre = 't1'
-$urljdkfx = 't2'
-$urljrefx = 't3'
+$urljre = 'https://api.azul.com/zulu/download/community/v1.0/bundles/latest/?jdk_version=8&bundle_type=jre&features=&ext=zip&os=windows&arch=x86&hw_bitness=64'
+$urljdkfx = 'https://api.azul.com/zulu/download/community/v1.0/bundles/latest/?jdk_version=8&bundle_type=jdk&features=fx&ext=zip&os=windows&arch=x86&hw_bitness=64'
+$urljrefx = 'https://api.azul.com/zulu/download/community/v1.0/bundles/latest/?jdk_version=8&bundle_type=jre&features=fx&ext=zip&os=windows&arch=x86&hw_bitness=64'
 
 
 Get-ChocolateyWebFile -PackageName 'zulu8-x64' -FileFullPath "$toolsDir\JRE\zulu8-x64-jre.zip" -Url $urljre
