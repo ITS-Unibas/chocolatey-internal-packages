@@ -8,11 +8,14 @@ $jrefxrelease = 'https://api.azul.com/zulu/download/community/v1.0/bundles/lates
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            "(?i)(^\s*url64bit\s*=\s*)('.*')"    = "`$1'$($Latest.URL64)'"
-            "(?i)(^\s*checksum64\s*=\s*)('.*')"  = "`$1'$($Latest.Checksum64)'"
-            "(?i)(^\s*\`$urljre\s*=\s*)('.*')"   = "`$1'$($Latest.URLJRE)'"
-            "(?i)(^\s*\`$urljdkfx\s*=\s*)('.*')" = "`$1'$($Latest.URLJDKFX)'"
-            "(?i)(^\s*\`$urljrefx\s*=\s*)('.*')" = "`$1'$($Latest.URLJREFX)'"
+            "(?i)(^\s*url64bit\s*=\s*)('.*')"            = "`$1'$($Latest.URL64)'"
+            "(?i)(^\s*checksum64\s*=\s*)('.*')"          = "`$1'$($Latest.Checksum64)'"
+            "(?i)(^\s*\`$urljre\s*=\s*)('.*')"           = "`$1'$($Latest.URLJRE)'"
+            "(?i)(^\s*\`$urljdkfx\s*=\s*)('.*')"         = "`$1'$($Latest.URLJDKFX)'"
+            "(?i)(^\s*\`$urljrefx\s*=\s*)('.*')"         = "`$1'$($Latest.URLJREFX)'"
+            "(?i)(^\s*\`$checksumurljre\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumURLJRE)'"
+            "(?i)(^\s*\`$checksumurljdkfx\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumURLJDKFX)'"
+            "(?i)(^\s*\`$checksumurljrefx\s*=\s*)('.*')" = "`$1'$($Latest.ChecksumURLJREFX)'"
         }
     }
 }
@@ -29,13 +32,16 @@ function global:au_GetLatest {
     $releasejrefx = Invoke-WebRequest -Uri $jrefxrelease | ConvertFrom-Json
 
     @{
-        URL64          = $url
-        Version        = $version
-        Checksum64     = $checksum
-        ChecksumType64 = 'sha256'
-        URLJRE         = $releasejre.url
-        URLJDKFX       = $releasejdkfx.url
-        URLJREFX       = $releasejrefx.url
+        URL64            = $url
+        Version          = $version
+        Checksum64       = $checksum
+        ChecksumType64   = 'sha256'
+        URLJRE           = $releasejre.url
+        URLJDKFX         = $releasejdkfx.url
+        URLJREFX         = $releasejrefx.url
+        ChecksumURLJRE   = $releasejre.sha256_hash
+        ChecksumURLJDKFX = $releasejdkfx.sha256_hash
+        ChecksumURLJREFX = $releasejrefx.sha256_hash
     }
 }
 
