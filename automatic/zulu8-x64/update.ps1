@@ -24,15 +24,19 @@ function global:au_GetLatest {
     $version = $release.zulu_version -Join '.'
     $checksum = $release.sha256_hash
 
+    $releasejre = Invoke-WebRequest -Uri $jrerelease | ConvertFrom-Json
+    $releasejdkfx = Invoke-WebRequest -Uri $jdkfxrelease | ConvertFrom-Json
+    $releasejrefx = Invoke-WebRequest -Uri $jrefxrelease | ConvertFrom-Json
+
     @{
         URL64          = $url
         Version        = $version
         Checksum64     = $checksum
         ChecksumType64 = 'sha256'
-        URLJRE         = $jrerelease
-        URLJDKFX       = $jdkfxrelease
-        URLJREFX       = $jrefxrelease
+        URLJRE         = $releasejre.url
+        URLJDKFX       = $releasejdkfx.url
+        URLJREFX       = $releasejrefx.url
     }
 }
 
-update -ChecksumFor none -NoCheckChocoVersion -Force
+update -ChecksumFor none -NoCheckChocoVersion
