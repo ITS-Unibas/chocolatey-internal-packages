@@ -45,4 +45,4 @@ function global:au_GetLatest {
     }
 }
 
-update -ChecksumFor none -NoCheckChocoVersion -Force
+update -ChecksumFor none -NoCheckChocoVersion
