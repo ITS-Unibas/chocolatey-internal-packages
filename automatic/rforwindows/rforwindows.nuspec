@@ -19,7 +19,10 @@
     <tags>r r-project r-base admin statistics programming data-analysis programming-language mathematics data-mining
     statistical-analysis statistical data-acquisition statistical-graphics data-automation</tags>
     <summary>R is a language and environment for statistical computing and graphics</summary>
-    <description><![CDATA[## Introduction to R
+    <description><![CDATA[##
+Package is based on AdmiringWorm's [work](https://github.com/AdmiringWorm/chocolatey-packages/tree/master/automatic/r.project)
+
+## Introduction to R
 
 R is a language and environment for statistical computing and graphics. It is a [GNU project](http://www.gnu.org/) which is similar to the S language and environment which was developed at Bell Laboratories (formerly AT&T, now Lucent Technologies) by John Chambers and colleagues. R can be considered as a different implementation of S. There are some important differences, but much code written for S runs unaltered under R.
 
@@ -46,14 +49,6 @@ Many users think of R as a statistics system. We prefer to think of it of an env
 R can be extended (easily) via packages. There are about eight packages supplied with the R distribution and many more are available through the CRAN family of Internet sites covering a very wide range of modern statistics.
 
 R has its own LaTeX-like documentation format, which is used to supply comprehensive documentation, both on-line in a number of formats and in hardcopy.
-
-## Package Parameters
-
-- `/UseInf:` - Change the inno setup configuration file to use/save when installing.
-- `/AddToPath` - Add the R.Project bin directory to the `PATH` environment variable.
-
-**EXAMPLE**
-`choco install r.project --params "'/UseInf:C:\r.project.inf'"`
 ]]></description>
     <releaseNotes>
 [Software Changelog](https://cloud.r-project.org/doc/manuals/r-release/NEWS.html)
