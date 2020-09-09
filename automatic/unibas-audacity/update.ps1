@@ -4,7 +4,7 @@
 $releases = 'https://www.fosshub.com/Audacity.html'
 
 function global:au_BeforeUpdate() {
-  Get-RemoteFiles -Purge -FileNameBase $Latest.PackageName
+  Get-RemoteFiles -Purge -FileNameBase 'unibas-audacity'
   $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
 }
 function global:au_SearchReplace {
@@ -17,20 +17,11 @@ function global:au_SearchReplace {
 }
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $installer_exe = $download_page.Links | Where-Object href -match 'audacity-win-.*.exe$' | Select-Object -First 1 -expand href
-  if ($installer_exe) {
-    $version = $installer_exe -split '-|.exe' | Select-Object -Skip 2 -First 1
-  }
-
-  if ($version) {
-    $url = $releases + "?dwl=audacity-win-" + $version + ".exe"
-  }
-
-  @{
-    URL      = $url
-    Version  = $version
-    FileType = 'exe'
-  }
+  $regex = '.exe$'
+  $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
+  $arr = $url -split '-|.exe'
+  $version = $arr[2]
+  return @{ Version = $version; URL = $url }
 }
 
-update -ChecksumFor none -NoCheckChocoVersion
+update -ChecksumFor none -NoCheckChocoVersion -Force
