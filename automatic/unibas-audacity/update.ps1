@@ -5,7 +5,7 @@ $releases = 'https://www.audacityteam.org/download/windows/'
 
 function global:au_BeforeUpdate() {
   Get-RemoteFiles -Purge -FileNameBase 'unibas-audacity'
-  #$Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
+  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
 }
 function global:au_SearchReplace {
   @{
@@ -21,7 +21,6 @@ function global:au_GetLatest {
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   $arr = $url -split '-|.exe'
   $version = $arr[2]
-  $checksum =
   return @{ Version = $version; URL = $url }
 }
 
