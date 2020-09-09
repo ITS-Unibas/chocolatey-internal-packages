@@ -27,10 +27,10 @@ function global:au_GetLatest {
   }
 
   @{
-    URL    = $url
+    URL      = $url
     Version  = $version
     FileType = 'exe'
   }
 }
 
-update -ChecksumFor none -NoCheckChocoVersion -Force
+update -ChecksumFor none -NoCheckChocoVersion
