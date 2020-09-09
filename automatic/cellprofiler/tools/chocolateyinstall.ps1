@@ -9,7 +9,7 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url            = 'https://dpvpof9ygr7ad.cloudfront.net/CellProfiler-3.1.9.exe'
+  url            = 'https://cellprofiler-releases.s3.amazonaws.com/CellProfiler-Windows-3.1.9.exe'
   #file         = $fileLocation
 
   #MSI
@@ -32,7 +32,7 @@ $packageArgs = @{
 
   # optional, highly recommended
   softwareName   = 'cellprofiler*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum       = '6dec28c3d1f7c2254e2d0104100d079799cce79aacbd84515cf75f147d2c1461'
+  checksum       = 'hashhh'
   checksumType   = 'sha256' #default is md5, can also be sha1
 }
 

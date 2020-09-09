@@ -20,8 +20,7 @@ function global:au_GetLatest {
   $regex = '.exe$'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   $arr = $url -split '-|.exe'
-  Write-Host $arr
-  $version = $arr[1]
+  $version = $arr[3]
   return @{ Version = $version; URL = $url }
 }
 
