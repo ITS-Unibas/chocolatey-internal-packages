@@ -2,7 +2,7 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'unibas-audacity'
-$softwareName = 'unibas-audacity*'
+$softwareName = 'Audacity*'
 $installerType = 'EXE'
 
 $silentArgs = '/qn /norestart'
@@ -10,7 +10,7 @@ $silentArgs = '/qn /norestart'
 $validExitCodes = @(0, 3010, 1605, 1614, 1641)
 if ($installerType -ne 'MSI') {
   #$silentArgs = '/S'           # NSIS
-  $silentArgs = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-' # Inno Setup
+  $silentArgs = '/VERYSILENT' # Inno Setup
   #$silentArgs = '/s'           # InstallShield
   #$silentArgs = '/s /v"/qn"' # InstallShield with MSI
   #$silentArgs = '/s'           # Wise InstallMaster
