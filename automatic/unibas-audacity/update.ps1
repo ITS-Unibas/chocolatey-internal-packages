@@ -1,7 +1,7 @@
 ﻿Import-Module AU
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = 'https://www.fosshub.com/Audacity.html'
+$releases = 'https://www.audacityteam.org/download/windows/'
 
 function global:au_BeforeUpdate() {
   Get-RemoteFiles -Purge -FileNameBase 'unibas-audacity'
@@ -21,7 +21,8 @@ function global:au_GetLatest {
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   $arr = $url -split '-|.exe'
   $version = $arr[2]
+  $checksum =
   return @{ Version = $version; URL = $url }
 }
 
-update -ChecksumFor none -NoCheckChocoVersion -Force
+update -ChecksumFor none -NoCheckChocoVersion
