@@ -5,7 +5,7 @@ $releases = 'https://www.fosshub.com/Audacity.html'
 
 function global:au_BeforeUpdate() {
   Get-RemoteFiles -Purge -FileNameBase 'unibas-audacity'
-  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
+  #$Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
 }
 function global:au_SearchReplace {
   @{
@@ -24,4 +24,4 @@ function global:au_GetLatest {
   return @{ Version = $version; URL = $url }
 }
 
-update -ChecksumFor none -NoCheckChocoVersion -Verbose -Force
+update -ChecksumFor none -NoCheckChocoVersion -Force
