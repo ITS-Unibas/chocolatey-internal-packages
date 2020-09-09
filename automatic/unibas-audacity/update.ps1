@@ -4,7 +4,11 @@
 $releases = 'https://www.audacityteam.org/download/windows/'
 
 function global:au_BeforeUpdate() {
-  Get-RemoteFiles -Purge -FileNameBase 'unibas-audacity'
+  $Latest.Options.Headers = @{
+    'Referer'    = $Latest.URL + "/";
+    'User-Agent' = $Latest.Options.Headers.'User-Agent'
+  }
+  Get-RemoteFiles -Purge -FileNameBase $Latest.PackageName
   $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
 }
 function global:au_SearchReplace {
@@ -21,7 +25,12 @@ function global:au_GetLatest {
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   $arr = $url -split '-|.exe'
   $version = $arr[2]
-  return @{ Version = $version; URL = $url }
+  $HTTPheaders = @{
+    'Referer'    = $releases;
+    'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+  }
+
+  return @{ Version = $version; URL = $url; Options = @{ Headers = $HTTPheaders } }
 }
 
 update -ChecksumFor none -NoCheckChocoVersion
