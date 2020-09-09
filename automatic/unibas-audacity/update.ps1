@@ -30,7 +30,7 @@ function global:au_GetLatest {
     'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
   }
 
-  return @{ Version = $version; URL = $url; Options = @{ Headers = $HTTPheaders } }
+  return @{ Version = $version; URL = $url; Options = @{ Headers = $HTTPheaders }; BaseUrl = $releases }
 }
 
 update -ChecksumFor none -NoCheckChocoVersion
