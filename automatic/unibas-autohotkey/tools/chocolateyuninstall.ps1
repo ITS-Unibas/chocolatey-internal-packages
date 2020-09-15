@@ -1,8 +1,8 @@
 ﻿
 $ErrorActionPreference = 'Stop'
 
-$packageName = 'autohotkey'
-$softwareName = 'autohotkey*'
+$packageName = 'unibas-autohotkey'
+$softwareName = 'Autohotkey*'
 $installerType = 'EXE'
 
 $silentArgs = '/qn /norestart'

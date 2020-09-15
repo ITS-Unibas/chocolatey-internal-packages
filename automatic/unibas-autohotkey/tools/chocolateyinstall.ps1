@@ -4,7 +4,7 @@ $ErrorActionPreference = 'Stop'
 $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 
 $packageArgs = @{
-  packageName    = 'autohotkey'
+  packageName    = 'unibas-autohotkey'
   fileType       = 'exe'
   url            = 'https://github.com/Lexikos/AutoHotkey_L/releases/download/v1.1.33.02/AutoHotkey_1.1.33.02_setup.exe'
   silentArgs     = "/S /D=C:\Program Files\AutoHotkey"

@@ -4,7 +4,7 @@
 $releases = 'https://autohotkey.com/download/1.1'
 
 function global:au_BeforeUpdate() {
-  Get-RemoteFiles -Purge -FileNameBase 'autohotkey'
+  Get-RemoteFiles -Purge -FileNameBase 'unibas-autohotkey'
   $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
 }
 function global:au_SearchReplace {
