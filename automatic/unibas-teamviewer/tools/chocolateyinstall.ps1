@@ -8,7 +8,7 @@ $packageArgs = @{
   silentArgs     = '/S /norestart'
   validExitCodes = @(0, 1638, 3010)
   softwareName   = 'TeamViewer*'
-  checksum       = '441c21970a08ae66b331719c295a5f397fd486859fef20382251da57fafe9541'
+  checksum       = '3533583640b45b51cdde21f12c6389a7cdeb28e603c2289208f28c76c6b15365'
   checksumType   = 'sha256'
 }
 
