@@ -4,13 +4,13 @@
 $releaseurl = "https://packages.vmware.com/tools/releases/latest/windows/x64/"
 
 function global:au_GetLatest {
-  Write-Verbose "starting vmware-tools"
   $Version = "0.0"
   $content = Get-Content ".\automatic\unibas-vmware-tools\tools\chocolateyInstall.ps1"
-  Write-Verbose $content.ToString()
   $OldChecksum = ''
   if($content -match "(\s*checksum\s*=\s*)('.*')") {
-    $OldChecksum = $Matches[2].Replace("'", "")
+    if(Matches[2]) {
+      $OldChecksum = $Matches[2].Replace("'", "")
+    }
   }
   $html_content = Invoke-WebRequest -Uri $releaseurl
   $file = $html_content.Links | Where-Object href -like "*.exe" | Select-Object -ExpandProperty href
