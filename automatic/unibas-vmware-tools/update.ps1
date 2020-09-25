@@ -5,7 +5,7 @@ $releaseurl = "https://packages.vmware.com/tools/releases/latest/windows/x64/"
 
 function global:au_GetLatest {
   $Version = "0.0"
-  $content = Get-Content ".\automatic\unibas-vmware-tools\tools\chocolateyInstall.ps1"
+  $content = Get-Content ".\chocolateyInstall.ps1"
   $OldChecksum = ''
   if($content -match "(\s*checksum\s*=\s*)('.*')") {
     if(Matches[2]) {
