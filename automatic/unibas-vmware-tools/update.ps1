@@ -37,3 +37,4 @@ function global:au_SearchReplace {
 }
 
 Update -ChecksumFor none -NoCheckChocoVersion
+Write-Verbose $Matches
