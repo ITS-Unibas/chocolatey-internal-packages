@@ -6,7 +6,7 @@ $releaseurl = "https://packages.vmware.com/tools/releases/latest/windows/x64/"
 function global:au_GetLatest {
   Write-Verbose "starting vmware-tools"
   $Version = "0.0"
-  $content = Get-Content ".\tools\chocolateyInstall.ps1"
+  $content = Get-Content ".\automatic\unibas-vmware-tools\tools\chocolateyInstall.ps1"
   Write-Verbose $content.ToString()
   $content -match "(\s*checksum\s*=\s*)('.*')"
   $OldChecksum = $Matches[2].Replace("'", "")
