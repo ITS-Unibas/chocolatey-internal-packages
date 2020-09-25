@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-vmware-tools</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic/unibas-vmware-tools</packageSourceUrl>
+    <owners>ITS-Unibas</owners>
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <title>VMWare Tools</title>
+    <authors>VMWare</authors>
+    <projectUrl>https://www.vmware.com/support/packages.html</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-automatic-packages/icons/vmware-tools.png</iconUrl>
+    <copyright>© 2020 VMware, Inc</copyright>
+    <licenseUrl>https://www.vmware.com/help/legal.html</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://packages.vmware.com/tools</projectSourceUrl>
+    <docsUrl>https://www.vmware.com/support/pubs/</docsUrl>
+    <bugTrackerUrl>https://www.vmware.com/support/services.html</bugTrackerUrl>
+    <tags>vmware vmware-tools vm virtual machine</tags>
+    <summary>VMware Tools is a set of services and modules that enable several
+    features in VMware products for better management of, and seamless user
+    interactions with, guest operating systems.</summary>
+    <description>VMware Tools is a set of services and modules that enable
+    several features in VMware products for better management of, and seamless
+    user interactions with, guest operating systems.
+    </description>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
