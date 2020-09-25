@@ -7,7 +7,7 @@ function global:au_GetLatest {
   $Version = "0.0"
   $content = Get-Content ".\tools\chocolateyInstall.ps1"
   $OldChecksum = ''
-  if($content -match "(\s*checksum\s*=\s*)('.*')") {
+  if($content -match "(?i)(^\s*checksum\s*=\s*)('.*')") {
     if($Matches -and $Matches[2]) {
       $OldChecksum = $Matches[2].Replace("'", "")
     }
