@@ -8,8 +8,10 @@ function global:au_GetLatest {
   $Version = "0.0"
   $content = Get-Content ".\automatic\unibas-vmware-tools\tools\chocolateyInstall.ps1"
   Write-Verbose $content.ToString()
-  $content -match "(\s*checksum\s*=\s*)('.*')"
-  $OldChecksum = $Matches[2].Replace("'", "")
+  $OldChecksum = ''
+  if($content -match "(\s*checksum\s*=\s*)('.*')") {
+    $OldChecksum = $Matches[2].Replace("'", "")
+  }
   $html_content = Invoke-WebRequest -Uri $releaseurl
   $file = $html_content.Links | Where-Object href -like "*.exe" | Select-Object -ExpandProperty href
   $url = $releaseurl + $file
