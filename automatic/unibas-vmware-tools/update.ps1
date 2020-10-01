@@ -6,11 +6,15 @@ $releaseurl = "https://packages.vmware.com/tools/releases/latest/windows/x64/"
 function global:au_GetLatest {
   $Version = "0.0"
   $content = Get-Content ".\tools\chocolateyInstall.ps1"
-  Write-Host $content
+  $HasMatches = $false
+  foreach ($line in $content) {
+    if($line -match "(\s*checksum\s*=\s*)('.*')") {
+      $HasMatches = $true
+      continue
+    }
+  }
   $OldChecksum = ''
-  if($content -match "(\s*checksum\s*=\s*)('.*')") {
-    Write-host ($content -match "(\s*checksum\s*=\s*)('.*')")
-    #$Matches | foreach-object {Write-Host $_}
+  if($HasMatches) {
     if($Matches -and $Matches[2]) {
       $OldChecksum = $Matches[2].Replace("'", "")
     }
