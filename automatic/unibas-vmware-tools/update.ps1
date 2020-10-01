@@ -9,7 +9,7 @@ function global:au_GetLatest {
   $OldChecksum = ''
   if($content -match "(\s*checksum\s*=\s*)('.*')") {
     write-error $content
-    Write-error $Matches
+    $Matches | foreach-object {Write-Error $_}
     if($Matches -and $Matches[2]) {
       $OldChecksum = $Matches[2].Replace("'", "")
     }
