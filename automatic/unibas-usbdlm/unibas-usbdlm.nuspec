@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-usbdlm</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/elpatron68/my-chocolatey-packages</packageSourceUrl>
+    <owners>University Basel</owners>
+    <title>USBDLM</title>
+    <authors>Uwe Sieber</authors>
+    <projectUrl>https://www.uwe-sieber.de/usbdlm_e.html</projectUrl>
+    <copyright>Uwe Sieber</copyright>
+    <licenseUrl>https://www.uwe-sieber.de/usbdlm_e.html#prices</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://www.uwe-sieber.de/usbdlm_e.html#config</docsUrl>
+    <tags>usbdlm removable drive letter system tool</tags>
+    <summary>USBDLM is a Windows service that gives control over Windows' drive letter assignment for USB drives</summary>
+    <description>
+    USBDLM is a Windows service that gives control over Windows' drive letter assignment for USB drives. Running as service makes it independent of the logged on user's privileges, so there is no need to give the users the privilege to change drive letters.
+    It automatically solves conflicts between USB drives and network or subst drives of the currently logged on user.
+    Furthermore you can define new default letters for USB drives and much more.
+    It works on Windows XP to Windows 10.  USBDLM is Freeware for private and educational (schools, colleges, universities) use only. Otherwise one licence per computer is required after a 30 day test period even though the software does not expire.
+  </description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
