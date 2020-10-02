@@ -2,7 +2,7 @@
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
-  softwareName   = 'USBDLM*'
+  softwareName   = 'USB Drive Letter Manager*'
   fileType       = 'MSI'
   url            = 'https://www.uwe-sieber.de/files/usbdlm_x64.msi'
   checksum       = '9342fb9d9a86f8016b45ddeb8fc9d2a588b4ecbec6a9809b74b7fd0dd4438eac'

@@ -2,7 +2,7 @@
 $ErrorActionPreference = 'Stop'
 
 $packageName = 'unibas-usbdlm'
-$softwareName = 'USBDLM*'
+$softwareName = 'USB Drive Letter Manager*'
 $installerType = 'MSI'
 
 $silentArgs = '/qn /norestart'
