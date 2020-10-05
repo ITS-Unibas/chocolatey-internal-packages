@@ -8,7 +8,7 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'MSI'
-  url            = ''
+  url            = 'https://setup1.citavi.com/release/default/Citavi6Setup.msi'
   #file         = $fileLocation
 
   #MSI
@@ -17,7 +17,7 @@ $packageArgs = @{
 
   # optional, highly recommended
   softwareName   = 'Citavi*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum       = ''
+  checksum       = 'b6eed3d655da578b0d3af0cd3a72462bb747524a08e9c70f34fda674f3f908e8'
   checksumType   = 'sha256' #default is md5, can also be sha1
 }
 
