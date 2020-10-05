@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-texniccenter</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic/unibas-texniccenter</packageSourceUrl>
+    <owners>University Basel</owners>
+    <title>TexnicCenter</title>
+    <authors>TexnicCenter</authors>
+    <projectUrl>https://www.texniccenter.org/</projectUrl>
+    <copyright>TexnicCenter</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>http://texniccenter.sourceforge.net/</docsUrl>
+    <bugTrackerUrl>https://sourceforge.net/p/texniccenter/user-reports/search/?q=%21status%3Awont-fix+%26%26+%21status%3Aclosed</bugTrackerUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-automatic-packages/icons/TeXnicCenter.png</iconUrl>
+    <tags>unibas-texniccenter latex texniccenter</tags>
+    <summary>Premium LaTeX Editing for Windows</summary>
+    <description>
+    * integrated LaTeX environment for Windows
+    * powerful LaTeX editor with auto completion
+    * full UTF-8 support
+    * document navigator for easy navigation and referencing
+    * tight viewer integration with forward and inverse search
+    * quick setup wizard for MiKTeX
+    * trusted by millions of users around
+    * the world fre and open source (GPL)
+  </description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
