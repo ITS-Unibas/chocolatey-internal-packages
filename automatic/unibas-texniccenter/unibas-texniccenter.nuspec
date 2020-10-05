@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-texniccenter</id>
-    <version>0.0</version>
+    <version>2.02</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic/unibas-texniccenter</packageSourceUrl>
     <owners>University Basel</owners>
     <title>TexnicCenter</title>
