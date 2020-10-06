@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-cyberduck</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic/unibas-cyberduck</packageSourceUrl>
+    <owners>University of Basel</owners>
+    <!-- ============================== -->
+    <title>Cyberduck</title>
+    <authors> iterate GmbH</authors>
+    <projectUrl>https://cyberduck.io/download/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-automatic-packages/icons/cyberduck.png</iconUrl>
+    <licenseUrl>https://cyberduck.io/license/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://trac.cyberduck.io/wiki/help/en</docsUrl>
+    <summary>Cyberduck is a libre server and cloud storage browser for Mac and Windows with support for FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure and OneDrive, Google Drive and Dropbox.</summary>
+    <tags>unibas-cyberduck admin cyberduck</tags>
+    <description>Cyberduck is a libre server and cloud storage browser for Mac and Windows with support for FTP, SFTP, WebDAV, Amazon S3, OpenStack Swift, Backblaze B2, Microsoft Azure and OneDrive, Google Drive and Dropbox.</description>
+    <releaseNotes>https://cyberduck.io/changelog/</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
