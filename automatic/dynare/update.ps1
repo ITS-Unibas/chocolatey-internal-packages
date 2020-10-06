@@ -17,7 +17,7 @@ function global:au_SearchReplace {
 }
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $regex = '.exe$'
+  $regex = '.*dynare.*.exe$'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   $arr = $url -split '-|.exe'
   $version = $arr[1]
