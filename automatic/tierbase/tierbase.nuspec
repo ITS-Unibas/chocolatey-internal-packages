@@ -3,7 +3,7 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
     <id>tierbase</id>
-    <version>0.0</version>
+    <version>14.6</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic/tierbase</packageSourceUrl>
     <owners>University Basel</owners>
     <title>Tierbase 4D</title>
