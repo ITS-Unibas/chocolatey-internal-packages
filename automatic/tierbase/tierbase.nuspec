@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <metadata>
+    <id>tierbase</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic/tierbase</packageSourceUrl>
+    <owners>University Basel</owners>
+    <title>Tierbase 4D</title>
+    <authors>Universität Heidelberg</authors>
+    <projectUrl>https://www.uni-heidelberg.de/einrichtungen/ibf/datenbanken/tierbase.html</projectUrl>
+    <copyright>© Universität Heidelberg</copyright>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <tags>tierbase tierdatenbank </tags>
+    <description>
+     TierBase ist eine Datenbank zur Erfassung der Zucht und Haltung von
+     Versuchstieren sowie der Dokumentation von Tierexperimenten. Sie wurde auf
+     der Basis von 4D-Software für eine vernetzte Client/Server-Umgebung
+     entwickelt. Vier ineinander greifende Bereiche des Programms gewährleisten
+     eine effiziente und transparente Verwaltung einer großen Anzahl von
+     genmanipulierten Linien:
+
+      * Wissenschaftler können jederzeit den aktuellen Stand ihrer Tierbestände
+      und Zuchten einsehen, verschiedene Aufträge erzeugen (Tierbestellungen,
+      Verpaarungsaufträge, Gewebeaufträge u.s.w.), Projektleiter werden
+      automatisch über den Stand ihrer Projekte informiert.
+      * Tierpfleger bearbeiten erhaltene Aufträge und tragen die Zuchtdaten ein,
+      kommunizieren über interne Email mit den Wissenschaftlern.
+      * Zuchtadministratoren koordinieren, beraten und überwachen die
+      Zusammenarbeit aller Bereiche, gewährleisten das Anlegen und Stilllegen
+      von GV-Linien, die Einweisung neuer Nutzer, Vergabe der Zugriffsrechte.
+      * Tierschutzbeauftragte überwachen die projektbezogenen Daten und erfassen
+      die Tierzahlen entsprechend der Versuchstiermeldeverordnung
+
+      Um als Nutzer Zugriff auf die Datenbank zu bekommen, melden Sie sich bitte bei der
+      Zuchtadministration der IBF Terminvereinbarung zwecks Einweisung und Passwort-Vergabe.
+    </description>
+    <summary>TierBase ist eine Datenbank zur Erfassung der Zucht und Haltung von
+    Versuchstieren sowie der Dokumentation von Tierexperimenten.</summary>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-automatic-packages/icons/uni-heidelberg.png</iconUrl>
+    <docsUrl>https://www.uni-heidelberg.de/md/ibf/datenbanken/181023_tb_anmeldung.pdf</docsUrl>
+    <licenseUrl>https://www.uni-heidelberg.de/datenschutzerklaerung_web.html</licenseUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
