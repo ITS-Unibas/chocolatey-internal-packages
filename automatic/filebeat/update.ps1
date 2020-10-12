@@ -41,11 +41,8 @@ function global:au_GetLatest {
   $checkSum64 = ($checkSum64 | Out-String) -imatch "^\S+"
   $checkSum64 = $Matches[0]
 
-  WRite-Host $checkSum64
-
   $Latest = @{ URL64 = $url64; Version = $version; Checksum64 = $checkSum64; Checksum64Type = $checksum64Type; }
   return $Latest
 }
 
 update -ChecksumFor none
-
