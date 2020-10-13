@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-greenshot</id>
-    <version>1.2</version>
+    <version>1.2.10.6</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-greenshot</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <!-- ============================== -->
@@ -18,7 +18,12 @@
     <bugTrackerUrl>https://github.com/greenshot/greenshot/issues</bugTrackerUrl>
     <summary>Greenshot is an open source, light-weight screenshot software tool for Windows</summary>
     <tags>unibas-greenshot admin screenshot</tags>
-    <description></description>
+    <description><![CDATA[
+Quickly create screenshots of a selected region, window or fullscreen; you can even capture complete (scrolling) web pages from Internet Explorer.
+Easily annotate, highlight or obfuscate parts of the screenshot.
+Export the screenshot in various ways: save to file, send to printer, copy to clipboard, attach to e-mail, send Office programs or upload to photo sites like Flickr or Picasa, and others. and a lot more options simplifying creation of and work with screenshots every day.
+Being easy to understand and configurable, Greenshot is an efficient tool for project managers, software developers, technical writers, testers and anyone else creating screenshots.
+]]></description>
     <releaseNotes>https://github.com/greenshot/greenshot/releases</releaseNotes>
   </metadata>
   <files>
