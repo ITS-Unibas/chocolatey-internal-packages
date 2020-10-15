@@ -18,7 +18,7 @@ environment:
   au_test_groups: 1
   
   # Github token to commit pushed packages to repository
-  github_user_repo: ITS-Unibas/chocolatey-automatic-packages
+  github_user_repo: ITS-Unibas/chocolatey-internal-packages
   github_api_key:
     secure: UuPLB70DB7VQ22k1J3zN+w98ovKHe9RqDM7/jIXnqrBt3wou5ic6B1nI8jQZ1E+0
 
