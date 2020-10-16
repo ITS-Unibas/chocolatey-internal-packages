@@ -61,9 +61,9 @@ function global:au_BeforeUpdate() {
     $Latest.ChecksumType64 = 'SHA256'
 }
 
-function global:au_AfterUpdate {
-    Set-DescriptionFromReadme -SkipFirst 2
-}
+# function global:au_AfterUpdate {
+#     Set-DescriptionFromReadme -SkipFirst 2
+# }
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
