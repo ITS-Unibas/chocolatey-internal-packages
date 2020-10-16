@@ -112,9 +112,7 @@ notifications:
   on_build_status_changed: false
 
 on_success:
-  - git config credential.helper 'cache --timeout=120'
-  #- ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:github_api_key):x-oauth-basic@github.com`n" -NoNewline
-  - git push -q https://$($env:github_api_key)@github.com/ITS-Unibas/chocolatey-internal-packages.git master
+  - ps: Get-Content "$env:USERPROFILE\.git-credentials"
 
 #on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
