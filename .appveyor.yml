@@ -113,8 +113,6 @@ notifications:
 
 on_success:
   - ps: Set-Content -Path "$env:USERPROFILE\.git-credentials" -Value "https://$($env:github_api_key):x-oauth-basic@github.com`n" -NoNewline -Force
-  - ps: Get-Content "$env:USERPROFILE\.git-credentials"
-  - git push -q https://$($env:github_api_key)@github.com/ITS-Unibas/chocolatey-internal-packages.git master
-
+  - git push -q
 #on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
