@@ -20,7 +20,8 @@ environment:
   # Github token to commit pushed packages to repository
   github_user_repo: ITS-Unibas/chocolatey-internal-packages
   github_api_key:
-    secure: bXFOcbXgH3fbj0ultAHle95CkLxhoblDUWr85I5vgyYUboHePMJeMvmnVuSKSpDn
+    secure: 6LobuGQhmuLYywgINtw6cImqRiz5DwzoeP0O6QPdsFPHX7wisyQH2VSBsAis9c2Z
+  github_username: kev494
   # Mail credentials - for error notifications
   mail_user:
     secure: wH39Xr/l7C8U0iGwTLstIIujfUNxKoJOWfsZGePVmdk=
