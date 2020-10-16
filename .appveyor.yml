@@ -111,5 +111,11 @@ notifications:
   on_build_failure: false
   on_build_status_changed: false
 
+on_success:
+  - git config --global credential.helper store
+  - ps: Set-Content -Path "$HOME\.git-credentials" -Value "https://$($env:github_api_key):x-oauth-basic@github.com`n" -NoNewline
+  - git commit -m "updating new packages"
+  - git push
+
 #on_finish:
 #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
