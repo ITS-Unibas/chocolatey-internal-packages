@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>mnova</id>
+    <version>14.1.0</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/mnova</packageSourceUrl>
+    <owners>ITS-Unibas</owners>
+    <!-- ============================== -->
+    <title>MNova</title>
+    <authors>MestReLab Research</authors>
+    <projectUrl>https://mestrelab.com/download/mnova/</projectUrl>
+    <iconUrl>https://mestrelab.com/wp-content/uploads/2016/06/mnova_plugin_nmr.png</iconUrl>
+    <licenseUrl>https://mestrelab.com/terms-and-conditions/#1517223132033-1d0f3506-7fe3</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <docsUrl>https://mestrelab.com/downloads/mnova/manuals/MestReNova-14.2-0_Manual.pdf</docsUrl>
+    <summary>Mnova is a multivendor software suite designed for combined NMR, LC/GC/MS and Electronic and Vibrational Spectroscopic techniques.</summary>
+    <tags>mnova admin mestrelab</tags>
+    <description>Mnova is a multivendor software suite designed for combined NMR, LC/GC/MS and Electronic and Vibrational Spectroscopic techniques.</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
