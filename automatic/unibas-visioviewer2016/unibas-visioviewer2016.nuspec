@@ -3,7 +3,7 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
     <id>unibas-visioviewer2016</id>
-    <version>0.0</version>
+    <version>16.0.4339.1001</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/unibas-visioviewer2016</packageSourceUrl>
     <owners>University of Basel</owners>
     <title>Microsoft Visio Viewer 2016</title>
