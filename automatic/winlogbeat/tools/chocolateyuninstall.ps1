@@ -1,7 +1,7 @@
 ﻿
 $ErrorActionPreference = 'Stop'
 
-$packageName = 'filebeat'
+$packageName = 'winlogbeat'
 $softwareName = 'Beats filebeat*'
 $installerType = 'MSI'
 
