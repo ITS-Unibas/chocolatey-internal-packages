@@ -1,7 +1,7 @@
 ﻿
 $ErrorActionPreference = 'Stop'
 
-$packageName = 'unibas-googleeath'
+$packageName = 'unibas-googleearth'
 $softwareName = 'Google Earth*'
 $installerType = 'EXE'
 
