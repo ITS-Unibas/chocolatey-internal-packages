@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>unibas-infrarecorder</id>
+    <title>InfraRecorder</title>
+    <version>0.0</version>
+    <authors>Christian Kindahl</authors>
+    <owners>University of Basel</owners>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-infrarecorder</packageSourceUrl>
+    <summary>InfraRecorder</summary>
+    <description>InfraRecorder is a free CD/DVD burning solution for Microsoft Windows. It offers a wide range of powerful features; all through an easy to use application interface and Windows Explorer integration.</description>
+    <projectUrl>http://sourceforge.net/projects/infrarecorder</projectUrl>
+    <tags>InfraRecorder cd dvd iso data</tags>
+    <copyright>2006-2012 Christian Kindahl</copyright>
+    <licenseUrl>http://www.gnu.org/licenses/gpl-2.0.html</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <iconUrl>https://raw.github.com/calwell/nugetpackages/master/InfraRecorder/InfaRecorder.png</iconUrl>
+    <!--<dependencies>
+      <dependency id="" version="" />
+    </dependencies>-->
+    <releaseNotes></releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <!--<file src="content\**" target="content" />-->
+  </files>
+</package>
