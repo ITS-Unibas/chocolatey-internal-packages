@@ -3,7 +3,7 @@
   <metadata>
     <id>unibas-infrarecorder</id>
     <title>InfraRecorder</title>
-    <version>0.0</version>
+    <version>0.53</version>
     <authors>Christian Kindahl</authors>
     <owners>University of Basel</owners>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-infrarecorder</packageSourceUrl>
