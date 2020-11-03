@@ -5,7 +5,7 @@ $packageName = 'unibas-infrarecorder'
 $softwareName = 'InfraRecorder*'
 $installerType = 'MSI'
 
-$silentArgs = '/S'
+$silentArgs = '/quiet /norestart'
 # https://msdn.microsoft.com/en-us/library/aa376931(v=vs.85).aspx
 $validExitCodes = @(0, 3010, 1605, 1614, 1641)
 
