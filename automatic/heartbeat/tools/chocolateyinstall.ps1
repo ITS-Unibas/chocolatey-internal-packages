@@ -3,7 +3,7 @@
 $packageName = 'heartbeat'
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64 = 'https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-7.9.3-windows-x86_64.msi'
+$url64 = 'https://artifacts.elastic.co/downloads/beats/heartbeat/heartbeat-7.10.0-windows-x86_64.msi'
 
 $packageArgs = @{
   packageName    = $packageName
@@ -11,7 +11,7 @@ $packageArgs = @{
   fileType       = 'msi'
   unzipLocation  = $toolsDir
   url64bit       = $url64
-  checksum64     = '598c223a93ea5bb48412933290a2dddff75d8ecb95837488b9f02f58139ff7267a202ae502773ea0f338befd2c8c2d5db5ee62ed3953afea1326da98c7ec56c0'
+  checksum64     = '0ee2566d75e0d185ffa10c0b3a83b16b704d812cad825a515a626915a28aa7d4086ae04ef99c0ac1166e2d4df5ab2c0b041bea63aeff57ae26e0d73ac103d25b'
   checksumType64 = 'sha512'
   checksumType   = $checksumType64
   silentArgs     = '/qn /norestart'
