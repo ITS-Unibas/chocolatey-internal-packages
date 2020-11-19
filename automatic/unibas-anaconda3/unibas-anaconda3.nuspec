@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-anaconda3</id>
-    <version>2020.07</version>
+    <version>2020.11</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic/unibas-anaconda3</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <!-- == SOFTWARE SPECIFIC SECTION == -->
