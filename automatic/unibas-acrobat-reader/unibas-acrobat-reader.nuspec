@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. --><package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <!-- == PACKAGE SPECIFIC SECTION == -->
+    <id>unibas-acrobat-reader</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/itigoag/chocolatey.adobe-acrobat-reader-dc</packageSourceUrl>
+    <owners>University Basel</owners>
+    <!-- == SOFTWARE SPECIFIC SECTION == -->
+    <title>Adobe Acrobat Reader DC</title>
+    <authors>Adobe</authors>
+    <projectUrl>https://www.adobe.com/products/reader.html</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/itigoag/chocolatey.adobe-acrobat-reader-dc@c664e708a2c812f1da6cf3ef26f03fe56341dcc7/icon/adobe-acrobat-reader-dc.png</iconUrl>
+    <copyright>Copyright © 1984-2018 Adobe Systems Incorporated and its licensors</copyright>
+    <licenseUrl>http://www.adobe.com/products/eulas/pdfs/Reader10_combined-20100625_1419.pdf</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <docsUrl>https://helpx.adobe.com/reader.html</docsUrl>
+    <tags>unibas-acrobat-reader adobe acrobat reader DC pdf</tags>
+    <summary>View, print, sign, and annotate PDF files</summary>
+    <description>
+This package installs/upgrades the Multi-lingual ("MUI") release. In some cases,
+this package will be able to install over the top of a language-specific
+installation. Otherwise, this package will exit and require a manual uninstall
+of the language specific installation.
+
+
+</description>
+    <releaseNotes>https://www.adobe.com/devnet-docs/acrobatetk/tools/ReleaseNotes/index.html</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
