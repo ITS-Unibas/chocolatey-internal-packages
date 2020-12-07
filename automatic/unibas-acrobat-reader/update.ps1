@@ -2,63 +2,47 @@
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
+#Thanks to https://stackoverflow.com/questions/20259251/powershell-script-to-check-the-status-of-a-url
+function Get-UrlStatusCode([string] $Url)
+{
+    try
+    {
+        (Invoke-WebRequest -Method HEAD -Uri $Url -UseBasicParsing -DisableKeepAlive).StatusCode
+    }
+    catch [Net.WebException]
+    {
+        [int]$_.Exception.Response.StatusCode
+    }
+}
 function global:au_GetLatest {
    # Discover the latest release version
    $VersionURL  = 'https://helpx.adobe.com/acrobat/release-note/release-notes-acrobat-reader.html'
-   $download_page = Invoke-WebRequest -Uri $VersionURL -UseBasicParsing -DisableKeepAlive
-   $ReleaseText = $download_page.links | 
-                     Where-Object {$_.innertext -match 'DC.*\([0-9.]+\)'} |
-                     #Select-Object -ExpandProperty innertext -First 1
-   $Release = $ReleaseText -replace '.*\(([0-9.]+)\).*','$1'
-   Write-Host $Release
-   $version = "20$Release"
-   $ReleaseFolder = $Release.replace('.','')
-
-   # Find the MSP for the latest version
-   $FTPbase = 'ftp://ftp.adobe.com/pub/adobe/reader/win/AcrobatDC'
-   $MSPpage = Invoke-WebRequest -Uri "$FTPbase/$ReleaseFolder" -UseBasicParsing -DisableKeepAlive
-   $MUIMSPstub = $MSPpage.rawcontent -split '"' |
-                  Where-Object {$_ -match 'MUI\.msp$'} |
-                  Select-Object -First 1
-   $MSPstub = $MSPpage.rawcontent -split '"' |
-                  Where-Object {$_ -match '\d\.msp$'} |
-                  Select-Object -First 1
-
-   # Find the most-recent EXE
-   $FTPpage = Invoke-WebRequest -Uri $FTPbase -UseBasicParsing -DisableKeepAlive
-   $Folders = $FTPpage.rawcontent -split '[\r\n]' | 
-                  Where-Object {$_ -match '>\d+<'} |
-                  ForEach-Object {$_ -replace '.*>(\d+)<.*','$1'} |
-                  Sort-Object -Descending
-   foreach ($folder in $Folders) {
-      $FolderFiles = Invoke-WebRequest -Uri "$FTPbase/$folder" -UseBasicParsing -DisableKeepAlive
-      $EXEstub = $FolderFiles.rawcontent -split '"' |
-                     Where-Object {$_ -match 'en_US\.exe$'} |
-                     Select-Object -First 1
-      if ($EXEstub) { break }
+   $download_page = Invoke-WebRequest -Uri $VersionURL #-UseBasicParsing -DisableKeepAlive
+   $Version = "0.0"
+   $download_page | Select-String -Pattern "((\d+)\.(\d+)\.(\d+))" -AllMatches | ForEach-Object Matches | ForEach-Object {
+      if ([version]$_.Value -gt [version]$Version -and (Get-UrlStatusCode "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/$($_.Value.Replace('.',''))/AcroRdrDC$($_.Value.Replace('.',''))_MUI.exe") -ne '404') {
+         $Version = $_.Value
+      }
    }
-   $MUIstub = $EXEstub -replace 'en_US','MUI'
+   $VersionWOPoints = $Version.Replace('.','')
 
-   return  @{ 
-       Version   = $version
-       URL     = "http://ardownload.adobe.com/pub/adobe/reader/win/AcrobatDC/$MUIstub"
-       MUIMSPurl = "$FTPbase/$MUIMSPstub"
+   return  @{
+       Version = $Version
+       URL     = "https://ardownload2.adobe.com/pub/adobe/reader/win/AcrobatDC/$VersionWOPoints/AcroRdrDC$($VersionWOPoints)_MUI.exe"
    }
 }
 
 function global:au_SearchReplace {
    @{
-      'tools\chocolateyInstall.ps1' = @{
-         "(^[$]MUIurl\s*=\s*)('.*')"         = "`$1'$($Latest.URL32)'"
-         "(^[$]MUIchecksum\s*=\s*)('.*')"    = "`$1'$($Latest.Checksum32)'"
-         "(^[$]MUImspURL\s*=\s*)('.*')"      = "`$1'$($Latest.MUIMSPurl)'"
-         "(^[$]MUImspChecksum\s*=\s*)('.*')" = "`$1'$($Latest.MUImspChecksum)'"
-      } 
+     ".\tools\chocolateyInstall.ps1" = @{
+       "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
+       "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
+     }
    }
-}
+ }
 
 function global:au_BeforeUpdate() {
-   $Latest.MUImspChecksum = Get-RemoteChecksum $Latest.MUIMSPurl
+   $Latest.Checksum = Get-RemoteChecksum $Latest.URL
 }
 
 Update-Package -NoCheckChocoVersion
