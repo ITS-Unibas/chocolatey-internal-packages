@@ -1,51 +1,29 @@
-import-module au
+Import-Module AU
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$url = 'https://www.kooijman.biz/files/VeraCrypt123HF2.msi'
+$releases = 'https://www.veracrypt.fr/en/Downloads.html'
 
-function global:au_BeforeUpdate {
-  $Latest.Checksum = Get-FileHash "$PSScriptRoot\veracrypt.msi" -Algorithm 'sha256' | Select-Object -ExpandProperty Hash
+function global:au_BeforeUpdate() {
+  Get-RemoteFiles -Purge -FileNameBase 'unibas-veracrypt'
+  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
 }
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
+      "(?i)(^\s*url\s*=\s*)('.*')"   = "`$1`'$($Latest.URL)`'"
       "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
     }
   }
 }
-
-function Get-VersionFromMsi() {
-  param(
-    $Path
-  )
-  $MSI = Get-Item $Path
-  $windowsInstaller = New-Object -com WindowsInstaller.Installer
-  $database = $windowsInstaller.GetType().InvokeMember(
-    "OpenDatabase", "InvokeMethod", $Null,
-    $windowsInstaller, @($MSI.FullName, 0)
-  )
-
-  $q = "SELECT Value FROM Property WHERE Property = 'ProductVersion'"
-  $View = $database.GetType().InvokeMember(
-    "OpenView", "InvokeMethod", $Null, $database, ($q)
-  )
-
-  $View.GetType().InvokeMember("Execute", "InvokeMethod", $Null, $View, $Null) | Out-Null
-  $record = $View.GetType().InvokeMember( "Fetch", "InvokeMethod", $Null, $View, $Null )
-  $productversion = $record.GetType().InvokeMember( "StringData", "GetProperty", $Null, $record, 1 )
-
-  $View.GetType().InvokeMember("Close", "InvokeMethod", $Null, $View, $Null) | Out-Null
-
-  return $productversion
-}
-
 function global:au_GetLatest {
-  Invoke-WebRequest -UseBasicParsing -Uri $url -OutFile "veracrypt.msi" -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox
-  $version = Get-VersionFromMsi -Path "$PSScriptRoot\veracrypt.msi"
-
-  $Latest = @{ URL = $url; Version = $version }
-  return $Latest
+  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $regex = '.exe$'
+  $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
+  $arr = $url -split '%20'
+  $version = $arr[2].replace('-Update','.')
+  $version = $version.replace('.exe','')
+  $url = $url.replace('&#43;','+')
+  return @{ Version = $version; URL = $url }
 }
 
-update -ChecksumFor none
+update -ChecksumFor none -NoCheckChocoVersion
