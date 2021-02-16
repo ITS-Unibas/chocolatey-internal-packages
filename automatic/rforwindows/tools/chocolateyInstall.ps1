@@ -6,7 +6,7 @@ $packageArgs = @{
     packageName    = 'rforwindows'
     fileType       = 'exe'
     softwareName   = 'R for Windows*'
-    file           = "$toolsDir\R-4.0.3-win.exe"
+    file           = "$toolsDir\R-4.0.4-win.exe"
     silentArgs     = "/SILENT /SUPPRESSMSGBOXES /SP- /LOG=`"$($env:SWP)\$($env:chocolateyPackageName).$($env:chocolateyPackageVersion).InnoInstall.log`""
     validExitCodes = @(0)
 }
