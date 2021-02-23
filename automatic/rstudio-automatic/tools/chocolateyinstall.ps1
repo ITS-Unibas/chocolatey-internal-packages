@@ -7,12 +7,12 @@ $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
   fileType      = 'EXE'
-  url           = 'https://download1.rstudio.org/desktop/windows/RStudio-1.4.1103.exe'
+  url           = 'https://download1.rstudio.org/desktop/windows/RStudio-1.4.1106.exe'
   silentArgs   = '/S'
   validExitCodes= @(0)
  
   softwareName  = 'rstudio*'
-  checksum      = '3196c9e727ddb4447e3664a2c380860b'
+  checksum      = '64c821269730f380ebd2ac842451016c'
   checksumType  = 'md5'
 }
 
