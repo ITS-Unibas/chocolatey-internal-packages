@@ -7,10 +7,10 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url64bit       = 'https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-21.1-x64.exe'
+  url64bit       = 'https://miktex.org/download/ctan/systems/win32/miktex/setup/windows-x64/basic-miktex-21.2-x64.exe'
   silentArgs     = '--no-registry --shared --unattended --local-package-repository=C:\Temp\MikTex\'
   softwareName   = 'miktex*'
-  checksum64     = '6094e60920c31da14e9bcc56951572c79f05c3922f9192869df14aa80ed9cc31'
+  checksum64     = 'cb4160f7d3f310ff3490b51004596c2e42d272c08e8a1143d0757ece1ebf9d07'
   checksumType64 = 'sha256'
 }
 
