@@ -14,7 +14,7 @@ $packageArgs = @{
   validExitCodes = @(0, 1223)
 }
 
-Install-ChocolateyInstallPackage @packageArgs
+Install-ChocolateyPackage @packageArgs
 
 $installLocation = Get-AppInstallLocation $packageArgs.softwareName
 $packageName = $packageArgs.softwareName
