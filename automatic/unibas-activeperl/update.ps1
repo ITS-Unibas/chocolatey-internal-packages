@@ -1,9 +1,13 @@
-﻿Import-Module AU
+Import-Module AU
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releases = 'https://www.activestate.com/products/perl/downloads/'
 
 function global:au_BeforeUpdate() {
+   $Latest.Options.Headers  = @{
+                                'Referer'    = $Latest.URL + "/";
+                                'User-Agent' = $Latest.Options.Headers.'User-Agent'
+                              }
   Get-RemoteFiles -Purge -FileNameBase 'unibas-activepearl'
   $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'md5'
 }
@@ -16,17 +20,19 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing -Header @{ Referer = $releases }
   $regex = '.msi$'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   $arr = $url -split '-|.msi'
   $version = $arr[3]
-  $Options = @{ Headers = @{Referer = $releases}}
-  $options.Headers.Add("User-Agent", [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox)
+  $HTTPheaders = @{
+    'Referer'    = $releases;
+    'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
+  }
   return @{ 
     Version = $version; 
     URL = $url;
-    Options = $Options
+    Options  = @{ Headers  = $HTTPheaders }
     }
 }
 
