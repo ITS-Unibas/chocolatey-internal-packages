@@ -21,7 +21,13 @@ function global:au_GetLatest {
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   $arr = $url -split '-|.msi'
   $version = $arr[3]
-  return @{ Version = $version; URL = $url }
+  $Options = @{ Headers = @{Referer = $releases}}
+  $options.Headers.Add("User-Agent", [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox)
+  return @{ 
+    Version = $version; 
+    URL = $url;
+    Options = $Options
+    }
 }
 
 update -ChecksumFor none -NoCheckChocoVersion
