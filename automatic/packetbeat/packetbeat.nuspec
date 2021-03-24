@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>packetbeat</id>
-    <version>7.11.2</version>
+    <version>7.12.0</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <title>packetbeat</title>
@@ -13,8 +13,8 @@
     <!-- If there is a license Url available, it is is required for the community feed -->
     <licenseUrl>https://cdn.rawgit.com/palethorper/chocolatey-packages/f264aca5/automatic/packetbeat/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://github.com/elastic/beats/tree/7.11/packetbeat</projectSourceUrl>
-    <docsUrl>https://www.elastic.co/guide/en/beats/packetbeat/7.11/index.html</docsUrl>
+    <projectSourceUrl>https://github.com/elastic/beats/tree/7.12/packetbeat</projectSourceUrl>
+    <docsUrl>https://www.elastic.co/guide/en/beats/packetbeat/7.12/index.html</docsUrl>
     <tags>packetbeat beat elastic admin</tags>
     <summary>packetbeat is a lightweight, open source shipper for log file data.</summary>
     <description><![CDATA[Contains the chocolatey package for packetbeat
