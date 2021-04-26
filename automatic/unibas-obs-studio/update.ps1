@@ -24,7 +24,13 @@ function global:au_GetLatest {
     # Filenames omit ending '0' in version string; just scrape again.
     $url64 = 'https://github.com' + ($cache_page | Select-String 'x64.exe$' | Select-Object -First 1 )
 
-    return @{ Version = $version; URL64 = $url64; }
+    if ($url64.Equals('https://github.com')) {
+        Write-Host "No new version for obs studio found"
+        return
+    }
+    else {
+        return @{ Version = $version; URL64 = $url64; }
+    }
 }
 
 if ($MyInvocation.InvocationName -ne '.') {
