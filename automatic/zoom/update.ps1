@@ -1,34 +1,36 @@
+$ErrorActionPreference = 'Stop'
 import-module au
 
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $download_page_url = 'https://zoom.us/download#client_4meeting'
-$url_part1 = 'https://zoom.us/client/'
-$url_part2 = '/ZoomInstallerFull.msi'
+$url_part1 = 'https://cdn.zoom.us/prod/'
 
-function global:au_BeforeUpdate() {
-  Get-RemoteFiles -Purge -FileNameBase 'ZoomInstallerFull'
-  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'md5'
-}
 function global:au_SearchReplace {
-  @{
-    ".\tools\chocolateyInstall.ps1" = @{
-      "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
-      "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
-    }
-  }
+    @{
+        'tools\ChocolateyInstall.ps1' = @{
+            "(^[$]checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
+            "(^[$]url\s*=\s*)('.*')"   = "`$1'$($Latest.Url32)'"
+            "(^[$]checksum64\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum64)'"
+            "(^[$]url64\s*=\s*)('.*')"   = "`$1'$($Latest.Url64)'"
+        }
+     }
 }
+function global:au_BeforeUpdate {
+    $Latest.Checksum32 = Get-RemoteChecksum $Latest.URL32
+    $Latest.Checksum64 = Get-RemoteChecksum $Latest.URL64
+}
+
 function global:au_GetLatest {
-  $homepage_content = Invoke-WebRequest -UseBasicParsing -Uri $download_page_url
+    $homepage_content = Invoke-WebRequest -UseBasicParsing -Uri $download_page_url
 
-  # Get Version
-  $homepage_content -match '(Version \d+.\d+.\d+ (\(.\d+.\d+\)))' | Out-Null
-  $recodeversion = $matches[1] -replace "Version ", ""
-  $recodeversion = $recodeversion -replace "\d+ \(",""
-  $version = $recodeversion -replace "\)",""
-  $url = $url_part1 + $version + $url_part2
+     # Get Version
+    $homepage_content -match 'Version \d+\.\d+\.\d (\(\d+\))'| Out-Null
+    $recodeversion = $matches[0] -replace "Version ", ""
+    $version = $recodeversion.Substring(0,5) + '.' + $recodeversion.Substring(7,3)
+    $url32 = $url_part1 + $version + '/ZoomInstallerFull.msi'
+    $url64 = $url_part1 + $version + '/x64/ZoomInstallerFull.msi'
 
-  $Latest = @{ URL = $url; Version = $version }
-  return $Latest
+    $Latest = @{ URL32 = $url32; URL64=$url64; Version = $version }
+    return $Latest
 }
 
 update -ChecksumFor none
