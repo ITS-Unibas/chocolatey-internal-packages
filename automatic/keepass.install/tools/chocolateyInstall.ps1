@@ -4,8 +4,8 @@ $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
     packageName    = $env:ChocolateyPackageName
-    url            = 'https://sourceforge.net/projects/keepass/files/KeePass%202.x/2.47/KeePass-2.47-Setup.exe/download'
-    checksum       = '3EB2723AE5363C8400B494A5C2BB24D911E622ECBC15B20AAA32526A7BB45E42'
+    url            = 'https://sourceforge.net/projects/keepass/files/KeePass%202.x/2.48/KeePass-2.48-Setup.exe/download'
+    checksum       = '298A17579EAAFFF12E219EC52C83AB1802421EFF341E81E1E1C55CFBAEFF5027'
     checksumType   = 'sha256'
     fileType       = 'EXE'
     silentArgs     = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-'
