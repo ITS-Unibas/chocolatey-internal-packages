@@ -3,7 +3,7 @@
 $packageName = 'winlogbeat'
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64 = 'https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-7.13.2-windows-x86_64.msi'
+$url64 = 'https://artifacts.elastic.co/downloads/beats/winlogbeat/winlogbeat-7.13.3-windows-x86_64.msi'
 
 $packageArgs = @{
   packageName    = $packageName
@@ -11,7 +11,7 @@ $packageArgs = @{
   fileType       = 'msi'
   unzipLocation  = $toolsDir
   url64bit       = $url64
-  checksum64     = '3008877ea3ea3aacd2d1593526aeef320b1db7f699892466dd03818cf58b222325b6a74d189b193e2aeffbddd01511bd23a479379fd453f59e37d38f62a1644a'
+  checksum64     = 'db854563e665b5b37473261f0b757fb45b505a83517022aee567b6e84e2f5993053ca8c124b6a3377c790e3375110d980d2079bdf917090a5bf2ed6bf479458e'
   checksumType64 = 'sha512'
   checksumType   = $checksumType64
   silentArgs     = '/qn /norestart'
