@@ -22,8 +22,6 @@ $packageArgs = @{
   softwareName  = 'unibas-slack*'
   silentArgs    = "/qn /norestart"
   validExitCodes= @(0)
-  
-  silentArgs     = "/qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`"" # ALLUSERS=1 DISABLEDESKTOPSHORTCUT=1 ADDDESKTOPICON=0 ADDSTARTMENU=0
 }
 
 Install-ChocolateyPackage @packageArgs
