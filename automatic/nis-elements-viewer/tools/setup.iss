@@ -1,0 +1,19 @@
+[InstallShield Silent]
+Version=v7.00
+File=Response File
+[File Transfer]
+OverwrittenReadOnly=NoToAll
+[{A1521295-C203-49F7-945F-EEAD9C7B72FF}-DlgOrder]
+Dlg0={A1521295-C203-49F7-945F-EEAD9C7B72FF}-SdWelcome-0
+Count=3
+Dlg1={A1521295-C203-49F7-945F-EEAD9C7B72FF}-SdAskDestPath-0
+Dlg2={A1521295-C203-49F7-945F-EEAD9C7B72FF}-SdFinish-0
+[{A1521295-C203-49F7-945F-EEAD9C7B72FF}-SdWelcome-0]
+Result=1
+[{A1521295-C203-49F7-945F-EEAD9C7B72FF}-SdAskDestPath-0]
+szDir=C:\Program Files\NIS-Elements Viewer
+Result=1
+[{A1521295-C203-49F7-945F-EEAD9C7B72FF}-SdFinish-0]
+Result=1
+bOpt1=0
+bOpt2=0
