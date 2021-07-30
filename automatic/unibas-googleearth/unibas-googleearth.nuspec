@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-googleearth</id>
-    <version>7.3.3</version>
+    <version>7.3.4</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/googleearth</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <title>Google Earth (Install)</title>
