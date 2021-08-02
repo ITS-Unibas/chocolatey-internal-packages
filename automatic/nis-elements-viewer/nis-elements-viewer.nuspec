@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
@@ -14,7 +14,16 @@
     <docsUrl>https://d33b8x22mym97j.cloudfront.net/phase4/literature/Manuals/NIS-Elements_Viewer-en-5.21.00.pdf</docsUrl>
     <summary>Der NIS-Elements Viewer ist ein kostenloses standalone-Programm für das Darstellen von Bild- und Daten-Files.</summary>
     <tags>nis-elements-viewer</tags>
-    <description>Der NIS-Elements Viewer ist ein kostenloses standalone-Programm für das Darstellen von Bild- und Daten-Files. Der Viewer enthält dieselben, mächtigen Betrachtungs- und Auswahl-Modi für Bilder wie die NIS-Elements Kern-Modulpakete: Die Volumen-Darstellung mit 3D Rendering, die "Kachel"-Ansicht ("Tile View") für Datensätze über die Zeit, über Z-Serien und von Multipoints (XY), sowie die Schnittansicht ("Slice View") für Z-Ebenen- und Zeit-Datensätze. Der NIS-Elements Viewer hat dasselbe "Look & Feel" wie die NIS-Elements Kern-Modulpakete. Zum Beispiel werden Kalibrierungen und Binärbildmasken (durch Schwellenwertsetzen erkannte Objekte), die in den NIS-Elements Kern-Modulpaketen kreiert wurden in den NIS-Elements Viewer übertragen. Zusätzlich sind die Informationen der Image Header Daten und die experimentellen Informationen, wie beispielsweise Zeitintervalle, Z-Schritte und Geräteparameter zugänglich (nur in der Windows Version). Das Speichern von ND-Datensätzen (multidimensionale Bildaufnahmen) als TIFF-Daten ist auch als Feature im NIS-Elements Viewer integriert.</description>
+    <description>
+      Der NIS-Elements Viewer ist ein kostenloses standalone-Programm für das Darstellen von Bild- und Daten-Files. 
+      Der Viewer enthält dieselben, mächtigen Betrachtungs- und Auswahl-Modi für Bilder wie die NIS-Elements Kern-Modulpakete:
+      Die Volumen-Darstellung mit 3D Rendering, die "Kachel"-Ansicht ("Tile View") für Datensätze über die Zeit, über Z-Serien und von Multipoints (XY), 
+      sowie die Schnittansicht ("Slice View") für Z-Ebenen- und Zeit-Datensätze. Der NIS-Elements Viewer hat dasselbe "Look & Feel" wie die NIS-Elements Kern-Modulpakete.
+      Zum Beispiel werden Kalibrierungen und Binärbildmasken (durch Schwellenwertsetzen erkannte Objekte), die in den NIS-Elements Kern-Modulpaketen kreiert wurden in den 
+      NIS-Elements Viewer übertragen. Zusätzlich sind die Informationen der Image Header Daten und die experimentellen Informationen, wie beispielsweise Zeitintervalle,
+      Z-Schritte und Geräteparameter zugänglich (nur in der Windows Version). Das Speichern von ND-Datensätzen (multidimensionale Bildaufnahmen) als TIFF-Daten ist auch als
+      Feature im NIS-Elements Viewer integriert.
+    </description>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
