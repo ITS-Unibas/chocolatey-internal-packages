@@ -18,7 +18,7 @@
       Der NIS-Elements Viewer ist ein kostenloses standalone-Programm für das Darstellen von Bild- und Daten-Files. 
       Der Viewer enthält dieselben, mächtigen Betrachtungs- und Auswahl-Modi für Bilder wie die NIS-Elements Kern-Modulpakete:
       Die Volumen-Darstellung mit 3D Rendering, die "Kachel"-Ansicht ("Tile View") für Datensätze über die Zeit, über Z-Serien und von Multipoints (XY), 
-      sowie die Schnittansicht ("Slice View") für Z-Ebenen- und Zeit-Datensätze. Der NIS-Elements Viewer hat dasselbe "Look & Feel" wie die NIS-Elements Kern-Modulpakete.
+      sowie die Schnittansicht ("Slice View") für Z-Ebenen- und Zeit-Datensätze. Der NIS-Elements Viewer hat dasselbe "Look and Feel" wie die NIS-Elements Kern-Modulpakete.
       Zum Beispiel werden Kalibrierungen und Binärbildmasken (durch Schwellenwertsetzen erkannte Objekte), die in den NIS-Elements Kern-Modulpaketen kreiert wurden in den 
       NIS-Elements Viewer übertragen. Zusätzlich sind die Informationen der Image Header Daten und die experimentellen Informationen, wie beispielsweise Zeitintervalle,
       Z-Schritte und Geräteparameter zugänglich (nur in der Windows Version). Das Speichern von ND-Datensätzen (multidimensionale Bildaufnahmen) als TIFF-Daten ist auch als
