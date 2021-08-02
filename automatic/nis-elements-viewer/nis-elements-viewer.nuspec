@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>nis-elements-viewer</id>
-    <version>0.0</version>
+    <version>5.21.00.1483</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/nis-elements-viewer</packageSourceUrl>
     <owners>University of Basel</owners>
     <title>NIS-Elements Viewer</title>
