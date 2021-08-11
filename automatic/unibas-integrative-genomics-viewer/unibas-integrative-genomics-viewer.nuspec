@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-integrative-genomics-viewer</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/unibas-integrative-genomics-viewer</packageSourceUrl>
+    <owners>University of Basel</owners>
+    <title>Integrative Genomics Viewer</title>
+    <authors>Jim Robinson, Helga Thorvaldsdóttir, David Eby</authors>
+    <projectUrl>https://github.com/igvteam/igv</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/igvteam/igv/master/resources/IGV_64.ico</iconUrl>
+    <licenseUrl>https://github.com/igvteam/igv/blob/master/license.txt</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://software.broadinstitute.org/software/igv/home</projectSourceUrl>
+    <docsUrl>https://github.com/igvteam/igv</docsUrl>
+    <summary>The Integrative Genomics Viewer - IGV - is a high-performance, easy-to-use, interactive tool for the visual exploration of genomic data.</summary>
+    <tags>unibas-integrative-genomics-viewer</tags>
+    <description><![CDATA[The Integrative Genomics Viewer (IGV) is a high-performance, easy-to-use, interactive tool for the visual exploration of genomic data. 
+    It supports flexible integration of all the common types of genomic data and metadata, investigator-generated or publicly available, loaded from local or 
+    cloud sources.]]></description>
+    <releaseNotes>https://software.broadinstitute.org/software/igv/ReleaseNotes</releaseNotes>
+    <dependencies>
+      <dependency id="zulu11-x64" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
