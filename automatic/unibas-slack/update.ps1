@@ -26,6 +26,8 @@ function global:au_GetLatest {
     return @{
         URL64 = $url64
         Version = $version
+	Checksum64 = $Latest.Checksum64
+	CheckSumType64 = $Latest.ChecksumType64
     }
 }
 
