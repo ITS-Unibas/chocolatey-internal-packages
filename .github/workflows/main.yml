@@ -42,6 +42,8 @@ jobs:
           install-Module powerhtml -Force -SkipPublisherCheck
           git clone -q https://github.com/MaxBurgert/au.git $Env:TEMP/au
           . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version -verbose
+          Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+          Install-Module Wormies-AU-Helpers -Scope CurrentUser -Force
       - name: build_script
         shell: powershell # Instead of pwsh because au fails on pwsh core.
         env:
