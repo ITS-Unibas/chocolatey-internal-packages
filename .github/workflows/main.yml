@@ -51,8 +51,8 @@ jobs:
           github_api_key: ${{ secrets.GH_TOKEN }}
           choco_api_key: ${{ secrets.CHOCO_TOKEN }}
           github_user_repo: ${{ github.repository }}
-          gist_id: "84b7570be09beb04ffb3ba3cd6d35eda"
-          gist_id_test: "cb0f8e31c631a03beb28be380b58c056"
+          gist_id: "96b4efbc9647eab3f4ae8eee2e90207e"
+          gist_id_test: ""
           au_test_groups: 1
           au_push: false
         run: |
