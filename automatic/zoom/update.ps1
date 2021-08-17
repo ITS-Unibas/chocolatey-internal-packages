@@ -8,11 +8,11 @@ function global:au_SearchReplace {
     @{
         'tools\ChocolateyInstall.ps1' = @{
             "(^[$]checksum\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum32)'"
-            "(^[$]url\s*=\s*)('.*')"   = "`$1'$($Latest.Url32)'"
-            "(^[$]checksum64\s*=\s*)('.*')"   = "`$1'$($Latest.Checksum64)'"
-            "(^[$]url64\s*=\s*)('.*')"   = "`$1'$($Latest.Url64)'"
+            "(^[$]url\s*=\s*)('.*')"        = "`$1'$($Latest.Url32)'"
+            "(^[$]checksum64\s*=\s*)('.*')" = "`$1'$($Latest.Checksum64)'"
+            "(^[$]url64\s*=\s*)('.*')"      = "`$1'$($Latest.Url64)'"
         }
-     }
+    }
 }
 function global:au_BeforeUpdate {
     $Latest.Checksum32 = Get-RemoteChecksum $Latest.URL32
@@ -22,14 +22,15 @@ function global:au_BeforeUpdate {
 function global:au_GetLatest {
     $homepage_content = Invoke-WebRequest -UseBasicParsing -Uri $download_page_url
 
-     # Get Version
-    $homepage_content -match 'Version \d+\.\d+\.\d (\(\d+\))'| Out-Null
+    # Get Version
+    $homepage_content -match 'Version \d+\.\d+\.\d (\(\d+\))' | Out-Null
     $recodeversion = $matches[0] -replace "Version ", ""
-    $version = $recodeversion.Substring(0,5) + '.' + $recodeversion.Substring(7,3)
+    $recodeversion = $recodeversion -replace " \(", "."
+    $version = $recodeversion -replace "\)", ""
     $url32 = $url_part1 + $version + '/ZoomInstallerFull.msi'
     $url64 = $url_part1 + $version + '/x64/ZoomInstallerFull.msi'
 
-    $Latest = @{ URL32 = $url32; URL64=$url64; Version = $version }
+    $Latest = @{ URL32 = $url32; URL64 = $url64; Version = $version }
     return $Latest
 }
 
