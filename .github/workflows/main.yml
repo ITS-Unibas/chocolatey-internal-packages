@@ -56,7 +56,7 @@ jobs:
           au_test_groups: 1
           au_push: false
         run: |
-          [Net.ServicePointManager]::SecurityProtocol = [Net.ServicePointManager]::SecurityProtocol -bor [Net.SecurityProtocolType]::Tls12
+          [Net.ServicePointManager]::SecurityProtocol = 'tls12, tls11, tls'
           $context = $ENV:github_context | ConvertFrom-JSON
           choco apikey --key $ENV:choco_api_key --source https://push.chocolatey.org/
           $ErrorActionPreference = 'Continue'
