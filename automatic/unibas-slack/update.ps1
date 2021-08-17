@@ -15,7 +15,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-	$download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
     $url64 = Get-RedirectedUrl 'https://slack.com/ssb/download-win64-msi'
 
@@ -26,8 +26,6 @@ function global:au_GetLatest {
     return @{
         URL64 = $url64
         Version = $version
-	Checksum64 = $Latest.Checksum64
-	CheckSumType64 = $Latest.ChecksumType64
     }
 }
 
