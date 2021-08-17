@@ -44,6 +44,4 @@ function GetDownloadLink([string] $downloadlinks, [string] $pattern, [string] $v
   $downloadlinks + $link
 }
 
-if ($MyInvocation.InvocationName -ne '.') {
-  update -ChecksumFor None -NoCheckChocoVersion
-}
+update -ChecksumFor None -NoCheckChocoVersion
