@@ -4,11 +4,11 @@ $packageArgs = @{
   packageName    = 'micro-manager'
   unzipLocation  = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
   fileType       = 'msi'
-  url            = 'https://github.com/PowerShell/PowerShell/releases/download/v7.1.4/PowerShell-7.1.4-win-x64.msi'
+  url            = 'https://valelab4.ucsf.edu/~MM/builds/2.0/Windows/MMSetup_64bit_2.0.0.exe'
   silentArgs     = '/quiet /norestart'
   validExitCodes = @(0)
   softwareName   = 'Micro-Manager*'
-  checksum       = '9190F005ADCC59F1D2CFF21B8D4FBBA70D72B8B4B567D845B33508A9C388A7A2'
+  checksum       = '774ec9fe484f36776adccbb43055f87cc665128c71c8b94f9d4ad097247497d7'
   checksumType   = 'sha256'
 }
 
