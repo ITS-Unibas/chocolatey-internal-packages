@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>micro-manager</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/micro-manager</packageSourceUrl>
+    <owners>University of Basel,AdmiringWorm,zippy1981,yoshimov,jeffmoser</owners>
+    <title>Open Source Software for Control and Automation of Microscope Hardware</title>
+    <authors>Micro Manager</authors>
+    <projectUrl>https://micro-manager.org/</projectUrl>
+    <iconUrl>https://micro-manager.org/media/logo/logo-web.png</iconUrl>
+    <copyright>µManager</copyright>
+    <licenseUrl>https://micro-manager.org/Credits</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://micro-manager.org/</projectSourceUrl>
+    <docsUrl>https://micro-manager.org/Micro-Manager_Project_Overview</docsUrl>
+    <mailingListUrl>https://micro-manager.org/</mailingListUrl>
+    <bugTrackerUrl>https://micro-manager.org/</bugTrackerUrl>
+    <tags>admin mirco-manager micro manager</tags>
+    <summary>Open Source Software for Control and Automation of Microscope Hardware</summary>
+    <description>Open Source Software for Control and Automation of Microscope Hardware</description>
+    <releaseNotes>
+    </releaseNotes>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
