@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-cyberduck</id>
-    <version>7.10.1.35318</version>
+    <version>7.10.2.35432</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic/unibas-cyberduck</packageSourceUrl>
     <owners>University of Basel</owners>
     <!-- ============================== -->
