@@ -40,7 +40,7 @@ jobs:
           au_version: "master"
         run: |
           install-Module powerhtml -Force -SkipPublisherCheck
-          git clone -q https://github.com/MaxBurgert/au.git $Env:TEMP/au
+          git clone -q https://github.com/ITS-Unibas/au $Env:TEMP/au
           . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version -verbose
           Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
           Install-Module Wormies-AU-Helpers -Scope CurrentUser -Force
