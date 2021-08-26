@@ -37,7 +37,7 @@ jobs:
       - name: install
         shell: powershell
         env:
-          au_version: "master"
+          au_version: "main"
         run: |
           install-Module powerhtml -Force -SkipPublisherCheck
           git clone -q https://github.com/ITS-Unibas/au $Env:TEMP/au
