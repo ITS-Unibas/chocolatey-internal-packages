@@ -32,14 +32,14 @@ function global:au_SearchReplace {
 }
 
 function GetVersion {
-  $version_page = Invoke-WebRequest -Uri $version_page
+  $version_page = Invoke-WebRequest -Uri $version_page -UseBasicParsing
   $re64 = '(http[s]?|[s]?)(:\/\/)([^\s,]+)\/win64\/[Ww]ire[Ss]hark-win64-[\d\.]+\.exe$'
   $v = $version_page.links | Where-Object href -match $re64 | Select-Object -First 1 -expand href
   $v -split '-|.exe' | Select-Object -Last 1 -Skip 1
 }
 
 function GetDownloadLink([string] $downloadlinks, [string] $pattern, [string] $version) {
-  $page = Invoke-WebRequest -Uri $downloadlinks
+  $page = Invoke-WebRequest -Uri $downloadlinks -UseBasicParsing
   $link = $page.links | Where-Object { ($_.href -like '*' + $version + '*') -And ($_.href -match $pattern) } | Select-Object -first 1 -expand href
   $downloadlinks + $link
 }
