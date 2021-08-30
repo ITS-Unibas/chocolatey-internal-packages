@@ -2,7 +2,7 @@ name: PackageUpdate
 
 on:
   push:
-    branches: [dev, ci, master]
+    branches: master
   schedule:
     - cron: "11 4-17 * * *"
 
