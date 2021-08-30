@@ -16,11 +16,13 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
-  $homepage_content = Invoke-WebRequest -Uri $release_url
-  # Get Version
-  $homepage_content -match '\((\d+\.\d+)\)' | Out-Null
-  $version = $Matches[1]
-  $Url = "https://www.uni-heidelberg.de/md/ibf/datenbanken/4d_v$($version)_windows_32-bit.exe"
+  $homepage_content = Invoke-WebRequest -Uri $release_url -UseBasicParsing
+  $re = '/f/'
+  $url = $homepage_content.links | Where-Object href -match $re | Select-Object -First 1 -expand href
+  $download_page_content = Invoke-WebRequest -Uri $url -UseBasicParsing
+  $download_page_content -match '\d+\.\d+' | Out-Null
+  $version = $Matches[0]
+  $url = $url + "?dl=1"
   $Latest = @{ URL = $Url; Version = $version; }
   return $Latest
 }
