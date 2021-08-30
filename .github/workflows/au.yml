@@ -30,6 +30,7 @@ jobs:
           cmd /c "set" | grep -i 'github\|runner' | sort
       - name: Initialize Git config
         run: |
+          $context = $ENV:github_context | ConvertFrom-JSON
           git config --global user.email ($context.repository_owner + '+github@gmail.com')
           git config --global user.name $context.repository_owner
           git config --global core.safecrlf false
