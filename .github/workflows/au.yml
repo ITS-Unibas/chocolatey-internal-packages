@@ -7,11 +7,11 @@ on:
         description: The list of packages to forcibly update (like "pkg1:ver1 pkg2")
         required: false
   schedule:
-    - cron:  '5 0/8 * * *'
+    - cron:  '11 4-17 * * *'
 
 jobs:
   auto_update:
-    runs-on: windows-2019
+    runs-on: windows-latest
     defaults:
       run:
         shell: powershell
@@ -28,12 +28,12 @@ jobs:
           cmd /c "set" | grep -i 'github\|runner' | sort
       - name: Initialize Git config
         run: |
-          git config --global user.email "chocolatey@realdimensions.net"
-          git config --global user.name "Chocolatey"
+          git config --global user.email ($context.repository_owner + '+github@gmail.com')
+          git config --global user.name $context.repository_owner
           git config --global core.safecrlf false
       - name: Install AU
         run: |
-          git clone -q https://github.com/MaxBurgert/au.git $Env:TEMP/au
+          git clone -q https://github.com/ITS-Unibas/au $Env:TEMP/au
           . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
           Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
           Install-Module Wormies-AU-Helpers -Scope CurrentUser -Force
@@ -53,7 +53,7 @@ jobs:
 
           # ID of the gist used to save run results - create a gist under the github_user (secret or not) and grab the id - https://gist.github.com/name/id
           # Optional, leave empty to create anonymous gist
-          gist_id: 96b4efbc9647eab3f4ae8eee2e90207e
+          gist_id: 6e43d8e376dd6eebfabe0775beab0ab0
 
           # Force test: gist id for test results
           gist_id_test:
