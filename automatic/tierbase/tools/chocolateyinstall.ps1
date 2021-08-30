@@ -4,11 +4,11 @@ $packageArgs = @{
   packageName    = 'tierbase'
   unzipLocation  = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
   fileType       = 'exe'
-  url            = 'https://www.uni-heidelberg.de/md/ibf/datenbanken/4d_v14.6_windows_32-bit.exe'
+  url            = 'https://heibox.uni-heidelberg.de/f/508ffd3c94fd4d119e30/?dl=1'
   silentArgs     = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP- /LOG=`"$($LogPath)$($env:chocolateyPackageName).$($env:chocolateyPackageVersion).InnoInstall.log`""
   validExitCodes = @(0)
   softwareName   = '4D v*'
-  checksum       = '132dc0414466a644581b5ffe58efac6c95e778e3cb745dfdb39cf8ce6002d05d'
+  checksum       = '03aab34a5bf1d2d1b67fd18414a5c9128e825c6174e24555905d6510e1265508'
   checksumType   = 'sha256'
 }
 
