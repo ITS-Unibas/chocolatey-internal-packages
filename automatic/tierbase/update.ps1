@@ -23,7 +23,7 @@ function global:au_GetLatest {
   $download_page_content -match '\d+\.\d+' | Out-Null
   $version = $Matches[0]
   $url = $url + "?dl=1"
-  $Latest = @{ URL = $Url; Version = $version; }
+  $Latest = @{ URL = $url; Version = $version; }
   return $Latest
 }
 
