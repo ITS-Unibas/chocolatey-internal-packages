@@ -29,7 +29,10 @@ jobs:
           choco --version
           cmd /c "set" | grep -i 'github\|runner' | sort
       - name: Initialize Git config
+        env:
+          github_context: ${{ toJson(github) }}
         run: |
+          $context = $ENV:github_context | ConvertFrom-JSON
           git config --global user.email ($context.repository_owner + '+github@gmail.com')
           git config --global user.name $context.repository_owner
           git config --global core.safecrlf false
@@ -76,3 +79,21 @@ jobs:
             update_info.xml
             Update-AUPackages.md
             au_temp.zip
+      - name: Send mail
+        if: ${{ failure() }}
+        uses: dawidd6/action-send-mail@v2
+        with:
+          # mail server settings
+          server_address: smtp.gmail.com
+          server_port: 465
+          # user credentials
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          # email subject
+          subject: ${{ github.job }} job of ${{ github.repository }} has ${{ job.status }}
+          # email body as text
+          body: ${{ github.job }} job in worflow ${{ github.workflow }} of ${{ github.repository }} has ${{ job.status }}
+          # comma-separated string, send email to
+          to: ${{ secrets.MAIL2 }}
+          # from email name
+          from: GitHub Actions

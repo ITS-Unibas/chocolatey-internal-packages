@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>packetbeat</id>
-    <version>7.14.0</version>
+    <version>7.14.1</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <title>packetbeat</title>
