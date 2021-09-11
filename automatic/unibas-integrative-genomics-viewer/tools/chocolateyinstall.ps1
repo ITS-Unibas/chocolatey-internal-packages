@@ -7,10 +7,10 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url            = 'https://data.broadinstitute.org/igv/projects/downloads/2.11/IGV_Win_2.11.0-installer.exe'
+  url            = 'https://data.broadinstitute.org/igv/projects/downloads/2.11/IGV_Win_2.11.1-installer.exe'
   silentArgs     = "/S"
   softwareName   = 'Integrative Genomics Viewer*'
-  checksum       = '4d23a0f8c17891811fb509fbb7296bdd42bd38f389ab0b955c5dbceb212de4e1'
+  checksum       = 'f344e990cc6dad63137156bc6627cd595e0f1a1220fed05f285e6c65b1531396'
   checksumType   = 'sha256'
 }
 
