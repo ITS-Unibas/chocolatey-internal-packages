@@ -2,7 +2,7 @@ import-module au -Force
 
 #. $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://support.techsmith.com/hc/en-us/articles/115006443267%C2%A0'
+$releases    = 'https://www.videohelp.com/software/Camtasia-Studio/version-history'
 
 # Taken from https://gist.github.com/jstangroome/913062
 function Get-MsiProductVersion {
