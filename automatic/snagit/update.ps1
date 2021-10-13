@@ -2,7 +2,7 @@ import-module au
 
 #. $PSScriptRoot\..\..\scripts\all.ps1
 
-$releases    = 'https://support.techsmith.com/hc/en-us/articles/115006435067-Snagit-Windows-Version-History'
+$releases    = 'https://www.videohelp.com/software/Snagit/version-history'
 
 # Taken from https://gist.github.com/jstangroome/913062
 function Get-MsiProductVersion {
