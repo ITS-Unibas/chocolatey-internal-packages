@@ -3,7 +3,7 @@
 $packageName = 'packetbeat'
 
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$url64 = 'https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-7.15.0-windows-x86_64.msi'
+$url64 = 'https://artifacts.elastic.co/downloads/beats/packetbeat/packetbeat-7.15.1-windows-x86_64.msi'
 
 $packageArgs = @{
   packageName    = $packageName
@@ -11,7 +11,7 @@ $packageArgs = @{
   fileType       = 'msi'
   unzipLocation  = $toolsDir
   url64bit       = $url64
-  checksum64     = 'a8d4bd3da29c115793989c821bfd93f5fdbe2cf2a29e09ea281641def143bf5a6371557b27e766735dd4387e4d72168ae7f197e0f2691bc91ac77358e33477f5'
+  checksum64     = '57084c016e4c69e6f1f6e6cc29c4b51d3c0da338b73cfa74844fcbaae29acd4c2075fa8a7b637fc34dbb9aec7340230aaa864d13763544d19109a9f8129768d5'
   checksumType64 = 'sha512'
   checksumType   = $checksumType64
   silentArgs     = '/qn /norestart'
