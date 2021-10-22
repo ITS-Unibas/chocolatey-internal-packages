@@ -28,7 +28,7 @@ function global:au_GetLatest {
 	$ie.visible = $false
 	$ie.Navigate($releases)
 	Start-Sleep 8
-	$links = $ie.Document.links
+	$links = $ie.Document.getElementsByTagName("a")
 	$lenovoThinInstaller = "lenovo_thininstaller_.*.exe$"
 	foreach ($link in $links) {
 		if (($link.href) -match $lenovoThinInstaller) {
