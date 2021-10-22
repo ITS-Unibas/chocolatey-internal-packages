@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-lenovo-thin-installer</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-lenovo-thin-installer</packageSourceUrl>
+    <owners>University of Basel</owners>
+    <title>Lenovo Thin Installer</title>
+    <authors>Lenovo</authors>
+    <projectUrl>https://support.lenovo.com/us/en/solutions/ht037099#ti</projectUrl>
+    <licenseUrl>https://support.lenovo.com/us/en/solutions/ht037099#ti</licenseUrl>
+    <projectSourceUrl>https://support.lenovo.com/us/en/solutions/ht037099#ti</projectSourceUrl>
+    <summary>Thin Installer is a smaller version of System Update which does not require installation - it can simply be copied to the target system.</summary>
+    <description>Thin Installer is a smaller version of System Update which does not require installation - it can simply be copied to the target system. Thin Installer searches for the update packages from a repository that you create. The repository can be created on your local hard drive, a network share, a web server, or external media such as a CD, DVD, or USB hard drive. When Thin Installer finishes installing applicable packages, no registry keys relating to Thin Installer exist - thus the user only needs to delete the folder containing Thin Installer to remove all files associated with Thin Installer and the associated repository.</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
