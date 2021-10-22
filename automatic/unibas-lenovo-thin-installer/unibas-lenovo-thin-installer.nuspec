@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-lenovo-thin-installer</id>
-    <version>0.0</version>
+    <version>1.3.0031</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-lenovo-thin-installer</packageSourceUrl>
     <owners>University of Basel</owners>
     <title>Lenovo Thin Installer</title>
