@@ -6,17 +6,17 @@
     <version>0.0</version>
     <owners>ITS Unibasel</owners>
     <title>unibas-powertoys</title>
-    <author>MKevenaar</author>
-    <projectUrl>https://github.com/mkevenaar/chocolatey-packages/tree/master/automatic/powertoys</projectUrl>
+    <author>ITS Unibasel</author>
+    <projectUrl>https://github.com/microsoft/PowerToys/releases</projectUrl>
     <summary> PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity.</summary>
     <description><![CDATA[Inspired by the Windows 95 era PowerToys project, this reboot provides power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows. A great overview of the Windows 95 PowerToys can be found here.]]></description>
-    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-powertoys</packageSourceUrl>
-    <licenseUrl></licenseUrl>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic</packageSourceUrl>
+    <licenseUrl>https://github.com/microsoft/PowerToys/blob/main/LICENSE</licenseUrl>
     <releaseNotes>https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/</releaseNotes>
-    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-automatic-packages/icons/rstudio.png</iconUrl>
-    <tags>powertoys unibas</tags>
+    <iconUrl>https://cdn.jsdelivr.net/gh/mkevenaar/chocolatey-packages@783a3b629ad9948830e24567739a7a884537d9a4/icons/powertoys.png</iconUrl>
+    <tags>powertoys microsoft windows10 admin</tags>
     <docsUrl>https://socket3.wordpress.com/2016/10/22/using-windows-95-powertoys/</docsUrl>
-    <projectSourceUrl>https://github.com/mkevenaar/chocolatey-packages/tree/master/automatic/powertoys</projectSourceUrl>
+    <projectSourceUrl>https://github.com/microsoft/PowerToys</projectSourceUrl>
     <bugTrackerUrl>https://github.com/mkevenaar/chocolatey-packages/issues</bugTrackerUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <mailingListUrl>https://github.com/mkevenaar/chocolatey-packages/issues</mailingListUrl>

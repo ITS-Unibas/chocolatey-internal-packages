@@ -2,13 +2,14 @@
 
 $packageName = 'unibas-powertoys'
 $softwareName   = 'unibas-powertoys*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-$installerType = 'EXE'
+$installerType = 'exe'
 
-$silentArgs = '--silent'
+$silentArgs = "--silent --skip_dotnet_install"         # NSIS
+
 # https://msdn.microsoft.com/en-us/library/aa376931(v=vs.85).aspx
-$validExitCodes = @(0, 3010, 1605, 1614, 1641)
+validExitCodes = @(0,1641,3010)
 if ($installerType -ne 'MSI') {
-  $silentArgs = '--silent'           # NSIS
+  $silentArgs = "--silent --skip_dotnet_install"         # NSIS
   #$silentArgs = '/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-' # Inno Setup
   #$silentArgs = '/s'           # InstallShield
   #$silentArgs = '/s /v"/qn"' # InstallShield with MSI
