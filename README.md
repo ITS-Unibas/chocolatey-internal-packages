@@ -1,7 +1,6 @@
 # Chocolatey Automatic Packages
 
 [![Auto Update chocolatey-internal-packages](https://github.com/ITS-Unibas/chocolatey-internal-packages/actions/workflows/au.yml/badge.svg)](https://github.com/ITS-Unibas/chocolatey-internal-packages/actions/workflows/au.yml)
-
 [Update status](https://gist.github.com/96b4efbc9647eab3f4ae8eee2e90207e)
 
 
