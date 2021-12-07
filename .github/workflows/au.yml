@@ -1,4 +1,4 @@
-name: Auto Update
+name: Auto Update chocolatey-internal-packages
 
 on:
   push:
@@ -60,28 +60,12 @@ jobs:
           # Optional, leave empty to create anonymous gist
           gist_id: 6e43d8e376dd6eebfabe0775beab0ab0
 
-          # Force test: gist id for test results
-          gist_id_test:
-
           # Chocolatey API key - to push updated packages
           api_key: ${{ secrets.MYGET_API_KEY }}
-
-          # Slack webhook URL
-          #slack_webhook_url: ${{ secrets.SLACK_WEBHOOK_URL }}
-
-          # GitHub Actions build url which points to this build
-          GH_ACTIONS_BUILD_URL: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
-      - name: Upload update results
-        uses: actions/upload-artifact@v2
-        with:
-          name: update_results
-          path: |
-            update_info.xml
-            Update-AUPackages.md
-            au_temp.zip
+          
       - name: Send mail
         if: ${{ failure() }}
-        uses: dawidd6/action-send-mail@v2
+        uses: dawidd6/action-send-mail@v3
         with:
           # mail server settings
           server_address: smtp.gmail.com
