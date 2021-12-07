@@ -59,9 +59,6 @@ jobs:
           # ID of the gist used to save run results - create a gist under the github_user (secret or not) and grab the id - https://gist.github.com/name/id
           # Optional, leave empty to create anonymous gist
           gist_id: 6e43d8e376dd6eebfabe0775beab0ab0
-
-          # Chocolatey API key - to push updated packages
-          api_key: ${{ secrets.MYGET_API_KEY }}
           
       - name: Send mail
         if: ${{ failure() }}
