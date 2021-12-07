@@ -7,8 +7,8 @@
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-interal-packages/unibas-veracrypt</packageSourceUrl>
     <owners>University of Basel</owners>
     <title>VeraCrypt</title>
-    <authors>Microsoft</authors>
-    <projectUrl>https://github.com/PowerShell/PowerShell</projectUrl>
+    <authors>IDRIX</authors>
+    <projectUrl>https://www.veracrypt.fr/code/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>unibas-veracrypt veracrypt encryption</tags>
     <description>
@@ -28,7 +28,6 @@
     on-the-fly encryption (OTFE). It can create a virtual encrypted disk within
     a file or encrypt a partition or (in Windows) the entire storage device with
     pre-boot authentication.</summary>
-    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-internal-packages/icons/VeraCrypt.svg</iconUrl>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
