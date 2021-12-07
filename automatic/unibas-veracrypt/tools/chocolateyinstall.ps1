@@ -3,7 +3,7 @@
 $packageArgs = @{
   packageName    = 'unibas-veracrypt'
   fileType       = 'msi'
-  url            = 'https://launchpad.net/veracrypt/trunk/1.25.4/+download/VeraCrypt%20Setup%201.25.4.exe'
+  url            = 'https://launchpad.net/veracrypt/trunk/1.25.4/+download/VeraCrypt_Setup_1.25.4.exe'
   silentArgs     = '/quiet /norestart'
   validExitCodes = @(0)
   softwareName   = 'VeraCrypt*'
