@@ -3,6 +3,11 @@ Import-Module AU
 
 $releases = 'https://www.veracrypt.fr/en/Downloads.html'
 
+function global:au_BeforeUpdate() {
+  Get-RemoteFiles -Purge -FileNameBase 'unibas-veracrypt'
+  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
+}
+
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
@@ -22,4 +27,4 @@ function global:au_GetLatest {
   return @{ Version = $version; URL = $url }
 }
 
-update -NoCheckChocoVersion
+update -ChecksumFor none -NoCheckChocoVersion
