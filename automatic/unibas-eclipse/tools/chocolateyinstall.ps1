@@ -7,7 +7,7 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url64bit       = 'https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2021-09/R/eclipse-jee-2021-09-R-win32-x86_64.zip&r=1'
+  url64bit       = 'https://www.eclipse.org/downloads/download.php?file=/technology/epp/downloads/release/2021-12/R/eclipse-jee-2021-12-R-win32-x86_64.zip&r=1'
   #OTHERS
   # Uncomment matching EXE type (sorted by most to least common)
   #silentArgs   = '/S'           # NSIS
@@ -25,7 +25,7 @@ $packageArgs = @{
 
   # optional, highly recommended
   softwareName   = 'Eclipse*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum64     = 'e44376f49ce2cfe9fff18cb4fb80310577aa1424f64a9725b1382989a030809f'
+  checksum64     = 'b74213e8dd13d94474224a33774dc478e41ac4cfbb90055532f381449792940f'
   checksumType64 = 'sha256' #default is checksumType
 }
 

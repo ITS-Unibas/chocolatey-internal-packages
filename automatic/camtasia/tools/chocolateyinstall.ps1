@@ -2,14 +2,14 @@
 
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 # Old Camtasia versions can be found at https://www.techsmith.com/download/oldversions
-$url64      = 'https://download.techsmith.com/camtasiastudio/releases/21014/camtasia.msi'
+$url64      = 'https://download.techsmith.com/camtasiastudio/releases/21015/camtasia.msi'
 
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   fileType      = 'MSI'
   url64bit      = $url64
 
-  checksum64    = 'f03ef6481bc6ce740ff6288204a964bd373358bc5a854a6faf9b92590008de49'
+  checksum64    = '2ac02dfa39178ce4eb4d629a74a7fbb3d2b870c766aea7d511cb3d1617222f61'
   checksumType64= 'SHA256'
 
   silentArgs    = "/qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`"" # ALLUSERS=1 DISABLEDESKTOPSHORTCUT=1 ADDDESKTOPICON=0 ADDSTARTMENU=0
