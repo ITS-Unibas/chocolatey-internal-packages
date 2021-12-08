@@ -3,7 +3,7 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
     <id>unibas-veracrypt</id>
-    <version></version>
+    <version>0.0</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-interal-packages/unibas-veracrypt</packageSourceUrl>
     <owners>University of Basel</owners>
     <title>VeraCrypt</title>
