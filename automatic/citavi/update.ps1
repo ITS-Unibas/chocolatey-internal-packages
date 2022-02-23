@@ -19,9 +19,10 @@ function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
   $regex = '.msi$'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
-  $regexVersion = 'Citavi (.?)(((\d+)(\.)*)+)'
-  $download_page -match $regexVersion
-  $version = $Matches[2]
+  $page_version = $download_page | Select -ExpandProperty Links | Where-Object {$_.id -eq "download-msi"} | Select -ExpandProperty outerHTML
+  $page_version = ($page_version -split ">")[1]
+  $page_version = ($page_version -replace "MSI-Setup Citavi ", "") -replace "</a"
+  $version = $page_version
   return @{ Version = $version; URL = $url }
 }
 
