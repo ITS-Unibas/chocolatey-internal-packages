@@ -14,6 +14,7 @@ $packageArgs = @{
   unzipLocation  = $toolsDir
   fileType       = 'exe'
   url            = 'https://github.com/microsoft/PowerToys/releases/download/v0.49.1/PowerToysSetup-0.49.1-x64.exe'
+  version        =
   #file         = $fileLocation
 
   #MSI
