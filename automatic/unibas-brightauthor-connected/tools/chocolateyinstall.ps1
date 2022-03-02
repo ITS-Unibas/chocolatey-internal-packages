@@ -7,10 +7,10 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url            = 'https://brightsignnetwork.com/download/nsingh/ba-connected/BA connected Setup 1.6.52.exe'
+  url            = 'https://brightsignnetwork.com/download/nsingh/ba-connected/BA connected Setup 1.7.1.exe'
   silentArgs     = "/S"
   softwareName   = 'unibas-brightauthor-connected'
-  checksum       = 'e83de4b0b0ad64aa10330b4f683b26e8ed0d3641ac1936cc274c60be777b7f99'
+  checksum       = 'ca74b5686fadf9b457ce06341b9f7902dbbc4fd00063db693a774d0ddf543ae4'
   checksumType   = 'sha256' 
 }
 
