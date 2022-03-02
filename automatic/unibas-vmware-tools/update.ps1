@@ -43,4 +43,4 @@ function global:au_SearchReplace {
   }
 }
 
-Update -ChecksumFor none -NoCheckChocoVersion -Verbose
+Update -ChecksumFor none -NoCheckChocoVersion
