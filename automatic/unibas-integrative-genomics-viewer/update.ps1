@@ -1,6 +1,6 @@
 ﻿Import-Module AU
 
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+[Net.ServicePointManager]::SecurityProtocol = "Tls12,Tls11"
 $releases = 'https://software.broadinstitute.org/software/igv/download'
 
 function global:au_BeforeUpdate() {
