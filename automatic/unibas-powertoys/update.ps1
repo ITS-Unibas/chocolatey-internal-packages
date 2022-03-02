@@ -23,8 +23,8 @@ function global:au_GetLatest {
 function global:au_SearchReplace {
   return @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "(^[$]fileName\s*=\s*`"[$]toolsDir\\).*" = "`${1}$($Latest.FileName64)`""
-      "(^[$]version\s*=\s*)`".*`""             = "`${1}`"$($Latest.RemoteVersion)`""
+      "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
+      "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
     }
     ".\legal\VERIFICATION.txt" = @{
       "(?i)(listed on\s*)\<.*\>" = "`${1}<$releases>"
