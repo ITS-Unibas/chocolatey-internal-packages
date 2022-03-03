@@ -1,4 +1,4 @@
-
+﻿
 $ErrorActionPreference = 'Stop';
 
 $WindowsVersion=[Environment]::OSVersion.Version
@@ -13,7 +13,7 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'exe'
-  url            = 'https://github.com/microsoft/PowerToys/releases/download/v0.49.1/PowerToysSetup-0.49.1-x64.exe'
+  url            = ''
   #file         = $fileLocation
 
   #MSI
@@ -35,7 +35,7 @@ $packageArgs = @{
 
   # optional, highly recommended
   softwareName   = 'unibas-powertoys*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum       = '31962E9947318F00086269B903E3B53B4613C9E9ABE32A71D1128E3437222B2C'
+  checksum       = ''
   checksumType   = 'sha256' #default is md5, can also be sha1
 }
 
