@@ -1,6 +1,6 @@
 Import-Module AU
 
-[Net.ServicePointManager]::SecurityProtocol = "Tls12,Tls11"
+[Net.ServicePointManager]::SecurityProtocol = "Tls12,Tls11,Tls"
 $releases = 'https://software.broadinstitute.org/software/igv/download'
 
 function global:au_BeforeUpdate() {
@@ -16,7 +16,6 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
-  [Net.ServicePointManager]::SecurityProtocol = "Tls12,Tls11"
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
   $regex         = '.exe$'
   $java          = 'Java' 
