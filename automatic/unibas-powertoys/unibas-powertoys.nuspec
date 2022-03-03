@@ -6,7 +6,7 @@
     <version>0.49.1</version>
     <owners>ITS Unibasel</owners>
     <title>unibas-powertoys</title>
-    <author>ITS Unibasel</author>
+    <authors>ITS Unibasel</authors>
     <projectUrl>https://github.com/microsoft/PowerToys/releases</projectUrl>
     <summary> PowerToys is a set of utilities for power users to tune and streamline their Windows experience for greater productivity.</summary>
     <description><![CDATA[Inspired by the Windows 95 era PowerToys project, this reboot provides power users with ways to squeeze more efficiency out of the Windows 10 shell and customize it for individual workflows. A great overview of the Windows 95 PowerToys can be found here.]]></description>
