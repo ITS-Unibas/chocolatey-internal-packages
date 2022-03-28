@@ -2,7 +2,6 @@ import-module au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $download_page_url = 'https://www.microsoft.com/en-us/edge/business/download'
-$release_notes_url = 'https://docs.microsoft.com/en-us/deployedge/microsoft-edge-relnote-stable-channel'
 
 function global:au_SearchReplace {
   @{
@@ -13,18 +12,20 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
-  $homepage_content = Invoke-WebRequest -UseBasicParsing -Uri $release_notes_url
-  # Get Version
-  $homepage_content -match 'Version (\d+)\.(\d+)\.(\d+)\.(\d+)' | Out-Null
-  $version = $matches[0] -replace "Version ", ""
+  
   $download_content = Invoke-WebRequest -Uri $download_page_url
   $DataDiv = $download_content.ParsedHtml.getElementById("commercial-json-data")
   $Json = ConvertFrom-Json $DataDiv.getAttribute("data-whole-json")
   $StableObjects = $Json | Where-Object Product -eq Stable | Select-Object -ExpandProperty Releases
-  $StableWinObject = $StableObjects | Where-Object {$_.ProductVersion -eq $version -and $_.Architecture -eq "x64" -and $_.Platform -eq "Windows"}
-  $Url = $StableWinObject.Artifacts.Location
-  $Checksum = $StableWinObject.Artifacts.Hash
+  $StableWinObject = $StableObjects | Where-Object {$_.Architecture -eq "x64" -and $_.Platform -eq "Windows"}
+  $LatestStableWinObject = ($StableWinObject | Sort-Object -Property ProductVersion -Descending)[0]
+  
+  $Url = $LatestStableWinObject.Artifacts.Location
+  $Checksum = $LatestStableWinObject.Artifacts.Hash
+  $version = $LatestStableWinObject.ProductVersion
+  
   $Latest = @{ URL = $Url; Version = $version; Checksum = $Checksum }
+  
   return $Latest
 }
 
