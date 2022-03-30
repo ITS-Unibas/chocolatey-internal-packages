@@ -3,7 +3,7 @@ Verification is intended to assist the Chocolatey moderators and community
 in verifying that this package's contents are trustworthy.
 
 Upstream URLs
-  x64: https://github.com/obsproject/obs-studio/releases/download/27.2.3/OBS-Studio-27.2.3-Full-Installer-x64.exe
+  x64: https://github.com/obsproject/obs-studio/releases/download/27.2.4/OBS-Studio-27.2.4-Full-Installer-x64.exe
 Checksums of embedded binaries
   checksumtype: sha256
-  checksum64: A72EA0DF0EC38DA30B6122CBB8ABA09B6871A2272E30E52A10CB6C23B6CCB5CE
+  checksum64: 4C7F82FD2ECC532CBDB7B279702B28B252A38BBC462C65086F53938CD8D4C43B
