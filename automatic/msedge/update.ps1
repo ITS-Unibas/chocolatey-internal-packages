@@ -18,7 +18,7 @@ function global:au_GetLatest {
   $Json = ConvertFrom-Json $DataDiv.getAttribute("data-whole-json")
   $StableObjects = $Json | Where-Object Product -eq Stable | Select-Object -ExpandProperty Releases
   $StableWinObject = $StableObjects | Where-Object {$_.Architecture -eq "x64" -and $_.Platform -eq "Windows"}
-  $LatestStableWinObject = ($StableWinObject | Sort-Object -Property ProductVersion -Descending)[0]
+  $LatestStableWinObject = $StableWinObject[0]
   
   $Url = $LatestStableWinObject.Artifacts.Location
   $Checksum = $LatestStableWinObject.Artifacts.Hash
