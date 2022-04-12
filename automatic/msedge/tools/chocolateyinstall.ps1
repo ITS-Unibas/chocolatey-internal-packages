@@ -4,11 +4,11 @@ $packageArgs = @{
   packageName    = 'msedge'
   unzipLocation  = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
   fileType       = 'msi'
-  url            = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/8beaa4da-9e68-4e9c-94d8-1a67395985b7/MicrosoftEdgeEnterpriseX64.msi'
+  url            = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/baddf6fc-24a8-45d5-955c-70580010effe/MicrosoftEdgeEnterpriseX64.msi'
   silentArgs     = '/quiet /norestart'
   validExitCodes = @(0)
   softwareName   = 'edge*'
-  checksum       = 'B3D86B9F2A4868BA3129A4B62CB5935454136EE33D35AB891701E56A1FC93152'
+  checksum       = '33EFBA971D6A60FAB1531525FC69A64ED9029F93A668F42759FAF3FF182DBD66'
   checksumType   = 'sha256'
 }
 
