@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-filezilla</id>
+    <version>0.0</version>
+    <packageSourceUrl>https://filezilla-project.org/</packageSourceUrl>
+    <projectSourceUrl>https://filezilla-project.org/</projectSourceUrl>
+    <owners>IT-Services | University of Basel</owners>
+    <title>unibas-filezilla</title>
+    <authors>IT-Services | University of Basel</authors>
+    <docsUrl>UrlToDocs</docsUrl>
+    <bugTrackerUrl>UrlToBugTracker</bugTrackerUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/__REPLACE_YOUR_REPO__/master/icons/unibas-filezilla.png</iconUrl>
+    <licenseUrl>UrlToLicense</licenseUrl>
+    <tags>unibas-filezilla</tags>
+    <description>Chocolatey package unibas-filezilla</description>
+    <releaseNotes>Paste or link Release Notes here</releaseNotes>
+    <!--<dependencies>
+      <dependency id="" version="__MINIMUM_VERSION__" />
+    </dependencies>-->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
