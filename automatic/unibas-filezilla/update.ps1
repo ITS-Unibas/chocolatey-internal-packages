@@ -3,17 +3,12 @@
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releases = 'https://filezilla-project.org/download.php?show_all=1'
 
+
+
 function global:au_BeforeUpdate() {
- Get-RemoteFiles -Purge -FileNameBase "FileZilla_$($Latest.Version)"
+  Get-RemoteFiles -Purge -FileNameBase 'unibas-filezilla' #name for override 
   $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
 }
-
-
-
-
-
-
-
 
 
 function global:au_SearchReplace {

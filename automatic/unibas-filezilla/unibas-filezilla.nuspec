@@ -2,19 +2,24 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-filezilla</id>
-    <version>0.0</version>
-    <packageSourceUrl>https://filezilla-project.org/</packageSourceUrl>
-    <projectSourceUrl>https://filezilla-project.org/</projectSourceUrl>
+    <version>3.59.0</version>
     <owners>IT-Services | University of Basel</owners>
     <title>unibas-filezilla</title>
     <authors>IT-Services | University of Basel</authors>
-    <docsUrl>UrlToDocs</docsUrl>
-    <bugTrackerUrl>UrlToBugTracker</bugTrackerUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/__REPLACE_YOUR_REPO__/master/icons/unibas-filezilla.png</iconUrl>
-    <licenseUrl>UrlToLicense</licenseUrl>
-    <tags>unibas-filezilla</tags>
+    <projectUrl> https://filezilla-project.org/</projectUrl>
+    <summary>This software is a ftp client </summary> 
     <description>Chocolatey package unibas-filezilla</description>
-    <releaseNotes>Paste or link Release Notes here</releaseNotes>
+    <packageSourceUrl>https://filezilla-project.org/</packageSourceUrl>
+    
+    <licenseUrl>UrlToLicense</licenseUrl>
+    <releaseNotes>https://filezilla-project.org </releaseNotes>
+    <iconUrl>https://logodownload.org/wp-content/uploads/2017/10/filezilla-logo-2.png</iconUrl>
+    <tags>filezilla ftp client website developer tool</tags>
+    <docsUrl>https://filezilla-project.org</docsUrl>
+    <projectSourceUrl>https://filezilla-project.org/</projectSourceUrl>
+    <bugTrackerUrl>UrlToBugTracker</bugTrackerUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <mailingListUrl>https://filezilla-project.org</mailingListUrl>
     <!--<dependencies>
       <dependency id="" version="__MINIMUM_VERSION__" />
     </dependencies>-->
