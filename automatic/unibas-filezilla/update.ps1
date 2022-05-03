@@ -1,6 +1,6 @@
-﻿Import-Module AU
-
+﻿import-module au
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
 $releases = 'https://filezilla-project.org/download.php?show_all=1'
 
 
