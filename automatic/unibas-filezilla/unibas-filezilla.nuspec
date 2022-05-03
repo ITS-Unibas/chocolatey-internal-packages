@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-filezilla</id>
-    <version>3.59.0</version>
+    <version>0.0.0</version>
     <owners>IT-Services | University of Basel</owners>
     <title>unibas-filezilla</title>
     <authors>IT-Services | University of Basel</authors>
