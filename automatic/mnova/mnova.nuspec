@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>mnova</id>
-    <version>14.2.3</version>
+    <version>14.3.0</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/mnova</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <!-- ============================== -->
