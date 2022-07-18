@@ -4,7 +4,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>unibas-miktex</id>
-    <version>22.3</version>
+    <version>22.7</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-miktex</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <!-- == SOFTWARE SPECIFIC SECTION == -->
