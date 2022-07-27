@@ -13,7 +13,7 @@ $packageArgs = @{
 
   # optional, highly recommended
   softwareName   = 'Citavi*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum64     = '24367bde9121e5d22ebf63a550accd672c950ba44a746983a751c4c1211bf01a'
+  checksum64     = '43fe08694b1fc40ccd6928b2552517d2c12442bcb431cc90639d5491c9d4865c'
   checksumType64 = 'sha256' #default is md5, can also be sha1
 }
 
