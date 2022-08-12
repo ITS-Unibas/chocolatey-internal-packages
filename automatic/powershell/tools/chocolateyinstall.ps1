@@ -4,11 +4,11 @@ $packageArgs = @{
   packageName    = 'powershell'
   unzipLocation  = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
   fileType       = 'msi'
-  url            = 'https://github.com/PowerShell/PowerShell/releases/download/v7.2.5/PowerShell-7.2.5-win-x64.msi'
+  url            = 'https://github.com/PowerShell/PowerShell/releases/download/v7.2.6/PowerShell-7.2.6-win-x64.msi'
   silentArgs     = '/quiet /norestart'
   validExitCodes = @(0)
   softwareName   = 'PowerShell*'
-  checksum       = '632A69EA46F966A03A1EE0AA1647C5970DF7B5936BDF27DF3CF18E6C63C21198'
+  checksum       = '77566D5B831523C6740C392B64237C52089B574F342A9F51D84ADED24E412CB8'
   checksumType   = 'sha256'
 }
 
