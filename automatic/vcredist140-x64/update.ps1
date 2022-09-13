@@ -4,7 +4,7 @@ Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
 Import-Module "$PSScriptRoot\..\..\scripts/au_extensions.psm1"
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$x64Release = 'https://aka.ms/vs/16/release/VC_redist.x64.exe'
+$x64Release = 'https://aka.ms/vs/17/release/VC_redist.x64.exe'
 
 function global:au_SearchReplace {
   @{
