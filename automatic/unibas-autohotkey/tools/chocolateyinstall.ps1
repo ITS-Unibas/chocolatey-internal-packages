@@ -6,10 +6,10 @@ $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 $packageArgs = @{
   packageName    = 'unibas-autohotkey'
   fileType       = 'exe'
-  url            = 'https://github.com/Lexikos/AutoHotkey_L/releases/download/v1.1.34.04/AutoHotkey_1.1.34.04_setup.exe'
+  url            = 'https://github.com/Lexikos/AutoHotkey_L/releases/download/v1.1.35.00/AutoHotkey_1.1.35.00_setup.exe'
   silentArgs     = "/S /D=C:\Program Files\AutoHotkey"
   softwareName   = 'AutoHotkey*'
-  checksum       = '7350f50c3fc022d217821e6f416497820e6216a714c5ee859af1f36be9b740d7'
+  checksum       = '8e61b9221dd7aeab8c362c7d580eec35e192317bb8c645909e0ce95b91c1332a'
   checksumType   = 'sha256' #default is md5, can also be sha1
   validExitCodes = @(0, 1223)
 }
