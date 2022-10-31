@@ -1,7 +1,9 @@
 import-module au
 
+# Taken from @DennisGaida (https://github.com/DennisGaida/chocolatey-packages/blob/master/microsoft-edge/update.ps1)
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$download_page_url = 'https://www.microsoft.com/en-us/edge/business/download'
+$download_api_url  = 'https://edgeupdates.microsoft.com/api/products'
+$release_branch       = "Stable"
 
 function global:au_SearchReplace {
   @{
@@ -12,21 +14,15 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
+  $download_api_content = (Invoke-WebRequest -Uri $download_api_url).Content
+  $json_data = $download_api_content | ConvertFrom-Json
+  $releases = $json_data | Where-Object -Property Product -eq $release_branch | Select-Object Releases
+  $download_url_64 = ($releases.Releases | Where-Object {$_.Platform -eq 'Windows'} | Where-Object {$_.Architecture -eq 'x64'}).Artifacts.Location
+  $download_hash_64 = ($releases.Releases | Where-Object {$_.Platform -eq 'Windows'} | Where-Object {$_.Architecture -eq 'x64'}).Artifacts.Hash
+  $version_number = ($releases.Releases | Where-Object {$_.Platform -eq 'Windows'} | Where-Object {$_.Architecture -eq 'x64'}).ProductVersion.Trim()
   
-  $download_content = Invoke-WebRequest -Uri $download_page_url
-  $DataDiv = $download_content.ParsedHtml.getElementById("commercial-json-data")
-  $Json = ConvertFrom-Json $DataDiv.getAttribute("data-whole-json")
-  $StableObjects = $Json | Where-Object Product -eq Stable | Select-Object -ExpandProperty Releases
-  $StableWinObject = $StableObjects | Where-Object {$_.Architecture -eq "x64" -and $_.Platform -eq "Windows"}
-  $LatestStableWinObject = $StableWinObject[0]
-  
-  $Url = $LatestStableWinObject.Artifacts.Location
-  $Checksum = $LatestStableWinObject.Artifacts.Hash
-  $version = $LatestStableWinObject.ProductVersion
-  
-  $Latest = @{ URL = $Url; Version = $version; Checksum = $Checksum }
-  
-  return $Latest
+  $Latest = @{URL = $download_url_64; Version = $version_number; Checksum = $download_hash_64}
+  return $Latest  
 }
 
 update -ChecksumFor none
