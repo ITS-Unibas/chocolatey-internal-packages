@@ -45,12 +45,7 @@ jobs:
           Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
           Install-Module Wormies-AU-Helpers -Scope CurrentUser -Force
       - name: Check update for packages & push changes
-        env:
-          au_push: false
-          # Github token to commit pushed packages to repository
-          github_user_repo: ${{ github.repository }}
-          github_api_key: ${{ secrets.CHOCO_TOKEN }}
-	run: |
+        run: |
           $ErrorActionPreference = 'Continue'
           # Update automatic packages
           ./update_all.ps1 -ForcedPackages '${{ github.event.inputs.forced_packages }}'
@@ -61,3 +56,9 @@ jobs:
           git add .
           git commit -m "updated chocolatey-community-packages"
           git push
+	env:
+          au_push: false
+          # Github token to commit pushed packages to repository
+          github_user_repo: ${{ github.repository }}
+          github_api_key: ${{ secrets.CHOCO_TOKEN }}
+	
