@@ -61,4 +61,3 @@ jobs:
           # Github token to commit pushed packages to repository
           github_user_repo: ${{ github.repository }}
           github_api_key: ${{ secrets.CHOCO_TOKEN }}
-	
