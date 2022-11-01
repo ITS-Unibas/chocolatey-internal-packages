@@ -50,6 +50,7 @@ jobs:
           # Github token to commit pushed packages to repository
           github_user_repo: ${{ github.repository }}
           github_api_key: ${{ secrets.CHOCO_TOKEN }}
+	  
         run: |
           $ErrorActionPreference = 'Continue'
           ./update_all.ps1 -ForcedPackages '${{ github.event.inputs.forced_packages }}'
