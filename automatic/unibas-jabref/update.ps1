@@ -1,7 +1,7 @@
-﻿Import-Module AU
+Import-Module AU
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = 'https://github.com/JabRef/jabref/releases'
+$releases = 'https://api.github.com/repos/JabRef/jabref/releases/latest'
 
 function global:au_BeforeUpdate() {
   Get-RemoteFiles -Purge -FileNameBase 'unibas-jabref'
@@ -16,13 +16,12 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $regex = '.msi$'
-  $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
-  $arr = $url -split '-|.msi'
-  $url = "https://github.com/$url"
-  $version = $arr[1]
+  $download_page = Invoke-RestMethod -Uri $releases
+  $asset = $download_page.assets | Where {$_.name -match "JabRef-.*\.msi$"}
+  $url = $asset.browser_download_url
+  $version = Get-Version $url
+
   return @{ Version = $version; URL = $url }
 }
 
-update -ChecksumFor none
+update -ChecksumFor none -NoCheckChocoVersion
