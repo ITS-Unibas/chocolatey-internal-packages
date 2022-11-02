@@ -44,7 +44,7 @@ jobs:
           . "$Env:TEMP/au/scripts/Install-AU.ps1" $Env:au_version
           Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
           Install-Module Wormies-AU-Helpers -Scope CurrentUser -Force
-      - name: Check update for packages & push changes
+      - name: Check update for packages
         run: |
           $ErrorActionPreference = 'Continue'
           # Update automatic packages
