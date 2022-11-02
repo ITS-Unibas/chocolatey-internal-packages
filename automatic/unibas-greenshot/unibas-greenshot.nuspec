@@ -10,7 +10,7 @@
     <title>Greenshot</title>
     <authors>Greenshot</authors>
     <projectUrl>https://getgreenshot.org/downloads/</projectUrl>
-    <iconUrl>http://cdn.rawgit.com/__REPLACE_YOUR_REPO__/master/icons/unibas-greenshot.png</iconUrl>
+    <iconUrl>https://raw.githubusercontent.com/greenshot/greenshot/release/1.3/src/Greenshot/icons/applicationIcon/90.png</iconUrl>
     <licenseUrl>https://github.com/greenshot/greenshot/blob/develop/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://github.com/greenshot/greenshot</projectSourceUrl>
