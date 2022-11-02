@@ -9,6 +9,7 @@
     <title>NIS-Elements Viewer</title>
     <authors>Nikon Europe BV</authors>
     <projectUrl>https://www.microscope.healthcare.nikon.com/de_EU/products/software/nis-elements/viewer</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ITS-Unibas/chocolatey-internal-packages/master/icons/nis-elements-viewer.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <projectSourceUrl>https://www.microscope.healthcare.nikon.com/de_EU/products/software/nis-elements/viewer</projectSourceUrl>
     <docsUrl>https://d33b8x22mym97j.cloudfront.net/phase4/literature/Manuals/NIS-Elements_Viewer-en-5.21.00.pdf</docsUrl>
