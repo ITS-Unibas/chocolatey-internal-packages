@@ -9,6 +9,7 @@
     <title>VeraCrypt</title>
     <authors>IDRIX</authors>
     <projectUrl>https://www.veracrypt.fr/code/</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ITS-Unibas/chocolatey-internal-packages/master/icons/VeraCrypt.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <tags>unibas-veracrypt veracrypt encryption</tags>
     <description>
