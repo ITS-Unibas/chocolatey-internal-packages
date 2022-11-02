@@ -5,6 +5,7 @@
     <id>unibas-lenovo-thin-installer</id>
     <version>1.3.0043</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-lenovo-thin-installer</packageSourceUrl>
+    <iconUrl>https://raw.githubusercontent.com/ITS-Unibas/chocolatey-internal-packages/master/icons/lenovo-thin-installer.png</iconUrl>
     <owners>University of Basel</owners>
     <title>Lenovo Thin Installer</title>
     <authors>Lenovo</authors>
