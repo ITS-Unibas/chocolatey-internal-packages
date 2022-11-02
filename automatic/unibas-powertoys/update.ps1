@@ -1,23 +1,24 @@
-﻿import-module au
+import-module au
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$releases = 'https://github.com/microsoft/PowerToys/releases/latest'
+$releases = 'https://api.github.com/repos/microsoft/PowerToys/releases/latest'
 
 function global:au_BeforeUpdate { Get-RemoteFiles -Purge }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $download_page = Invoke-RestMethod -Uri $releases
+  $asset = $download_page.assets | Where-Object -Property name -Like "PowerToysSetup*-x64.exe"
+  $version = $download_page.tag_name.Replace('v', '')
+  $version = Get-Version($version)
 
-    $re  = "PowerToysSetup(.+)?.exe"
-    $url = $download_page.links | Where-Object href -match $re | Select-Object -First 1 -expand href
-    $arr = $url -split '-|.exe'
-    $version = (($download_page.Links | Where-Object href -Match "releases/tag" | Select-Object -First 1 -ExpandProperty href) -Split "/" | Select-Object -Last 1) -Replace "v"
-    $url64 = 'https://github.com' + $url
-
+  if ($asset) {
+    $url = $asset.browser_download_url
+  
     return @{
       Version = $version
-      URL64 = $url64
+      URL64   = $url
     }
+  }
 }
 
 function global:au_SearchReplace {
@@ -34,6 +35,4 @@ function global:au_SearchReplace {
   }
 }
 
-if ($MyInvocation.InvocationName -ne '.') {
-  Update-Package -checksumfor none -NoCheckChocoVersion
-}
+Update-Package -checksumfor none -NoCheckChocoVersion
