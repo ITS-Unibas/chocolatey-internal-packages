@@ -1,25 +1,20 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-filezilla</id>
-    <version>0.0.0</version>
+    <version>3.62.0</version>
     <owners>IT-Services | University of Basel</owners>
     <title>unibas-filezilla</title>
     <authors>IT-Services | University of Basel</authors>
-    <projectUrl> https://filezilla-project.org/</projectUrl>
+    <projectUrl> https://filezilla-project.org</projectUrl>
     <summary>This software is a ftp client </summary> 
     <description>Chocolatey package unibas-filezilla</description>
-    <packageSourceUrl>https://filezilla-project.org/</packageSourceUrl>
-    
-    <licenseUrl>UrlToLicense</licenseUrl>
-    <releaseNotes>https://filezilla-project.org </releaseNotes>
+    <releaseNotes>https://filezilla-project.org</releaseNotes>
     <iconUrl>https://logodownload.org/wp-content/uploads/2017/10/filezilla-logo-2.png</iconUrl>
     <tags>filezilla ftp client website developer tool</tags>
     <docsUrl>https://filezilla-project.org</docsUrl>
-    <projectSourceUrl>https://filezilla-project.org/</projectSourceUrl>
-    <bugTrackerUrl>UrlToBugTracker</bugTrackerUrl>
+    <projectSourceUrl>https://filezilla-project.org</projectSourceUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <mailingListUrl>https://filezilla-project.org</mailingListUrl>
     <!--<dependencies>
       <dependency id="" version="__MINIMUM_VERSION__" />
     </dependencies>-->
