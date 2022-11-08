@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-cryptomator</id>
+    <version>1.6.11.3908</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-cryptomator</packageSourceUrl>
+    <owners>ITS-Unibas</owners>
+    <title>Cryptomator</title>
+    <authors>Skymatic GmbH</authors>
+    <projectUrl>http://cryptomator.org</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/npm/cryptomator@0.1.0/src/assets/logo.png</iconUrl>
+    <licenseUrl>http://cryptomator.org</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/cryptomator/cryptomator</projectSourceUrl>
+    <tags>cryptomator</tags>
+    <summary>An implementation of Cryptomator</summary>
+    <description>
+    With Cryptomator, the key to your data is in your hands. Cryptomator encrypts your data quickly and easily. Afterwards you upload them protected to your favorite cloud service.
+    </description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
