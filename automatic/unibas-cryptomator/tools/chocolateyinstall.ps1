@@ -14,4 +14,4 @@ $packageArgs = @{
   checksumType   = 'sha256'
 }
 
-Install-ChocolateyInstallPackage @packageArgs
+Install-ChocolateyPackage @packageArgs
