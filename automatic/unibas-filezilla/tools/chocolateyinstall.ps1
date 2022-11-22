@@ -6,8 +6,8 @@ $packageArgs = @{
   fileType      = 'EXE'
   silentArgs    = '/S'
   validExitCodes= @(0)
-  url           = 'https://dl1.cdn.filezilla-project.org/client/FileZilla_3.62.1_win64-setup.exe?h=SequiixlAcCtT34s2XiAYA&x=1668699465'
-  checksum      = '95ECA7FD49E2C332121332A54B866216F7FDFA6D5C12BB16ECDFC443D87EE79F'
+  url           = 'https://dl3.cdn.filezilla-project.org/client/FileZilla_3.62.2_win64-setup.exe?h=7kraNbA2lKFgdCanQkdKJw&x=1669131602'
+  checksum      = 'EF3C2DFBE13AEEF9D04BF6FAEBEC26B97D614E52F24C63955BF7D36543253E07'
   checksumType  = 'sha256'
 }
  
