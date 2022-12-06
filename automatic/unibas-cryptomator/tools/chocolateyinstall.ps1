@@ -6,11 +6,11 @@ $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'EXE'
-  url            = 'https://github.com/cryptomator/cryptomator/releases/download/1.6.15/Cryptomator-1.6.15-x64.exe'
+  url            = 'https://github.com/cryptomator/cryptomator/releases/download/1.6.16/Cryptomator-1.6.16-x64.exe'
   silentArgs     = '/S'
   validExitCodes = @(0) 
   softwareName   = 'Cryptomator'
-  checksum       = '8de5af809f92acb5bf957e6dc02b519e6552a29903b57d724e208dca28e1a87f'
+  checksum       = '7e2204431540c66e2d02f3b0a6924a2710d223530d864adb6fd5c94806631acd'
   checksumType   = 'sha256'
 }
 
