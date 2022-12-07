@@ -9,7 +9,7 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url            = 'https://github.com/audacity/audacity/releases/download/Audacity-3.2.1/audacity-win-3.2.1-64bit.exe'
+  url            = 'https://github.com/audacity/audacity/releases/download/Audacity-3.2.2/audacity-win-3.2.2-x64.exe'
   #OTHERS
   # Uncomment matching EXE type (sorted by most to least common)
   #silentArgs   = '/S'           # NSIS
@@ -27,7 +27,7 @@ $packageArgs = @{
 
   # optional, highly recommended
   softwareName   = 'Audacity' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum       = '35a318c716f2579bb81229c04375bc21cac878ad011d5d66d227f236e7d73ce6'
+  checksum       = '0505855a2bc4a8d90e101be8e9bd9a77113e33e99e1d879a6d30088d6fddb4ec'
   checksumType   = 'sha256' #default is md5, can also be sha1
 }
 
