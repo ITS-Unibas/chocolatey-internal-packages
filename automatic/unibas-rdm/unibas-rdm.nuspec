@@ -1,53 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
-<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+ 
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
-    <version>0.0.0.0</version>
-    <id>unibas-rdm</id>
-    <authors>ITS Unibasel</authors>
-    <projectUrl>https://www.mozilla.org/en-US/firefox/new/</projectUrl>
-    <projectSourceUrl>https://hg.mozilla.org/mozilla-central/</projectSourceUrl>
-    <docsUrl>https://developer.mozilla.org/en-US/Firefox</docsUrl>
-    <bugTrackerUrl>https://bugzilla.mozilla.org/</bugTrackerUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@8a7376cf4e5b7cde0eb1c6a608529601bfcd9546/icons/firefox.svg</iconUrl>
-    <licenseUrl>https://www.mozilla.org/en-US/MPL/2.0/</licenseUrl>
-    <title>Mozilla Firefox</title>
-    <owners>chocolatey</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description><![CDATA[Bringing together all kinds of awesomeness to make browsing better for you.
+    <id>rstudio-automatic</id>
+    <version>0.0</version>
+    <owners>ITS Unibasel</owners>
+    <title>RDM</title>
+    <authors>RDM</authors>
+    <projectUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/blob/master/automatic/rdm/tools/chocolateyinstall.ps1</projectUrl>
+    <summary>RStudio is an integrated development environment (IDE) for R. It includes a console, syntax-highlighting editor that supports direct code execution, as well as tools for plotting, history, debugging and workspace management. </summary>
+    <description><![CDATA[RStudio is an integrated development environment (IDE) for the R programming language.
+ 
 ## Features
-- A powerful, new engine that’s built for rapidfire performance.
-- Better, faster page loading that uses less computer memory.
-- Gorgeous design and smart features for intelligent browsing.
-- Instantly import your online info and favorites from any other browser.
-- The most powerful private browsing mode with added tracking protection.
-- Firefox Quantum features: screenshots, pocket, gaming & VR, library.
-- Customization Features - addons & extensions, themes, toolbar.
-- Synced across devices - passwords, bookmarks, tabs and more.
-- Ad tracker blocking.
-- Password manager.
-## Package Parameters
-- `/l:<locale>` - Install given Firefox locale. See the [official page](https://releases.mozilla.org/pub/firefox/releases/latest/README.txt) for a complete list of available locales.
-Command-line options for installer configuration. See the [official page](https://firefox-source-docs.mozilla.org/browser/installer/windows/installer/FullConfig.html) for details and defaults.
-- `/InstallDir:<path>`
-- `/NoTaskbarShortcut` Do not create Taskbar Shortcut
-- `/NoDesktopShortcut` Do not create Desktop Shortcut
-- `/NoStartMenuShortcut` Do not create Start Menu Shortcut
-- `/NoMaintenanceService` Do not install Maintenance Service
-- `/RemoveDistributionDir` Remove Distribution directory on installation/update. (This is the default behavior of the Firefox Installer, but not for this Chocolatey Package)
-- `/NoAutoUpdate` Sets a policies.json file to not update Firefox and does not install the Maintenance Service
-### Examples
-`choco install Firefox --params "/l:en-GB"`\
-`choco install Firefox --params "/NoTaskbarShortcut /NoDesktopShortcut /NoAutoUpdate"`\
-`choco install Firefox --params "/l:en-GB /RemoveDistributionDir"`
+ 
+- Customizable workbench with all of the tools required to work with R in one place (console, source, plots, workspace, help, history, etc.).
+- Syntax highlighting editor with code completion.
+- Execute code directly from the source editor (line, selection, or file).
+- Full support for authoring Sweave and TeX documents.
+- Runs on all major platforms (Windows, Mac, and Linux) and can also be run as a server, enabling multiple users to access the RStudio IDE using a web browser.
 ]]></description>
-    <summary>Bringing together all kinds of awesomeness to make browsing better for you</summary>
-    <tags>browser mozilla firefox admin foss cross-platform</tags>
-    <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/firefox</packageSourceUrl>
-    <dependencies>
-    </dependencies>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic</packageSourceUrl>
+    <licenseUrl>http://www.gnu.org/licenses/agpl-3.0-standalone.html</licenseUrl>
+    <releaseNotes>https://www.rstudio.com/products/rstudio/release-notes/</releaseNotes>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-automatic-packages/icons/rstudio.png</iconUrl>
+    <tags>rstudio r r.studio statistics</tags>
+    <docsUrl>https://support.rstudio.com/hc/en-us/categories/200035113-Documentation</docsUrl>
+    <projectSourceUrl>https://github.com/rstudio/rstudio</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/rstudio/rstudio/issues</bugTrackerUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <mailingListUrl>https://community.rstudio.com/c/rstudio-ide</mailingListUrl>
   </metadata>
-    <files>
+  <files>
     <file src="tools\**" target="tools" />
   </files>
 </package>
