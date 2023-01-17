@@ -45,7 +45,10 @@ function global:au_GetLatest {
     return @{
         URL   = $url
         Version = $version_number
+        FileName = $url -split '/' | Select-Object -Last 1
+
     }
+    
 }
 
 Update-Package -ChecksumFor None -NoCheckChocoVersion
