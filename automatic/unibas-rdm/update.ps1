@@ -5,8 +5,9 @@ $releases = 'https://devolutions.net/remote-desktop-manager/home/download'
 $softwareName= "Remote Desktop Manager"
 
 function global:au_BeforeUpdate() {
-    $Latest.Checksum = Get-Checksum -version $Latest.Version -checksumType $Latest.ChecksumType
-}
+    Get-RemoteFiles -Purge -FileNameBase 'unibas-rdm'
+    $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'md5'
+ }
 
 
 function global:au_SearchReplace {
