@@ -1,7 +1,7 @@
 $ErrorActionPreference = 'Stop';
   
 $packageArgs = @{
-  packageName   = 'rdm'
+  packageName   = 'unibas-rdm'
   softwareName  = 'remote desktop manager*'
   fileType      = 'EXE'
   silentArgs    = '/S'
