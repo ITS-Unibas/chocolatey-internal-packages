@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-rdm</id>
-    <version>2022.3.30.0</version>
+    <version>2022.3.31.0</version>
     <owners>ITS Unibasel</owners>
     <title>RDM</title>
     <authors>RDM</authors>
