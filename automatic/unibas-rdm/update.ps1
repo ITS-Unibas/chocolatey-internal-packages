@@ -1,6 +1,5 @@
-#import-module au
-
-Import-Module au
+import-module au
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $releases = 'https://devolutions.net/remote-desktop-manager/home/download'
 $softwareName= "Remote Desktop Manager"
