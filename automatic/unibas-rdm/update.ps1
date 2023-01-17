@@ -5,31 +5,23 @@ $releases = 'https://devolutions.net/remote-desktop-manager/home/download'
 $softwareName= "Remote Desktop Manager"
 
 function global:au_BeforeUpdate() {
-  Get-RemoteFiles -Purge -FileNameBase 'unibas-rdm'
-  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
+  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm "sha256"
 }
 
 function global:au_SearchReplace {
-    @{
-        ".\tools\chocolateyInstall.ps1" = @{
-           "(?i)^(\s*softwareName\s*=\s*)'.*'" = "`${1}'$softwareName'"
-            "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
-        }
-   
-     ".\tools\chocolateyUninstall.ps1" = @{
-      "(?i)^(\s*softwareName\s*=\s*)'.*'" = "`${1}'$softwareName'"
+  @{
+    ".\tools\chocolateyInstall.ps1" = @{
+      "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
+      "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
     }
-     }
+  }
 }
+
 
 Function GetVersion($InputString) {
     $regExResult = $InputString | Select-String -Pattern 'Version 202\d.\d.\d\d.\d' 
     $regExResult.Matches[0].Value
 }
-
-
-
 
 
 
@@ -45,10 +37,9 @@ function global:au_GetLatest {
     return @{
         URL   = $url
         Version = $version_number
-        FileName = $url -split '/' | Select-Object -Last 1
 
     }
     
 }
 
-Update-Package -ChecksumFor None -NoCheckChocoVersion
+update -ChecksumFor none
