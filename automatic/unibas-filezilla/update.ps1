@@ -10,8 +10,8 @@ function global:au_BeforeUpdate() {
 function global:au_SearchReplace {
   return @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL64)`'"
-      "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum64)`'"
+      "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
+      "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
     }
   }
 }
@@ -23,7 +23,7 @@ function global:au_GetLatest {
 
   @{
       Version  = $version
-      URL64    = $url64
+      URL    = $url64
       FileType = "exe"
   }
 }
