@@ -20,7 +20,7 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
 	$download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-	$regex = 'x64.exe$'
+	$regex = 'x64.msi$'
 	$urlPart = $download_page.links | Where-Object {$_.href -match $regex} | Select-Object -First 1 -expand href
 
 	$url = "$domain$urlPart"
