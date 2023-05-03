@@ -19,7 +19,7 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing -UserAgent "Chocolatey"
   $url = $download_page.Links | ? href -match "win64\-setup\.exe" | select -first 1 -expand href
-  $version = Get-Version $url64
+  $version = Get-Version $url
 
   return @{
       Version  = $version
