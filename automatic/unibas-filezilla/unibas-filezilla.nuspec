@@ -15,12 +15,8 @@
     <docsUrl>https://filezilla-project.org</docsUrl>
     <projectSourceUrl>https://filezilla-project.org</projectSourceUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <!--<dependencies>
-      <dependency id="" version="__MINIMUM_VERSION__" />
-    </dependencies>-->
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
-        <file src="legal\**" target="legal" />
   </files>
 </package>
