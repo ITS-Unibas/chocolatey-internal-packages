@@ -4,7 +4,7 @@ import-module AU
 $releases = 'https://filezilla-project.org/download.php?show_all=1'
 
 function global:au_BeforeUpdate() {
-  Get-RemoteFiles -Purge -FileNameBase 'unibas-filezilla' #name for override 
+  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm "sha256"
 }
 
 function global:au_SearchReplace {
@@ -18,14 +18,13 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing -UserAgent "Chocolatey"
-  $url64 = $download_page.Links | ? href -match "win64\-setup\.exe" | select -first 1 -expand href
+  $url = $download_page.Links | ? href -match "win64\-setup\.exe" | select -first 1 -expand href
   $version = Get-Version $url64
 
-  @{
+  return @{
       Version  = $version
-      URL    = $url64
-      FileType = "exe"
+      URL      = $url
   }
 }
 
-update -ChecksumFor none -NoCheckChocoVersion
+update -NoCheckChocoVersion -ChecksumFor none
