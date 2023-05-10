@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-seb</id>
+    <version>3.5.0.544</version>
+    <owners>University of Basel</owners>
+    <title>RDM</title>
+    <authors>ETH Zuerich, Lehrentwicklung und -technologie (LET)</authors>
+    <projectUrl>https://safeexambrowser.org/about_overview_de.html</projectUrl>
+    <summary>Safe Exam Browser (SEB) ist eine abgesicherte Browser-Applikation, um Online-Prüfungen auf Learning Management Systemen (LMS) zuverlässig durchführen zu können.</summary>
+    <description>Safe Exam Browser (SEB) ist eine abgesicherte Browser-Applikation, um Online-Prüfungen auf Learning Management Systemen (LMS) zuverlässig durchführen zu können. Durch den Start der SEB-Applikation wird ein herkömmlicher Windows- oder macOS Computer oder ein iOS Gerät in einen sogenannten Kioskmodus versetzt und somit zu einer temporär abgesicherten Arbeitsstation. SEB regelt den Zugriff auf Hilfsmittel wie Systemfunktionen, andere Websites und Programme und unterbindet die Verwendung von unerlaubten Ressourcen während einer Prüfung.</description>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-seb</packageSourceUrl>
+    <licenseUrl>https://safeexambrowser.org/about_overview_de.html#license</licenseUrl>
+    <releaseNotes>https://github.com/SafeExamBrowser/seb-win-refactoring/releases/</releaseNotes>
+    <iconUrl>https://safeexambrowser.org/images/SEBIcon_40_2x.png</iconUrl>
+    <tags>seb safe exam browser</tags>
+    <docsUrl>https://safeexambrowser.org/windows/win_usermanual_de.html</docsUrl>
+    <projectSourceUrl>https://github.com/SafeExamBrowser/seb-win-refactoring</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/SafeExamBrowser/seb-win-refactoring/issues</bugTrackerUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
