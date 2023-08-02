@@ -7,10 +7,10 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url            = 'https://github.com/FreeCAD/FreeCAD/releases/download/0.20beta1/FreeCAD-0.20.0beta-WIN-x64-installer-4.exe'
+  url            = 'https://github.com/FreeCAD/FreeCAD/releases/download/0.21.0/FreeCAD-0.21.0-WIN-x64-installer-1.exe'
   silentArgs     = '/S'
   softwareName   = 'FreeCAD*'
-  checksum       = 'ca8c72fae8e5fc1addf801ca5a3c424cace308ca3843c9d408a1e0577fb7fa2d'
+  checksum       = 'e6a023e2b1aa8b46cb944fdf146c2d6dde46b3955a84cbb15a66d825c933166e'
   checksumType   = 'sha256'
   validExitCodes = @(0) 
 }
