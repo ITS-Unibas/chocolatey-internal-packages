@@ -1,7 +1,10 @@
 Import-Module AU
 
-$domain = "https://github.com"
-$releases = "$domain/cryptomator/cryptomator/releases/"
+$apiEndpoint = "https://api.github.com"
+$releases = "$apiEndpoint/repos/cryptomator/cryptomator/releases"
+$header = @{ 
+  "Accept" = "application/vnd.github.v3+json" 
+}
 
 function global:au_BeforeUpdate() {
   Get-RemoteFiles -Purge -FileNameBase 'nis-elements-viewer'
@@ -19,11 +22,9 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-	$download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-	$regex = 'x64.msi$'
-	$urlPart = $download_page.links | Where-Object {$_.href -match $regex} | Select-Object -First 1 -expand href
-
-	$url = "$domain$urlPart"
+	$restResults = Invoke-RestMethod -Uri $releases -Headers $header
+	$regex = '^(Cryptomator-)(\d+\.\d+\.)+(\d+)(-x64\.msi)$'
+  	$url = $restResults.assets | Where-Object {($_.name -match $regex)} | Select-Object -First 1 -expand browser_download_url
 	$version = $url.split("/")[7]
 
 	return @{ Version = $version; URL = $url }
