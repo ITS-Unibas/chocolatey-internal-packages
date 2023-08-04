@@ -10,20 +10,16 @@ function global:au_GetLatest {
   $ArchiveURL = 'https://repo.continuum.io/archive/'
   $List = Invoke-WebRequest -Uri $ArchiveURL
 
-  $version = "1.0"
+  $regex = "Anaconda3.*Windows"
+  $installer = $List.links | Where-Object {$_.href -match $regex} | Select-Object -First 1 -ExpandProperty innerText
 
-  $List.links | Where-Object { $_.href -match "Anaconda3.*Windows" } |
-  ForEach-Object {
-    $v = ($_.href.split('-')[1])
-    if ([version]$v -gt [version]$version) {
-      $version = $v
-    }
-  }
+  $versionRaw = $installer -replace "Anaconda3-(.*?)-Windows-x86_64.exe", '$1'
+  $version = $versionRaw -replace "-", "."
 
-  $URL64 = "https://repo.continuum.io/archive/Anaconda3-$version-Windows-x86_64.exe"
+  $URL64 = "https://repo.continuum.io/archive/Anaconda3-$versionRaw-Windows-x86_64.exe"
 
   return @{
-    Version = $Version
+    Version = $version
     URL     = $URL64
   }
 }
