@@ -54,7 +54,7 @@ jobs:
           Rename-Item -Path .\Update-AUPackages.md -NewName README.md
           # Push changes
           git add .
-          git commit -m "updated chocolatey-community-packages"
+          git commit -m "updated chocolatey-internal-packages"
           git push
         env:
           au_push: false
