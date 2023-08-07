@@ -17,31 +17,13 @@ function global:au_BeforeUpdate {
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases
-
-    $releaseUrls = $download_page.links | ? { $_.href -match 'release' -and $_.InnerText -match "Python 3\.\d+\.\d+\s.*" }
-
-    $version = '0.0'
-    $url = ''
-    foreach ($releaseUrl in $releaseUrls) {
-        $nextVersion = $releaseUrl.InnerText.Trim() -split ' ' | Select-Object -Index 1
-        try {
-            if([version]$version -lt [version]$nextVersion) {
-                $version = $nextVersion
-                $download_page = Invoke-WebRequest -Uri "https://www.python.org$($releaseUrl.href)" -UseBasicParsing
-                $url = $download_page.links | Where-Object href -match "python-3.+amd64\.(exe|msi)$" | Select-Object -first 1 -expand href
-                if (!$url) {
-                    Write-Host "Skipping due to missing installer: '$version'"; return
-                }
-                if (!$url.StartsWith('http')) {
-                    $url = 'https://www.python.org' + $url
-                }
-            }
-        } catch {
-            Write-Warning "Version cast not possible, possible due to wrong version format"
-        }
-
-
-    }
+    $regex_latest_version = "(Latest Python 3 Release - Python )(\d+\.\d+\.\d+)"
+    $download_page.Content -match $regex_latest_version
+    $version = $matches[2]
+    $version_without_dots = $version -replace '\.'
+    $download_page_Installer = Invoke-WebRequest -Uri "https://www.python.org/downloads/release/python-$version_without_dots" -UseBasicParsing
+    $regex_pyton_installer = "python-3.+amd64\.(exe|msi)$"
+    $url = $download_page_Installer.links | Where-Object href -match $regex_pyton_installer | Select-Object -first 1 -expand href
 
     return @{ Version = $version; URL = $url }
 }
