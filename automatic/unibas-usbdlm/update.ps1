@@ -1,4 +1,4 @@
-﻿Import-Module AU
+Import-Module AU
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releaseurl = 'https://www.uwe-sieber.de/usbdlm_e.html'
@@ -10,8 +10,8 @@ function global:au_BeforeUpdate() {
 
 function global:au_GetLatest {
   $request = Invoke-WebRequest $releaseurl
-  $request.Content -match "Download latest release V(\d+\.\d+\.\d+):"
-  $Version = $Matches[1]
+  $request.Content -match "(USBDLM V)(\d+\.\d+\.\d+)( - )"
+  $Version = $Matches[2]
   return @{
     Version = $Version
     URL     = $downloadurl
