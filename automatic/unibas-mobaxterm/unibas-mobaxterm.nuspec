@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-mobaxterm</id>
+    <version>23.3</version>
+    <owners>University of Basel</owners>
+    <title>unibas-mobaxterm</title>
+    <authors>MobaXterm</authors>
+	<packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-mobaxterm</packageSourceUrl>
+    <projectUrl>https://mobaxterm.mobatek.net/</projectUrl>
+    <licenseUrl>https://mobaxterm.mobatek.net/MobaXterm-Pro-General-Terms-and-Conditions.pdf</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>MobaXterm is your ultimate toolbox for remote computing. In a single Windows application</summary>
+    <tags>unibas-mobaxterm admin</tags>
+    <description>MobaXterm is your ultimate toolbox for remote computing. In a single Windows application</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
