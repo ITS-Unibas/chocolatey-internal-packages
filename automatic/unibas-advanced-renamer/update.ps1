@@ -5,7 +5,7 @@ $releases = 'https://www.advancedrenamer.com/download'
 
 function global:au_BeforeUpdate() {
   Get-RemoteFiles -Purge -FileNameBase 'unibas-advanced-renamer'
-  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'md5'
+  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
 }
 function global:au_SearchReplace {
   @{
