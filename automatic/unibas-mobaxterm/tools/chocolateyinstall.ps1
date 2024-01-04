@@ -1,5 +1,7 @@
 ﻿$ErrorActionPreference = 'Stop';
 
+$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+
 $packageArgs = @{
   packageName    = 'unibas-mobaxterm'
   url            = 'https://download.mobatek.net/2362023122033030/MobaXterm_Installer_v23.6.zip'
