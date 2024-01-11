@@ -11,7 +11,7 @@ $Options = [ordered]@{
     Timeout       = 100                                     #Connection timeout in seconds
     UpdateTimeout = 1200                                    #Update timeout in seconds
     Threads       = 10                                      #Number of background jobs to use
-    Push          = $Env:au_Push -eq 'false'                #Push to chocolatey
+    Push          = false                                   #Push to chocolatey
     PluginPath    = ''                                      #Path to user plugins
     IgnoreOn      = @(                                      #Error message parts to set the package ignore status
       'Could not create SSL/TLS secure channel'
