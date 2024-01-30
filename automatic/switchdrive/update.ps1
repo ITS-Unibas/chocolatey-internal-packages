@@ -51,8 +51,10 @@ function global:au_GetLatest {
   $regex = '\/s\/'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href 
   $ver = (download_extract -Url $url) | Out-String
-  $versionFix = $ver -replace "`n?`r", " "
-  $version = $versionFix -replace " ", ""
+  $versionFix = $ver -replace "`n", ""
+  $versionFix2 = $versionFix -replace "`r", ""
+  $version = $versionFix2 -replace " ", ""
+  
   return @{ Version = $version; URL = $url }
 }
 
