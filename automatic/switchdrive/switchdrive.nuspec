@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>switchdrive</id>
@@ -15,7 +14,7 @@ If your institution has subscribed to SWITCHdrive, you can register on https://c
 
 ![screenshot](https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-community-packages@master/automatic/switchdrive/screenshot.jpeg)
 ]]></description>
-    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-community-packages/tree/master/automatic/switchdrive</packageSourceUrl>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/switchdrive</packageSourceUrl>
     <licenseUrl>http://www.gnu.org/licenses/agpl-3.0-standalone.html</licenseUrl>
     <releaseNotes>https://help.switch.ch/drive/what-is-new-in-switchdrive/</releaseNotes>
     <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-community-packages/icons/switchdrive.png</iconUrl>
