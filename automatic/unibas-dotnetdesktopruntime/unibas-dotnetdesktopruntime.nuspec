@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-dotnetdesktopruntime</id>
-    <version>8.0</version>
+    <version>9.0</version>
     <packageSourceUrl>https://dotnet.microsoft.com/en-us/download/dotnet/6.0</packageSourceUrl>
     <owners>University of Basel</owners>
     <title>unibas-dotnetdesktopruntime (Install)</title>
