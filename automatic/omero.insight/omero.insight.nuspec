@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>omero.insight</id>
+    <version>5.8.3</version>
+    <packageSourceUrl>https://git.its.unibas.ch/projects/CSSWCS/repos/package-gallery/browse/omero.insight</packageSourceUrl>
+    <owners>University of Basel</owners>
+    <!-- ============================== -->
+    <title>OMERO.insight</title>
+    <authors>OME</authors>
+    <copyright>� 2005-2020 University of Dundee &amp; Open Microscopy Environment</copyright>
+    <projectUrl>https://www.openmicroscopy.org/omero/</projectUrl>
+    <licenseUrl>https://github.com/ome/omero-insight/blob/master/LICENSE.txt</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/ome/omero-insight</projectSourceUrl>
+    <docsUrl>https://docs.openmicroscopy.org/omero/5.6.3/</docsUrl>
+    <bugTrackerUrl>https://github.com/ome/omero-insight/issues</bugTrackerUrl>
+    <summary>From the microscope to publication, OMERO handles all your images
+    in a secure central repository. You can view, organize, analyze and share
+    your data from anywhere you have internet access. Work with your images from
+    a desktop app (Windows, Mac or Linux), from the web or from 3rd party
+    software. Over 140 image file formats supported, including all major
+    microscope formats.</summary>
+    <tags>omero.insight microscope scientific</tags>
+    <description>From the microscope to publication, OMERO handles all your
+    images in a secure central repository. You can view, organize, analyze and
+    share your data from anywhere you have internet access. Work with your
+    images from a desktop app (Windows, Mac or Linux), from the web or from 3rd
+    party software. Over 140 image file formats supported, including all major
+    microscope formats.</description>
+    <!-- =============================== -->
+
+    <!-- Specifying dependencies and version ranges? https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files -->
+    <!--<dependencies>
+      <dependency id="" version="__MINIMUM_VERSION__" />
+      <dependency id="" version="[__EXACT_VERSION__]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_INCLUSIVE]" />
+      <dependency id="" version="[_MIN_VERSION_INCLUSIVE, MAX_VERSION_EXCLUSIVE)" />
+      <dependency id="" />
+    </dependencies>-->
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
