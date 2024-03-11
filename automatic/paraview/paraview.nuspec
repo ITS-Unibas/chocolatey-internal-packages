@@ -5,7 +5,6 @@
     <id>paraview</id>
     <version>5.9.1</version>
     <owners>University of Basel</owners>
-
     <title>paraview</title>
     <authors>Kitware, Inc.</authors>
     <projectUrl>https://www.kitware.com/platforms/#paraview</projectUrl>
@@ -15,9 +14,7 @@
     <projectSourceUrl>https://www.paraview.org/download/</projectSourceUrl>
     <summary>OpenSource post viewer for CAE</summary>
     <tags>Kitware paraview postviewer opencae</tags>
-    <description>OpenSource post viewer for CAE
-    
-    paraview description: https://www.paraview.org/</description>
+    <description>OpenSource post viewer for CAE paraview</description>
     <releaseNotes>https://www.paraview.org/Wiki/ParaView_Release_Notes</releaseNotes>
   </metadata>
   <files>
