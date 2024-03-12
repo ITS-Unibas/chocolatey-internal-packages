@@ -1,4 +1,4 @@
-﻿Import-Module AU
+﻿Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releases = 'https://support.lenovo.com/us/en/solutions/ht037099'

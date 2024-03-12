@@ -1,4 +1,4 @@
-Import-Module AU
+Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = "Tls12"
 $releases = 'https://software.broadinstitute.org/software/igv/download'

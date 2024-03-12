@@ -1,4 +1,4 @@
-import-module au -Force
+Import-Module chocolatey-au -Force
 
 $releases = 'https://www.python.org/downloads/windows/'
 

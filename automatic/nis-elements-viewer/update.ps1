@@ -1,4 +1,4 @@
-﻿Import-Module AU
+﻿Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releases = 'https://www.microscope.healthcare.nikon.com/de_EU/products/software/nis-elements/viewer'

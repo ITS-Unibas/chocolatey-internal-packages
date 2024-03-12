@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 $releases = 'https://dotnet.microsoft.com/en-us/download/dotnet'
 

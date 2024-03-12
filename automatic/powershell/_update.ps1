@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $download_page_url = 'https://github.com/PowerShell/PowerShell/releases'

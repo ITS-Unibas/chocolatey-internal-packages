@@ -1,4 +1,4 @@
-Import-Module au
+Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releases = 'https://github.com/obsproject/obs-studio/releases/latest'

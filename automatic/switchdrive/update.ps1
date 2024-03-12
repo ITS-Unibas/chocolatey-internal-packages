@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releases = 'https://help.switch.ch/drive/downloads/#collapse-80e712df-6688-11e4-b6ef-5254009dc73c-1'

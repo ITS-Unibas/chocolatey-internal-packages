@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 $releases = 'https://www.openmicroscopy.org/omero/downloads/'
 
 function global:au_SearchReplace {

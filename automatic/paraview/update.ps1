@@ -1,5 +1,5 @@
 $ErrorActionPreference = 'Stop'
-import-module au
+Import-Module chocolatey-au
 
 $releases = 'https://www.paraview.org/files/'
 

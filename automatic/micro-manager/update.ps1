@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $releases = 'https://micro-manager.org/Download_Micro-Manager_Latest_Release'

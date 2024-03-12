@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 # Taken from @DennisGaida (https://github.com/DennisGaida/chocolatey-packages/blob/master/microsoft-edge/update.ps1)
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12

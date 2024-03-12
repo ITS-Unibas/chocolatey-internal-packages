@@ -1,5 +1,5 @@
 $ErrorActionPreference = 'Stop'
-Import-Module au
+Import-Module chocolatey-au
 
 # Thanks to mkevenaar (https://github.com/mkevenaar/chocolatey-packages/blob/master/automatic/wireshark/update.ps1)
 $version_page = 'https://www.wireshark.org/download.html'

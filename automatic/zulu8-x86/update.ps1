@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 $releases = 'https://api.azul.com/zulu/download/community/v1.0/bundles/latest/?jdk_version=8&bundle_type=jdk&features=&ext=msi&os=windows&arch=x86&hw_bitness=32'
 $jrerelease = 'https://api.azul.com/zulu/download/community/v1.0/bundles/latest/?jdk_version=8&bundle_type=jre&features=&ext=zip&os=windows&arch=x86&hw_bitness=32'

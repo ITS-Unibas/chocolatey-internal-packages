@@ -1,4 +1,4 @@
-Import-Module au
+Import-Module chocolatey-au
 
 $releases = 'https://slack.com/intl/en-nl/downloads/windows'
 

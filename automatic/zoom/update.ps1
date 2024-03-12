@@ -1,5 +1,5 @@
 $ErrorActionPreference = 'Stop'
-import-module au
+Import-Module chocolatey-au
 
 # Thanks to mikecole (https://github.com/mikecole/chocolatey-packages/blob/master/automatic/zoom/update.ps1)
 $download_page_url = 'https://zoom.us/rest/download?os=win'

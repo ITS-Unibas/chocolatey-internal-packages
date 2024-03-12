@@ -1,4 +1,4 @@
-Import-Module AU
+Import-Module chocolatey-au
 
 $apiEndpoint = "https://api.github.com"
 $releases = "$apiEndpoint/repos/cryptomator/cryptomator/releases"

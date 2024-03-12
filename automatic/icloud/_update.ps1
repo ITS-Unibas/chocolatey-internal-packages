@@ -1,4 +1,4 @@
-﻿import-module au
+﻿Import-Module chocolatey-au
 Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 

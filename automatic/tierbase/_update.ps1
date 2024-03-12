@@ -1,4 +1,4 @@
-import-module au
+Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $release_url = 'https://www.uni-heidelberg.de/einrichtungen/ibf/datenbanken/tierbase.html'
