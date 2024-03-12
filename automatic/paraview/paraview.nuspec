@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>paraview</id>
+    <version>5.9.1</version>
+    <owners>University of Basel</owners>
+    <title>paraview</title>
+    <authors>Kitware, Inc.</authors>
+    <projectUrl>https://www.kitware.com/platforms/#paraview</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/hirtanak/scripts/master/paraviewloggo.gif</iconUrl>
+    <licenseUrl>https://www.paraview.org/paraview-license/</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://www.paraview.org/download/</projectSourceUrl>
+    <summary>OpenSource post viewer for CAE</summary>
+    <tags>Kitware paraview postviewer opencae</tags>
+    <description>OpenSource post viewer for CAE paraview</description>
+    <releaseNotes>https://www.paraview.org/Wiki/ParaView_Release_Notes</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
