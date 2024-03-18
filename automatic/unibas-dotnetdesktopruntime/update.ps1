@@ -21,12 +21,12 @@ function global:au_GetLatest {
     $version_download_page = $domain + $version_part_download_page
     
     $download_page = Invoke-WebRequest -Uri $version_download_page -UseBasicParsing
-    $url = $download_page.Links.href | ? {($_ -match 'win-x64.exe$') | select -First 1
+    $url = $download_page.Links.href | ? {($_ -match 'win-x64.exe$')} | select -First 1
     $version = ($url -split("/"))[-1] -replace "dotnet-sdk-", "" -replace "-win-x64.exe", ""
 
     @{
-		URL		= $url
-		Version	= $version
+	URL	= $url
+	Version	= $version
     }
 }
 
