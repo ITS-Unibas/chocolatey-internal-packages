@@ -16,7 +16,7 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $version_part_download_page = $download_page.Links | ? href -match "windows-x64-installer"
+    $version_part_download_page = $download_page.Links.href | ? {$_ -match "windows-x64-installer"}
     $domain  = $releases -split '(?<=//.+)/' | select -First 1
     $version_download_page = $domain + $version_part_download_page
     
@@ -25,8 +25,8 @@ function global:au_GetLatest {
     $version = ($url -split("/"))[-1] -replace "dotnet-sdk-", "" -replace "-win-x64.exe", ""
 
     @{
-	URL	= $url
-	Version	= $version
+		URL		= $url
+		Version	= $version
     }
 }
 
