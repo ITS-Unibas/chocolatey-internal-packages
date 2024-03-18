@@ -4,17 +4,17 @@
   <metadata>
     <id>unibas-dotnetdesktopruntime</id>
     <version>8.0</version>
-    <packageSourceUrl>https://dotnet.microsoft.com/en-us/download/dotnet/6.0</packageSourceUrl>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-dotnetdesktopruntime</packageSourceUrl>
     <owners>University of Basel</owners>
     <title>unibas-dotnetdesktopruntime (Install)</title>
     <authors>Microsoft</authors>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <projectSourceUrl>https://dotnet.microsoft.com/en-us/download/dotnet/6.0</projectSourceUrl>
-    <docsUrl>https://dotnet.microsoft.com/en-us/download/dotnet/6.0</docsUrl>
-    <summary>.NET Desktop Runtime 6</summary>
+    <projectSourceUrl>https://dotnet.microsoft.com/en-us/download/dotnet</projectSourceUrl>
+    <docsUrl>https://dotnet.microsoft.com/en-us/download/dotnet</docsUrl>
+    <summary>.NET Desktop Runtime</summary>
     <tags>unibas-dotnetdesktopruntime admin</tags>
-    <description>.NET Desktop Runtime 6</description>
-    <releaseNotes>https://dotnet.microsoft.com/en-us/download/dotnet/6.0</releaseNotes>
+    <description>.NET Desktop Runtime</description>
+    <releaseNotes>https://dotnet.microsoft.com/en-us/download/dotnet</releaseNotes>
   </metadata>
   <files>
     <file src="tools\**" target="tools" />
