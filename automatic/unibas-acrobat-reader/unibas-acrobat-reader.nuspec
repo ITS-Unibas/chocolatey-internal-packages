@@ -3,7 +3,7 @@
   <metadata>
     <!-- == PACKAGE SPECIFIC SECTION == -->
     <id>unibas-acrobat-reader</id>
-    <version>24.001.20615</version>
+    <version>24.001.20643</version>
     <packageSourceUrl>https://github.com/itigoag/chocolatey.adobe-acrobat-reader-dc</packageSourceUrl>
     <owners>University Basel</owners>
     <!-- == SOFTWARE SPECIFIC SECTION == -->
