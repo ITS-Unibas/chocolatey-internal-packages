@@ -68,7 +68,7 @@ function global:au_BeforeUpdate() {
 
 function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regexUrl = ": Camtasia \(Windows\) (?<version>[\d\.]+)"
+    $regexUrl = ": Camtasia (?<version>[\d\.]+)"
 
     $page.content -match $regexUrl
 
