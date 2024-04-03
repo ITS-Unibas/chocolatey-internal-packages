@@ -1,19 +1,19 @@
-import-module chocolatey-au
+Import-Module chocolatey-au
 
 $releases = 'https://keepass.info/download.html'
 
+function global:au_BeforeUpdate() {
+    Invoke-WebRequest -UseBasicParsing -Uri $Latest.URL -OutFile "keepass.exe" -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox
+    $Latest.Checksum = Get-FileHash "$PSScriptRoot\keepass.exe" -Algorithm 'sha256' | Select-Object -ExpandProperty Hash
+}
+
 function global:au_SearchReplace {
     @{
+        ".\tools\chocolateyInstall.ps1" = @{
+            "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
+            "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
+        }
     }
-}
-
-function global:au_BeforeUpdate() {
-    Invoke-WebRequest -Uri $Latest.Url32 -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox `
-        -UseBasicParsing -OutFile "tools\KeePass-Setup.exe"
-}
-
-function global:au_AfterUpdate {
-    Set-DescriptionFromReadme -SkipFirst 2
 }
 
 function global:au_GetLatest {
@@ -23,9 +23,9 @@ function global:au_GetLatest {
     $url = ($page.links | Where-Object href -Match $regex | Select-Object -First 1).href
 
     return @{
-        URL32   = $url
-        Version = ConvertTo-VersionNumber -Version ([version]$matches.version) -Part 3
+        URL   = $url
+        Version = $matches.version
     }
 }
 
-Update-Package -ChecksumFor None
+Update-Package -ChecksumFor None -NoCheckChocoVersion
