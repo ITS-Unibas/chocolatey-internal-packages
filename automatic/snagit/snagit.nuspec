@@ -4,13 +4,13 @@
     <metadata>
         <id>snagit</id>
         <version>2024.0.2</version>
-        <packageSourceUrl>https://github.com/pauby/chocopackages/tree/master/automatic/snagit</packageSourceUrl>
-        <owners>pauby, DavidPeters,d.hilgarth</owners>
+        <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/snagit</packageSourceUrl>
+        <owners>ITS-Unibas</owners>
         <title>Snagit (Install)</title>
         <authors>TechSmith</authors>
         <projectUrl>https://www.techsmith.com/screen-capture.html</projectUrl>
-        <iconUrl>https://cdn.jsdelivr.net/gh/pauby/chocopackages/icons/snagit.png</iconUrl>
-        <copyright>2020 TechSmith</copyright>
+        <iconUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/blob/master/icons/snagit.png</iconUrl>
+        <copyright>TechSmith</copyright>
         <licenseUrl>http://www.techsmith.com/snagit-eula.html</licenseUrl>
         <requireLicenseAcceptance>true</requireLicenseAcceptance>
         <docsUrl>https://support.techsmith.com/hc/en-us/categories/200174548-Snagit-Windows-Technical-Issues</docsUrl>
