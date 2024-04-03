@@ -1,4 +1,4 @@
-#import-module chocolatey-au
+import-module chocolatey-au
 
 $releases    = 'https://www.adobe.com/solutions/ebook/digital-editions/download.html'
 
