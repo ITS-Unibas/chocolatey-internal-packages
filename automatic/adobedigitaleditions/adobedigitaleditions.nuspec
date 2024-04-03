@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?><package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>adobedigitaleditions</id>
-    <version>4.5.10.20190316</version>
+    <version>4.5.12</version>
     <packageSourceUrl>https://github.com/pauby/ChocoPackages/tree/master/automatic/adobedigitaleditions</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <title>Adobe Digital Editions (Install)</title>
     <authors>Adobe</authors>
     <projectUrl>https://www.adobe.com/solutions/ebook/digital-editions.html</projectUrl>
     <iconUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/blob/master/icons/adobedigitaleditions.png</iconUrl>
-    <requireLicenseAcceptance>true</requireLicenseAcceptance>-->
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>--&gt;
     <docsUrl>https://www.adobe.com/solutions/ebook/digital-editions/faq.html</docsUrl>
     <tags>adobe digital editions adobedigitaleditions admin ebook drm epub epub3 pdf</tags>
     <summary>Use it to download and purchase digital content and share between devices. Use it as an eReader to experience books in the optimum format.</summary>
