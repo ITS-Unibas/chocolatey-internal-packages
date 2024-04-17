@@ -2,13 +2,13 @@
 
 $toolsDir = "$(Split-Path -Parent $MyInvocation.MyCommand.Definition)"
 
-$urljre = 'https://cdn.azul.com/zulu/bin/zulu11.70.15-ca-jre11.0.22-win_i686.zip'
-$urljdkfx = 'https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-fx-jdk11.0.21-win_i686.zip'
-$urljrefx = 'https://cdn.azul.com/zulu/bin/zulu11.68.17-ca-fx-jre11.0.21-win_i686.zip'
+$urljre = 'https://cdn.azul.com/zulu/bin/zulu11.72.19-ca-jre11.0.23-win_i686.zip'
+$urljdkfx = 'https://cdn.azul.com/zulu/bin/zulu11.70.15-ca-fx-jdk11.0.22-win_i686.zip'
+$urljrefx = 'https://cdn.azul.com/zulu/bin/zulu11.70.15-ca-fx-jre11.0.22-win_i686.zip'
 
-$checksumurljre = '9523bd0c87ad0e17b888ff559ad07cdf1ae041d25393f897c033060a4974de86'
-$checksumurljdkfx = '0e634d9343764e5e04c3a5192c233bbcdf5073b599ebfaeb29456d2cffa9113d'
-$checksumurljrefx = 'eb2fa0895074b2d4964906679c0934f052c4ccb88a0ee2c7158752950e986a46'
+$checksumurljre = '8df75c7971493d758670581017d771f312509e0ebccd4d28e1789238839919fd'
+$checksumurljdkfx = '3faad1206e4c2afa720358ce8f5a34f67820f0b267c108c45e74b45027be0d6b'
+$checksumurljrefx = 'f3a7a3cbd403f857df37eb635dbe535e23dc64396475b360a7f5089bc77a85c6'
 
 
 Get-ChocolateyWebFile -PackageName 'zulu11-x32' -FileFullPath "$toolsDir\JRE\zulu11-x32-jre.zip" -Url $urljre -Checksum $checksumurljre -ChecksumType 'sha256'
@@ -18,8 +18,8 @@ Get-ChocolateyWebFile -PackageName 'zulu11-x32' -FileFullPath "$toolsDir\FX\JRE\
 $packageArgs = @{
     packageName    = 'zulu11-x86'
     fileType       = 'msi'
-    url64bit       = 'https://cdn.azul.com/zulu/bin/zulu11.70.15-ca-jdk11.0.22-win_i686.msi'
-    checksum64     = '0f11497cd0560b1fe64274dc195cd3106234048b94391404a1a096f9c6349bf7'
+    url64bit       = 'https://cdn.azul.com/zulu/bin/zulu11.72.19-ca-jdk11.0.23-win_i686.msi'
+    checksum64     = '17dc05decbd52efc4e3710d891fe3499e7550f07b2738dfc7a5b65253fde1d0e'
     checksumType64 = 'sha256'
     silentArgs     = '/qn /norestart'
     validExitCodes = @(0)
