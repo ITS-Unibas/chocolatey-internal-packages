@@ -6,11 +6,11 @@ $toolsDir = Split-Path $MyInvocation.MyCommand.Definition
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'MSI'
-  url            = 'https://github.com/cryptomator/cryptomator/releases/download/1.12.4/Cryptomator-1.12.4-x64.msi'
+  url            = 'https://github.com/cryptomator/cryptomator/releases/download/1.13.0/Cryptomator-1.13.0-x64.msi'
   silentArgs     = '/qn /norestart'
   validExitCodes = @(0) 
   softwareName   = 'Cryptomator'
-  checksum       = '939809d8bd0e8a31be311bd390c0d70c00196e22c83493a085285d72460474f4'
+  checksum       = 'e077c0b0e08cc9bec27ca6990281efc9f361f11b88f80ccf73201dded6af6c98'
   checksumType   = 'sha256'
 }
 
