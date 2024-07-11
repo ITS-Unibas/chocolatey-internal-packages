@@ -5,7 +5,7 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   fileType       = 'exe'
-  file64         = "$toolsDir\Wireshark-win64-4.0.15.exe"
+  file64         = "$toolsDir\Wireshark-win64-4.0.16.exe"
   softwareName   = 'Wireshark*'
   silentArgs     = '/S /quicklaunchicon=no'
   validExitCodes = @(0)
