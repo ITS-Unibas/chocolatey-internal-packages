@@ -1,0 +1,55 @@
+import-module chocolatey-au
+
+$urlEvergreenManifestMicrosoftEdgeWebView2Runtime = "https://raw.githubusercontent.com/aaronparker/evergreen/main/Evergreen/Manifests/MicrosoftEdgeWebView2Runtime.json"
+
+function global:au_SearchReplace {
+    @{
+        ".\tools\chocolateyInstall.ps1" = @{
+            '(^\s*\$url64\s*=\s*)(''.*'')'            = "`$1'$($Latest.url)'"
+            "(?i)(^\s*checksum64\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum)'"
+            "(?i)(^\s*checksumType64\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType)'"
+        }
+    }
+}
+
+function global:au_GetLatest {
+    # Get the version for MicrosoftEdgeWebView2Runtime
+    $content = Invoke-WebRequest -Uri $urlEvergreenManifestMicrosoftEdgeWebView2Runtime
+    $contentJSON = $content.Content | ConvertFrom-Json
+    $uri = $contentJSON.Get.Update.Uri
+    $ContentType = "application/json; charset=utf-8"
+    $Method = "Default"
+
+    $params = @{
+        Uri                = $Uri
+        ContentType        = $ContentType
+        DisableKeepAlive   = $true
+        MaximumRedirection = 2
+        Method             = $Method
+        UseBasicParsing    = $true
+    }
+
+    $products = Invoke-RestMethod @params
+    $releases = ($products | Where-Object {$_.Product -eq 'Stable'}).Releases
+    $winx64release = $releases | Where-Object {$_.Platform -eq 'Windows' -and $_.Architecture -eq 'x64'}
+
+    $version = $winx64release.ProductVersion
+
+    # Get the download URI for MicrosoftEdgeWebView2Runtime
+    $downloadURIWebView = $contentJSON.Get.Download.Uri.x64
+
+    $httpWebRequest = [System.Net.WebRequest]::Create($downloadURIWebView)
+    $httpWebRequest.MaximumAutomaticRedirections = 3
+    $httpWebRequest.AllowAutoRedirect = $true
+    $webResponse = $httpWebRequest.GetResponse()
+
+    $url = $webResponse.ResponseUri
+
+    # return everything
+    return @{
+        url          = $downloadUrl
+        version      = $version
+    }
+}
+
+Update-Package -ChecksumFor none -NoCheckChocoVersion
