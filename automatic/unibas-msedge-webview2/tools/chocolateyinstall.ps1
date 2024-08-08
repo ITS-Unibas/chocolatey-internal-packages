@@ -9,8 +9,8 @@ $packageArgs = @{
   silentArgs     = "/silent /install"
   validExitCodes = @(0)
   softwareName   = 'unibas-msedge-webview2*'
-  checksum       = ''
-  checksumType   = ''
+  checksum       = '8f0165de2f83174697bbdb273b6b53ea7d66bbc561d9a4ead5dacbfcbf8e8837'
+  checksumType   = 'sha256'
 }
 
 Install-ChocolateyPackage @packageArgs
