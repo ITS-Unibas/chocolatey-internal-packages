@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-msedge-webview2</id>
+    <version>90.0.818.51</version>
+    <owners>University of Basel</owners>
+    <title>unibas-msedge-webview2</title>
+    <authors>Microsoft</authors>
+    <projectUrl>https://developer.microsoft.com/en-us/microsoft-edge/webview2/</projectUrl>
+    <copyright>© Microsoft 2021</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://developer.microsoft.com/en-us/microsoft-edge/webview2/</projectSourceUrl>
+    <docsUrl>https://docs.microsoft.com/en-us/microsoft-edge/webview2/</docsUrl>
+    <summary>Embed web content (HTML, CSS, and JavaScript) in your native applications with Microsoft Edge WebView2</summary>
+    <tags>unibas-msedge-webview2 admin SPACE_SEPARATED</tags>
+    <description>The Microsoft Edge WebView2 control enables you to embed web technologies (HTML, CSS, and JavaScript) in your native apps. The WebView2 control uses Microsoft Edge (Chromium) as the rendering engine to display the web content in native apps. With WebView2, you may embed web code in different parts of your native app. Build all of the native app within a single WebView instance.</description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
