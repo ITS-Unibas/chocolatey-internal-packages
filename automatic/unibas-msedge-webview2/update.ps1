@@ -47,7 +47,7 @@ function global:au_GetLatest {
 
     # return everything
     return @{
-        url          = $downloadUrl
+        url          = $url
         version      = $version
     }
 }
