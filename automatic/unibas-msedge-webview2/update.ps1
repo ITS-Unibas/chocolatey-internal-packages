@@ -6,8 +6,8 @@ function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
             '(^\s*url\s*=\s*)(''.*'')'            = "`$1'$($Latest.url)'"
-            "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum)'"
-            "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType)'"
+            "(?i)(^\s*checksum\s*=\s*)('.*')"       = "`$1'$($Latest.Checksum64)'"
+            "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType64)'"
         }
     }
 }
@@ -47,9 +47,9 @@ function global:au_GetLatest {
 
     # return everything
     return @{
-        url          = $url
-        version      = $version
+        url			= $url
+        version		= $version
     }
 }
 
-Update-Package -NoCheckChocoVersion
+Update-Package -NoCheckChocoVersion -ChecksumFor 64
