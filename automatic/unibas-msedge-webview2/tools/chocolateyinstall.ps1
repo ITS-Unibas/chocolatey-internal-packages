@@ -5,12 +5,12 @@ $packageName = 'unibas-msedge-webview2'
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'EXE'
-  url            = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/1e1a85da-72f1-4848-8660-e638ccdfbd50/MicrosoftEdgeWebView2RuntimeInstallerX64.exe'
+  url            = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/33afdac1-33dd-4ee8-b08c-0d33be4dddb4/MicrosoftEdgeWebView2RuntimeInstallerX64.exe'
   silentArgs     = "/silent /install"
   validExitCodes = @(0)
   softwareName   = 'unibas-msedge-webview2*'
-  checksum       = ''
-  checksumType   = ''
+  checksum       = '4d4466068a7f7e6d26c584abc355e23bf622617703f4830b3aea2a3de5344e91'
+  checksumType   = 'sha256'
 }
 
 Install-ChocolateyPackage @packageArgs
