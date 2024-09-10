@@ -7,10 +7,10 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url            = 'https://download.lenovo.com/pccbbs/thinkvantage_en/lenovo_thininstaller_1.04.02.00017.exe'
+  url            = 'https://download.lenovo.com/pccbbs/thinkvantage_en/lenovo_thininstaller_1.04.02.00024.exe'
   silentArgs     = '/VERYSILENT /NORESTART /LOG="C:\ProgramData\LANDESK\Log\Install_ThinInstaller.log"'
   softwareName   = 'unibas-lenovo-thin-installer*'
-  checksum       = '19ee160b3e3c8ee87788904d616c250306299dcf21d5471249788acc34100637'
+  checksum       = '3f35fddfd07701caf95fc60eb488e26a73a1e27bb4beaed1afdf3982d871e234'
   checksumType   = 'sha256'
 }
 
