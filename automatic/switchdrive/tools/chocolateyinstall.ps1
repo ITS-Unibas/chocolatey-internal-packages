@@ -6,11 +6,11 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'msi'
-  url            = 'https://drive.switch.ch/index.php/s/z3SK7JuXtG0fk5C/download'
+  url            = 'https://drive.switch.ch/index.php/s/pdo2r7tbdwRHWq6/download'
   silentArgs     = 'MSIRESTARTMANAGERCONTROL=Disable ALLUSERS=1 REBOOT=ReallySuppress /qn'
   validExitCodes = @(0)
   softwareName   = 'SWITCHdrive*'
-  checksum       = '0fc3fd850d564fa50ca54a565f194eaa9f591cc56735edc5fe2f72545722c52c'
+  checksum       = 'ebb59a45ccd3f8e65cfbd1cc3674a17e48158ff54b5373a0d3fa81bdee7ff337'
   checksumType   = 'sha256'
 }
 
