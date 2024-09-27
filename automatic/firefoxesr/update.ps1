@@ -19,7 +19,7 @@ function global:au_GetLatest {
   
   # Get the Version for Firefix ESR next (v 128.x.x)
   $versionRaw = $pageContentJSON.FIREFOX_ESR_NEXT
-  $version = $versionRaw -replace 'esr', ''
+  $version = [Version]($versionRaw -replace 'esr', '')
 
   $url = "https://ftp.mozilla.org/pub/firefox/releases/$($version)esr/win64/en-US/Firefox%20Setup%20$($version)esr.msi"
   
