@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-teamviewer</id>
+    <version>15.55.8.0</version>
+    <owners>University of Basel</owners>
+    <title>TeamViewer</title>
+    <authors>University of Basel</authors>
+    <licenseUrl>https://www.teamviewer.com/en/eula/</licenseUrl>
+    <projectUrl>https://www.teamviewer.com/en/products/teamviewer/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/ITS-Unibas/chocolatey-automatic-packages/icons/teamviewer.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>TeamViewer lets you remote in to computers or mobile devices located
+     anywhere in the world and use them as though you were there. Plus, you can
+     remotely connect to servers, commercial-grade machines, and IoT devices
+     from anywhere, at any time through our secure global remote access network.</description>
+    <summary>TeamViewer is a comprehensive, remote access, remote control and
+    remote support solution that works with almost every desktop and mobile
+    platform, including Windows, macOS, Android, and iOS</summary>
+    <copyright>https://www.teamviewer.com/en/integrated/copyright/</copyright>
+    <tags>teamviewer remotecontrol remote control support</tags>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages</packageSourceUrl>
+    <docsUrl>https://www.teamviewer.com/en/documents/</docsUrl>
+    <bugTrackerUrl>https://status.teamviewer.com/</bugTrackerUrl>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
