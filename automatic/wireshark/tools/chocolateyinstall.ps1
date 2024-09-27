@@ -1,16 +1,14 @@
-﻿$ErrorActionPreference = 'Stop';
-
-$toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$ErrorActionPreference = 'Stop';
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
-  fileType       = 'exe'
-  file64         = "$toolsDir\Wireshark-win64-4.0.16.exe"
   softwareName   = 'Wireshark*'
+  fileType       = 'exe'
+  url            = ''
+  checksum       = ''
+  checksumType   = 'sha256'
   silentArgs     = '/S /quicklaunchicon=no'
   validExitCodes = @(0)
 }
 
-Install-ChocolateyInstallPackage @packageArgs
-
-Get-ChildItem $toolsDir\*.exe | ForEach-Object { Remove-Item $_ -ea 0; if (Test-Path $_) { Set-Content "$_.ignore" } }
+Install-ChocolateyPackage @packageArgs
