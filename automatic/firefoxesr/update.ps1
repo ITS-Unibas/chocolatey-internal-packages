@@ -1,35 +1,32 @@
 Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-
-$releasesESR = 'https://www.mozilla.org/en-US/firefox/all/#product-desktop-esr'
+$releasesESR = 'https://product-details.mozilla.org/1.0/firefox_versions.json'
 
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
       "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL64)`'"
-      "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
+      "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum64)`'"
+	  "(?i)(^\s*checksumType\s*=\s*)('.*')"   = "`$1'$($Latest.ChecksumType64)'"
     }
   }
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -UseBasicParsing -Uri $releasesESR
-
-
-  $version = Select-String "(\d+)\.(\d+)\.(\d+)esr" -InputObject $download_page -AllMatches | ForEach-Object {$_.matches}`
-                      | Select-Object -ExpandProperty Value | Sort-Object | Get-Unique | ForEach-Object {[version]($_.Replace('esr', ''))} `
-                      | Measure-Object -Maximum | Select-Object -ExpandProperty Maximum
+  $downloadPage = Invoke-WebRequest -UseBasicParsing -Uri $releasesESR
+  $pageContentJSON = $download_page.Content | ConvertFrom-Json
+  
+  # Get the Version for Firefix ESR next (v 128.x.x)
+  $versionRaw = $pageContentJSON.FIREFOX_ESR_NEXT
+  $version = $versionRaw -replace 'esr', ''
 
   $url = "https://ftp.mozilla.org/pub/firefox/releases/$($version)esr/win64/en-US/Firefox%20Setup%20$($version)esr.msi"
-
-  $ExecutableName = "Firefox Setup ${Version}esr.msi"
-  $allChecksums = Invoke-WebRequest -UseBasicParsing -Uri "https://releases.mozilla.org/pub/firefox/releases/${Version}esr/SHA512SUMS"
-  $allChecksums -match "(\w*)  win64\/en-US\/$ExecutableName" | Out-Null
-  $checksum = $matches[1]
-
-  $Latest = @{ URL64 = $url; Version = $version; Checksum = $checksum }
-  return $Latest
+  
+  return @{
+	  URL64 = $url
+	  Version = $version
+  }
 }
 
-update -ChecksumFor none -NoCheckChocoVersion
+update -ChecksumFor 64
