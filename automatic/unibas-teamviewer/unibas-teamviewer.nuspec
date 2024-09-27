@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-teamviewer</id>
-    <version>15.55.8.0</version>
+    <version>15.58.4</version>
     <owners>University of Basel</owners>
     <title>TeamViewer</title>
     <authors>University of Basel</authors>
