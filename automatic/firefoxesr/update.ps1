@@ -15,18 +15,13 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
   $downloadPage = Invoke-WebRequest -UseBasicParsing -Uri $releasesESR
-  Write-Host $downloadPage
-  $pageContentJSON = $download_page.Content | ConvertFrom-Json
-  Write-Host $pageContentJSON
+  $pageContentJSON = $downloadPage.Content | ConvertFrom-Json
   
   # Get the Version for Firefix ESR next (v 128.x.x)
-  $versionRaw = $pageContentJSON.FIREFOX_ESR_NEXT
-  Write-Host $versionRaw
+  $versionRaw = $pageContentJSON.FIREFOX_ESR
   $version = [Version]($versionRaw -replace 'esr', '')
-  Write-Host $version
 
   $url = "https://ftp.mozilla.org/pub/firefox/releases/$($version)esr/win64/en-US/Firefox%20Setup%20$($version)esr.msi"
-  Write-Host $url
   
   return @{
 	  URL64 = $url
