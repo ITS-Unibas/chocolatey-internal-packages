@@ -1,3 +1,5 @@
+# IGV wurde aus der Paketierung rausgenommen.
+
 Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = "Tls12"
