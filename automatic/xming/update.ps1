@@ -4,7 +4,7 @@
 $releases = 'https://sourceforge.net/projects/xming/files/Xming/'
 
 function global:au_BeforeUpdate() {
-  $file = Invoke-WebRequest -UseBasicParsing -Uri $Latest.URL -OutFile "xming.exe" -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox
+  $file = Invoke-WebRequest -UseBasicParsing -Uri $Latest.URL -OutFile "xming.exe" -UserAgent "Wget"
   $Latest.Checksum = Get-FileHash "$PSScriptRoot\xming.exe" -Algorithm 'sha256' | Select-Object -ExpandProperty Hash
 }
 function global:au_SearchReplace {
