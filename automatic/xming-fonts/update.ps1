@@ -4,7 +4,7 @@
 $releases = 'https://sourceforge.net/projects/xming/files/Xming-fonts/'
 
 function global:au_BeforeUpdate() {
-  $file = Invoke-WebRequest -UseBasicParsing -Uri $Latest.URL -OutFile "xming-fonts.exe" -UserAgent "Wget"
+  $file = Invoke-RestMethod -UseBasicParsing -Uri $Latest.URL -OutFile "xming-fonts.exe" -UserAgent "Wget"
   $Latest.Checksum = Get-FileHash "$PSScriptRoot\xming-fonts.exe" -Algorithm 'sha256' | Select-Object -ExpandProperty Hash
 }
 function global:au_SearchReplace {
