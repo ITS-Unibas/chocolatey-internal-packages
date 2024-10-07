@@ -19,15 +19,9 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-	$searchPattern = 'Safe Exam Browser for Windows</a> Version .*'
-	
-	$download_page -match $searchPattern
-	$matches[0]
-	
-	$searchPattern = $searchPattern -replace "\.\*", ""
-	$appendix = "</b></h5>"
-	$version = $matches[0] -replace $searchPattern, "" -replace $appendix, ""
+  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+	$re = 'Version ([\d+\.]+)'
+	$version = ([regex]::Match($download_page.RawContent, $re)).Captures.Groups[1].value
 	
 	$githubPage = $githubDomain + $urlPage + $version
 	$download_page = Invoke-WebRequest -Uri $githubPage
