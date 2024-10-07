@@ -1,7 +1,7 @@
 ﻿Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = 'https://mestrelab.com/download/mnova/'
+$releases = 'https://mestrelab.com/main-product/mnova'
 
 function global:au_BeforeUpdate() {
   Get-RemoteFiles -Purge -FileNameBase 'mnova'
