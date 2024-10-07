@@ -23,7 +23,6 @@ function global:au_GetLatest {
     $version = ([regex]::Match($download_page.RawContent, $re)).Captures.Groups[1].value
     $version_stripped = $version -replace "\.",""
     $url     = "https://www.software-dl.microscope.healthcare.nikon.com/en/imgsfw/data/NIS_Viewer_Ver$($version_stripped)_E.zip"
-	# Need to convert a version like '5.21.00_b1483' to a numeric version like '5.21.00.1483' (written in the AppWiz like that!)
     return @{ Version = $version; URL = $url }
 }
 
