@@ -8,8 +8,8 @@ $packageArgs = @{
   fileType      = 'EXE'
   silentArgs    = '/quiet /norestart /log $($logFile)'
   validExitCodes= @(0)
-  url           = 'https://github.com/SafeExamBrowser/seb-win-refactoring/releases/download/v3.7.1/SEB_3.7.1.704_SetupBundle.exe'
-  checksum      = 'bed0d15eb12d8bf3de8cfa92f95102afb867b83def4a9cdc57acff8b8626d909'
+  url           = 'https://github.com/SafeExamBrowser/seb-win-refactoring/releases/download/v3.8.0/SEB_3.8.0.742_SetupBundle.exe'
+  checksum      = '24903952ce7d22661c3d7e94b2b78a90dfc954eea59ba4e9b4bea1633917f54e'
   checksumType  = 'sha256'
 }
  
