@@ -3,9 +3,7 @@ Import-Module chocolatey-au
 
 $releases = 'https://filezilla-project.org/download.php?show_all=1'
 
-function global:au_BeforeUpdate() {
-  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm "sha256"
-}
+function global:au_BeforeUpdate { Get-RemoteFiles -Purge -FileNameBase "FileZilla_$($Latest.Version)"}
 
 function global:au_SearchReplace {
   return @{
@@ -17,9 +15,12 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing -UserAgent "Chocolatey"
-  $url = $download_page.Links | ? href -match "win64\-setup\.exe" | select -first 1 -expand href
-  $version = Get-Version $url
+  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing -UserAgent "Chocolatey" -Headers @{
+    "Accept" = "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
+}
+
+  $url = $download_page.Links | Where-Object href -match "win64\-setup\.exe" | Select-Object -first 1 -expand href
+  $version = $url -split '_' | Where-Object { $_ -match '^\d+\.[\d\.]+$' } | Select-Object -first 1
 
   return @{
       Version  = $version
@@ -27,4 +28,4 @@ function global:au_GetLatest {
   }
 }
 
-update -NoCheckChocoVersion -ChecksumFor none
+update -NoCheckChocoVersion -NoCheckUrl
