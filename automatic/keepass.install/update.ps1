@@ -3,7 +3,7 @@ Import-Module chocolatey-au
 $releases = 'https://keepass.info/download.html'
 
 function global:au_BeforeUpdate() {
-    Invoke-WebRequest -UseBasicParsing -Uri $Latest.URL -OutFile "keepass.exe" -UserAgent "Wget"
+    Invoke-RestMethod -UseBasicParsing -Uri $Latest.URL -OutFile "keepass.exe" -UserAgent "Wget"
     $Latest.Checksum = Get-FileHash "$PSScriptRoot\keepass.exe" -Algorithm 'sha256' | Select-Object -ExpandProperty Hash
 }
 
