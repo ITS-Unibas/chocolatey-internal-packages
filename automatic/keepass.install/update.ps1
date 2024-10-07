@@ -3,7 +3,7 @@ Import-Module chocolatey-au
 $releases = 'https://keepass.info/download.html'
 
 function global:au_BeforeUpdate() {
-    Invoke-RestMethod -UseBasicParsing -Uri $Latest.URL -OutFile "keepass.exe" -UserAgent "Wget"
+    Invoke-RestMethod -UseBasicParsing -Uri $Latest.URL -OutFile "keepass.exe" -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox
     $Latest.Checksum = Get-FileHash "$PSScriptRoot\keepass.exe" -Algorithm 'sha256' | Select-Object -ExpandProperty Hash
 }
 
@@ -20,7 +20,8 @@ function global:au_GetLatest {
     $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
     $regex = 'https:\/\/sourceforge\.net\/projects\/keepass\/files\/KeePass%202.x\/(?<version>[\d\.]+)\/KeePass-[\d\.]+-Setup\.exe\/download'
-    $url = ($page.links | Where-Object href -Match $regex | Select-Object -First 1).href
+    $sourceforge_url = ($page.links | Where-Object href -Match $regex | Select-Object -First 1).href
+    $url = Get-RedirectedUrl $sourceforge_url
 
     return @{
         URL   = $url
