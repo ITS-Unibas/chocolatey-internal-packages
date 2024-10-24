@@ -4,8 +4,8 @@ $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   softwareName   = 'Anaconda3'
   fileType       = 'EXE'
-  url            = 'https://repo.continuum.io/archive/Anaconda3-2024.06-1-Windows-x86_64.exe'
-  checksum       = '45eef9132b70e3d5a493c26429ddb4e2c9278a32097fd4bc729f860685633a3b'
+  url            = 'https://repo.continuum.io/archive/Anaconda3-2024.10-1-Windows-x86_64.exe'
+  checksum       = 'c1cb433e23997c84ade4ff7241b61b2f9b10a616c230da34e641e9c96dada49d'
   checksumType   = 'sha256'
   silentArgs     = "/S /InstallationType=AllUsers /RegisterPython=1 /AddToPath=1 /D=C:\Program Files\Anaconda3"
   validExitCodes = @(0)
