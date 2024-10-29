@@ -17,7 +17,7 @@ function global:au_GetLatest {
 
     $url64 = Get-RedirectedUrl 'https://www.maxqda.com/download/maxqdademo'
 
-    $re = "Release (\d+\.\d+)"
+    $re = "Release ([\d+\.]+)"
 
     $version = ([regex]::Match($download_page.RawContent, $re)).Captures.Groups[1].value
 
