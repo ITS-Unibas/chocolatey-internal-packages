@@ -1,0 +1,21 @@
+------START-LICENSE-KEY------
+
+Registration_Name=Universit\u00E4t Basel [SMP RENEWAL]
+
+Company=Universit\u00E4t Basel
+
+Category=Academic-Site
+
+Component=XML-Editor, XSLT-Debugger, Saxon-SA
+
+Version=26
+
+Number_of_Licenses=1
+
+Date=10-17-2023
+
+Maintenance=382
+
+SGN=MCwCFBLIHhcfePkHqGcLMJRiKUvJ3MQDAhR/dfkqeij15YN6I3XEpXkk+6ZaTg\=\=
+
+-------END-LICENSE-KEY-------

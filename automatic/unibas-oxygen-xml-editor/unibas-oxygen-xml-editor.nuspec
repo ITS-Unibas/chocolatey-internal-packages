@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-oxygen-xml-editor</id>
+    <version>26.0</version>
+    <title>unibas-oxygen-xml-editor</title>
+    <authors>IT-Services | University of Basel</authors>
+    <description>
+      Oxygen XML Editor is a comprehensive tool designed for XML editing, authoring, and development. It caters to a wide range of users, from beginners to experts, and is compatible across multiple platforms, including Windows, Mac OS X, and Linux¹². 
+
+      Here are some key features of Oxygen XML Editor:
+      - **Versatility**: Available as a standalone application or as an Eclipse plugin².
+      - **Robust XML Support**: Offers tools for creating, editing, and publishing XML documents¹.
+      - **Schema Support**: Supports all XML schema languages, including DTD, W3C XML Schema, RELAX NG, and Schematron².
+      - **Advanced Tools**: Includes XSLT/XQuery debuggers and profilers².
+      - **User-Friendly**: Provides different views for editing XML documents, such as text, grid, and author views².
+      
+      It's a powerful solution for anyone working with XML, whether you're just starting out or are an experienced developer.
+      
+      Is there something specific you'd like to know more about regarding Oxygen XML Editor?
+    </description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+
+  </files>
+</package>
+
+

@@ -1,6 +1,6 @@
 Import-Module chocolatey-AU
 
-$releases = 'https://www.maxqda.com/de/produkte/maxqda-release-notes'
+$releases = 'https://www.oxygenxml.com/build_history.html'
 
 function global:au_SearchReplace {
     @{
@@ -15,9 +15,9 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
 
-    $url64 = Get-RedirectedUrl 'https://www.maxqda.com/download/maxqdademo'
+    $url64 = 'https://mirror.oxygenxml.com/InstData/Editor/Windows64/VM/oxygen-64bit-openjdk.exe'
 
-    $re = "Release (\d+\.\d+)"
+    $re = "Version (\d+\.\d+)"
 
     $version = ([regex]::Match($download_page.RawContent, $re)).Captures.Groups[1].value
 
