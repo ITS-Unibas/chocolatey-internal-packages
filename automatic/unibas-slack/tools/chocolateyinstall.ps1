@@ -4,8 +4,8 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $url32 = 'https://downloads.slack-edge.com/releases/windows/4.33.84/prod/ia32/slack-standalone-4.33.84.0.msi'
 $checksum32 = '2dc813f90c9726931556515e4d06226af8dbf43708f3e427c56b924ef74bd66b'
 $checksumType32 = 'sha256'
-$url64 = 'https://downloads.slack-edge.com/desktop-releases/windows/x64/4.41.96/slack-standalone-4.41.96.0.msi'
-$checksum64 = 'c5447ccf5561278fa22abe39a6494f86b6a4980c665450532cabf961242fe89b'
+$url64 = 'https://downloads.slack-edge.com/desktop-releases/windows/x64/4.41.97/slack-standalone-4.41.97.0.msi'
+$checksum64 = 'b962c937733f81a455de635ffe61efc0de9b5b06b84e33597b42cc601138c8cf'
 $checksumType64 = 'sha256'
 
 $packageArgs = @{
