@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>snapgene</id>
+    <version>7.9.9</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas-Choco/packages-manual/tree/main/snapgene</packageSourceUrl>
+    <owners>University of Basel</owners>
+    <title>Snapgene</title>
+    <authors>GSL Biotech LLC</authors>
+    <projectUrl>https://www.snapgene.com/</projectUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/AdmiringWorm/chocolatey-packages@c41ccac1ed8c0477487dff021853b519eab9e855/icons/snapgene-viewer.png</iconUrl>
+    <licenseUrl>https://www.snapgene.com/legal-disclaimers/</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <summary>
+      SnapGene provides the easiest and most secure way to plan,
+      visualize, and document your everyday molecular biology procedures. That’s
+      why scientists at leading institutions and companies around the globe depend
+      on SnapGene every day.
+    </summary>
+    <tags>snapgene dna visualization</tags>
+    <description>
+      SnapGene provides the easiest and most secure way to plan,
+      visualize, and document your everyday molecular biology procedures. That’s
+      why scientists at leading institutions and companies around the globe depend
+      on SnapGene every day.
+    </description>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
+
