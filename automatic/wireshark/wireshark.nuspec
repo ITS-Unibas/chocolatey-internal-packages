@@ -45,7 +45,7 @@ out of date by more than a day or two, please contact the maintainer(s) and
 let them know the package is no longer updating correctly.
 ]]></description>
     <dependencies>
-      <dependency id="vcredist140" />
+      <dependency id="vcredist140-x64" />
     </dependencies>
   </metadata>
   <files>
