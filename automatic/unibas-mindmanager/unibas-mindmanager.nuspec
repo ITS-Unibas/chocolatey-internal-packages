@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>unibas-mindmanager</id>
+    <version>24.0.181</version>
+    <title>mindmanager</title>
+    <authors>Corel</authors>
+    <owners>ITS-Unibas</owners>
+    <projectUrl>https://www.mindmanager.com/de/product/mindmanager/windows/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>mindmanager</description>
+    <summary>mindmanager</summary>
+    <tags>unibas-mindmanager admin</tags>
+    <projectSourceUrl>https://www.mindmanager.com/de/product/mindmanager/windows/</projectSourceUrl>
+    <packageSourceUrl>https://github.com/ITS-Unibas-Choco/packages-manual/tree/main/unibas-mindmanager</packageSourceUrl>
+  </metadata>
+</package>
