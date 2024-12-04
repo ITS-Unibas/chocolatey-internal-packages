@@ -18,28 +18,18 @@ function global:au_SearchReplace {
 }
 
 
-Function GetVersion($InputString) {
-    $regExResult = $InputString | Select-String -Pattern 'Version 202\d.\d.\d\d.\d' 
-    $regExResult.Matches[0].Value
-}
-
-
-
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    #get Versionnumber
-    $urltext = $download_page.ToString()
-    $version = GetVersion -InputString $urltext
-    $version_number = $version -replace "Version "
-    $url = "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager."
-    $url+=$version_number
-    $url+=".exe"
-    return @{
-        URL   = $url
-        Version = $version_number
-
-    }
-    
+  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $urltext = $download_page.ToString()
+  $regExResult = $urltext | Select-String -Pattern 'Version:\s*(\d+\.\d+\.\d+\.\d+)'
+    $version = $regExResult.Matches[0].Groups[1].Value
+  $url = "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager."
+  $url += $version
+  $url += ".exe"
+  return @{
+    URL     = $url
+    Version = $version
+  }
 }
 
 update -ChecksumFor none
