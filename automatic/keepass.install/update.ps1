@@ -17,7 +17,10 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $headers = @{
+        'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
+    }
+    $page = Invoke-WebRequest -Uri $releases -UseBasicParsing -Headers $headers
 
     $regex = 'https:\/\/sourceforge\.net\/projects\/keepass\/files\/KeePass%202.x\/(?<version>[\d\.]+)\/KeePass-[\d\.]+-Setup\.exe\/download'
     $sourceforge_url = ($page.links | Where-Object href -Match $regex | Select-Object -First 1).href
@@ -29,4 +32,4 @@ function global:au_GetLatest {
     }
 }
 
-Update-Package -ChecksumFor None -NoCheckChocoVersion
+#Update-Package -ChecksumFor None -NoCheckChocoVersion
