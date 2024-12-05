@@ -19,10 +19,10 @@ function global:au_SearchReplace {
 }
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $regex = 'FreeCAD.*WIN-x64.*.exe$'
+  $regex = 'FreeCAD_.*-Windows-x86_64-installer-.*.exe$'
   $url = "$PreUrl$($download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href)"
-  $arr = $url -split 'FreeCAD-|-Win.*$' 
-  $version = $arr[1] -replace '(.*)\.(.*)','$1'
+  $arr = $url -split 'FreeCAD_|-conda-Windows-x86_64-installer-.*$' 
+  $version = $arr[1]
   return @{ Version = $version; URL = $url }
 }
 
