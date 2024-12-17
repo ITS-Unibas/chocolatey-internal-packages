@@ -1,6 +1,6 @@
 Import-Module chocolatey-AU
 
-$releases = 'https://www.oxygenxml.com/build_history.html'
+$releases = 'https://www.oxygenxml.com/xml_editor/download_oxygenxml_editor.html?os=Windows'
 
 function global:au_SearchReplace {
     @{
@@ -17,13 +17,17 @@ function global:au_GetLatest {
 
     $url64 = 'https://mirror.oxygenxml.com/InstData/Editor/Windows64/VM/oxygen-64bit-openjdk.exe'
 
-    $re = "Version (\d+\.\d+)"
+    $re = "Version: (\d+\.\d+)"
+    $buildnumber = "Build id:\s*<[^>]+>(\d+)</a>"
 
-    $version = ([regex]::Match($download_page.RawContent, $re)).Captures.Groups[1].value
+    $version = ([regex]::Match($download_page.RawContent, $re)).Groups[1].Value
+    $build = ([regex]::Match($download_page.RawContent, $buildnumber)).Groups[1].Value
+
+    $complete_version = "$version.$build"
 
     return @{
         URL64 = $url64
-        Version = $version
+        Version = $complete_version
     }
 }
 
