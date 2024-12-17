@@ -16,8 +16,8 @@ $packageArgs = @{
   checksum     = ''
   checksumType = ''
 =======
-  checksum     = '54d875981b6a32eb916bae0e3b3fafef365cbe3ea96c940c38d1b7257d8bb171'
-  checksumType = 'sha256'
+  checksum     = ''
+  checksumType = ''
 >>>>>>> 3a281d320b89097d0e065df1ec4561b572a50628
 }
 
