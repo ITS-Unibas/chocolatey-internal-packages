@@ -7,11 +7,11 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'MSI'
-  url64bit       = 'https://github.com/JabRef/jabref/releases/download/v5.15/JabRef-5.15.msi'
+  url64bit       = 'https://github.com/JabRef/jabref/releases/download/v6.0-alpha/JabRef-6.0.msi'
   silentArgs     = "/quiet /qn /norestart"
   validExitCodes = @(0, 3010, 1641)
   softwareName   = 'unibas-jabref*'
-  checksum64     = 'e2c7de77141e32134b85ac804b0230a4172f904d3fb6d615c7d0dd027eb8c44d'
+  checksum64     = '5a89a104c3d472197144e8cc3494c85b282e40b902b525177f82a89b67738a7a'
   checksumType64 = 'sha256' #default is checksumType
 }
 
