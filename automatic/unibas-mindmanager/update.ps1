@@ -25,6 +25,7 @@ function global:au_SearchReplace {
       ".\tools\chocolateyInstall.ps1" = @{
         "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
         "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
+        "(?i)(^\s*fileLocation\s*=\s*Join-Path\s*\$toolsDir\s*'MindManager\s*)\d+(\.msi')" = "`$1$($Latest.Version.Split('.')[0])`$2"
       }
     }
   }
