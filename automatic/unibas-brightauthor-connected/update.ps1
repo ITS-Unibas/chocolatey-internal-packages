@@ -1,7 +1,7 @@
 ﻿Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = 'https://www.brightsign.biz/resources/software-downloads/'
+$releases = 'https://brightsign-builds.s3.us-east-1.amazonaws.com/web/bs-download-versions.json'
 
 function global:au_BeforeUpdate() {
   Get-RemoteFiles -Purge -FileNameBase 'unibas-brightauthor-connected'
@@ -16,11 +16,15 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $regex = 'BA\+connected\+Setup\+([\d+\.]+)\.exe'
-  $url = $download_page.links | Where-Object {$_.href -match $regex} | Select-Object -First 1 -expand href
-  $version = ([regex]::Match($download_page.RawContent, $regex)).Captures.Groups[1].value
-  return @{ Version = $version; URL = $url }
+  $jsonData = Invoke-RestMethod -Uri $releases
+  $baconData = $jsonData.general.bacon
+
+  $version = $baconData.version
+  $url = if ($baconData.'pc-link') { $baconData.'pc-link' } else { throw "PC download link not found" }
+  return @{
+    Version = $version
+    URL = $url
+  }
 }
 
 update -ChecksumFor none -NoCheckChocoVersion -NoCheckURL
