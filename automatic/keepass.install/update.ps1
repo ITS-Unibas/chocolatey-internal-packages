@@ -19,6 +19,7 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $url = $download_page.Links | Where-Object href -match 'KeePass%202\.x/\d+\.\d+(?:\.\d+)?/KeePass-\d+\.\d+(?:\.\d+)?-Setup\.exe/download' | Select-Object -First 1 -ExpandProperty href
+    $url = "$url?use_mirror=netcologne#"
     $version = $url -replace '.*KeePass%202\.x/(\d+\.\d+(?:\.\d+)?)/.*', '$1'
 
     return @{
