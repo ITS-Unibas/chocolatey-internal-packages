@@ -1,6 +1,6 @@
 Import-Module chocolatey-au
 
-$releases = 'https://sourceforge.net/projects/keepass/rss?path=/KeePass%202.x'
+$releases = 'https://keepass.info/download.html'
 
 function global:au_BeforeUpdate() {
     Invoke-RestMethod -UseBasicParsing -Uri $Latest.URL -OutFile "keepass.exe" -UserAgent [Microsoft.PowerShell.Commands.PSUserAgent]::FireFox
@@ -17,12 +17,9 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $rss = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $xml = [xml]$rss.Content
-
-    $firstItem = $xml.rss.channel.item | Select-Object -First 1
-    $version = ($firstItem.title.InnerText -split 'KeePass-' | Select-Object -Last 1) -split '-Setup.exe' | Select-Object -First 1
-    $url = $firstItem.link
+    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    $url = $download_page.Links | Where-Object href -match 'KeePass%202\.x/\d+\.\d+(?:\.\d+)?/KeePass-\d+\.\d+(?:\.\d+)?-Setup\.exe/download' | Select-Object -First 1 -ExpandProperty href
+    $version = $url -replace '.*KeePass%202\.x/(\d+\.\d+(?:\.\d+)?)/.*', '$1'
 
     return @{
         URL     = $url
