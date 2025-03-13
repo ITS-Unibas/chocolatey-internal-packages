@@ -8,8 +8,8 @@ $packageArgs = @{
   silentArgs     = '/S'
   validExitCodes = @(0, 3010, 1605, 1614, 1641)
   softwareName   = 'Zotero'
-  url64bit       = 'https://download.zotero.org/client/release/7.0.13/Zotero-7.0.13_x64_setup.exe'
-  checksum64     = '1525119d643dc6766531dce53bc315967596e309e1d57dc531774c0ce3b06f5b'
+  url64bit       = 'https://download.zotero.org/client/release/7.0.14/Zotero-7.0.14_x64_setup.exe'
+  checksum64     = '72fc55db602f8097c34756eab65078ab6e7b316b072dd7d935ce4c6ee644c883'
   checksumType64 = 'sha256'
 }
 
