@@ -4,10 +4,10 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
   packageName    = 'unibas-mobaxterm'
-  url            = 'https://download.mobatek.net/2502024121622306/MobaXterm_Installer_v25.0.zip'
+  url            = 'https://download.mobatek.net/2512025030285413/MobaXterm_Installer_v25.1.zip'
   unzipLocation  = $toolsDir
   softwareName   = 'unibas-mobaxterm*'
-  checksum       = '317ac523678402d4c67c3bf051cdc77971515b828f3a2b7e8db73f1e4de66747'
+  checksum       = '63a4c8f5a7dec3ef04ce54d95f90165fa51f15132be4f5c21771b674f560de18'
   checksumType   = 'sha256' 
 }
 
