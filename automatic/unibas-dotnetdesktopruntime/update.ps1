@@ -17,7 +17,7 @@ function global:au_SearchReplace {
 function global:au_GetLatest {
     $sdk_download_page = Invoke-WebRequest -Uri $sdk_download_url -UseBasicParsing
 
-    [version]$sdk_version = (($sdk_download_page.Links.href | ? {$_ -match "windows-x64-installer"}) -split("/"))[-1] -replace "sdk-", "" -replace "-windows-x64-installer", ""
+    [version]$sdk_version = ((($sdk_download_page.Links.href | ? {$_ -match "windows-x64-installer"}) | select -First 1) -split("/"))[-1] -replace "sdk-", "" -replace "-windows-x64-installer", ""
     $sdk_major_version_clean = "$($sdk_version.Major)" + ".0"
     $ddrt_download_url =$ddrt_download_url_main + $sdk_major_version_clean
 
