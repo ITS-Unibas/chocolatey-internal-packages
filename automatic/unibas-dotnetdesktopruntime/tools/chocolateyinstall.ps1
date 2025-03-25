@@ -5,12 +5,12 @@ $packageName = 'unibas-dotnetdesktopruntime'
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  url            = 'https://download.visualstudio.microsoft.com/download/pr/907765b0-2bf8-494e-93aa-5ef9553c5d68/a9308dc010617e6716c0e6abd53b05ce/windowsdesktop-runtime-8.0.8-win-x64.exe'
+  url            = 'https://download.visualstudio.microsoft.com/download/pr/63f0335a-6012-4017-845f-5d655d56a44f/f8d5150469889387a1de578d45415201/windowsdesktop-runtime-9.0.3-win-x64.exe'
   silentArgs     = '/S'
   validExitCodes = @(0)
  
   softwareName   = 'unibas-dotnetdesktopruntime' 
-  checksum       = '1d8fc3eaad1285d701a77216e923c8be404dc2254d51779503828a3b3e1cdeb1'
+  checksum       = 'e477efa08fd14d6d543b71dbfca0c5e2f2a1b18dda244d3e6bc0ef548c528c38'
   checksumType   = 'sha256'
 }
  
