@@ -3,8 +3,8 @@
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   softwareName   = 'FileZilla*'
-  url            = 'https://dl1.cdn.filezilla-project.org/client/FileZilla_3.68.1_win64-setup.exe?h=PXni_q3vSL9jMHx7LvAMbA&x=1730741895'
-  checksum       = '1feb6c12f584e98f9fddf95bf128f549310c738376fab82a5893eafed765ad83'
+  url            = 'https://dl3.cdn.filezilla-project.org/client/FileZilla_3.69.0_win64-setup.exe?h=e5FvWZv6EqhKZct8Zh-Jtw&x=1744728197'
+  checksum       = 'ffba5c9d8b6550df595e3767d4a36856d739f54e4182721a1ea754ddebc1fcad'
   checksumType   = 'sha256'
   fileType       = 'EXE'
   silentArgs     = '/S'
