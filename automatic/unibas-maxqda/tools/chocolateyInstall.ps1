@@ -12,7 +12,7 @@ $packageArgs = @{
   silentArgs     = '/qn LIC_SRV="131.152.22.50" LIC_NAME="MAXQDA" DISABLE_AUTO_UPDATES=1 DISABLE_MANUAL_UPDATES=1 /norestart' # ALLUSERS=1 DISABLEDESKTOPSHORTCUT=1 ADDDESKTOPICON=0 ADDSTARTMENU=0
   validExitCodes = @(0,129, 3010, 1605, 1614, 1641)
   softwareName   = 'MAXQDA*'
-  checksum     = '85a253bbbf5066e929b483beee34acc9fcfe2c276a7374357545895bff3af3b2'
+  checksum     = 'acb59be8d159092a0591483685d9822a2f36343b685d22c584955b3e9586e1c2'
   checksumType = 'sha256'
 }
 
