@@ -8,8 +8,8 @@ $packageArgs = @{
   fileType      = 'EXE'
   silentArgs    = '/S'
   validExitCodes= @(0)
-  url           = 'https://cdn.devolutions.net/download/Setup.RemoteDesktopManager.2025.1.34.0.exe'
-  checksum      = '5026cc8c1c166db9340663811b6700a6c90a7ce13014d839c9c51ec67d3542a0'
+  url           = 'https://cdn.devolutions.net/download/Setup.RemoteDesktopManager.2025.1.37.0.exe'
+  checksum      = '5a75850693027226a9e4d3ddb6f64406a2a9cc3d7afe6d644d2b0fdd4ccfc3d9'
   checksumType  = 'sha256'
 }
  
