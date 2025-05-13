@@ -4,11 +4,11 @@ $packageArgs = @{
   packageName    = 'vcredist140-x86'
   unzipLocation  = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
   fileType       = 'exe'
-  url            = 'https://download.visualstudio.microsoft.com/download/pr/285b28c7-3cf9-47fb-9be8-01cf5323a8df/C4E3992F3883005881CF3937F9E33F1C7D792AC1C860EA9C52D8F120A16A7EB1/VC_redist.x86.exe'
+  url            = 'https://download.visualstudio.microsoft.com/download/pr/2c6b06c4-dc6a-4496-b769-b0d311cf515d/54CCBBC0663064F0B57442DC986511B90F3CFAAB23524087B0711E6FA214CB26/VC_redist.x86.exe'
   silentArgs     = '/quiet /norestart'
   validExitCodes = @(0, 1638, 3010)
   softwareName   = 'Microsoft Visual C++ 2015-2019 Redistributable (x86)*'
-  checksum       = 'c4e3992f3883005881cf3937f9e33f1c7d792ac1c860ea9c52d8f120a16a7eb1'
+  checksum       = '54ccbbc0663064f0b57442dc986511b90f3cfaab23524087b0711e6fa214cb26'
   checksumType   = 'sha256'
 }
 
