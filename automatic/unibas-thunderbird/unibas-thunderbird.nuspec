@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>unibas-thunderbird</id>
+    <version>128.9.0</version>
+    <title>Mozilla Thunderbird</title>
+    <owners>unibas-its</owners>
+    <authors>Mozilla</authors>
+    <licenseUrl>https://www.mozilla.org/en-US/about/legal/terms/thunderbird/</licenseUrl>
+    <projectUrl>https://www.mozilla.org/en/thunderbird/</projectUrl>
+    <projectSourceUrl>https://hg.mozilla.org/comm-central</projectSourceUrl>
+    <docsUrl>https://developer.thunderbird.net</docsUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/chocolatey-community/chocolatey-coreteampackages@edba4a5849ff756e767cba86641bea97ff5721fe/icons/thunderbird.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description></description>
+    <summary>A free email client from Mozilla</summary>
+    <releaseNotes>https://www.mozilla.org/en-US/thunderbird/notes/</releaseNotes>
+    <copyright>Mozilla. All rights reserved.</copyright>
+    <tags>mozilla thunderbird email admin foss cross-platform</tags>
+    <packageSourceUrl>https://github.com/UniBasel-SWD/package-gallery</packageSourceUrl>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
