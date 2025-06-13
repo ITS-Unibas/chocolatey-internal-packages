@@ -5,12 +5,12 @@ in verifying that this package's contents are trustworthy.
 The installer have been downloaded from their official download link listed on <https://cloud.r-project.org/bin/windows/base/>
 and can be verified like this:
 
-1. Download <https://cloud.r-project.org/bin/windows/base/R-4.5.0-win.exe>
+1. Download <https://cloud.r-project.org/bin/windows/base/R-4.5.1-win.exe>
 2. Then use one of the following methods to obtain the checksum
   - Use powershell function 'Get-Filehash'
   - Use chocolatey utility 'checksum.exe'
 
   checksum type: sha256
-  checksum: A0EE32E4EACDD003FAADA9D41DCB3264A441B81DB00B0E6BA10F247AB21BB397
+  checksum: 8555C189390349924F23104C8AF9C5A932281434CD6719C4CCCE3D74574627C3
 
 File 'LICENSE.txt' is obtained from <https://svn.r-project.org/R/trunk/COPYING>
