@@ -3,11 +3,11 @@
 $packageArgs = @{
   packageName    = 'snapgene'
   fileType       = 'EXE'
-  url            = 'https://cdn.snapgene.com/downloads/SnapGene/8.x/8.0/8.0.3/snapgene_8.0.3_win.exe'
+  url            = 'https://cdn.snapgene.com/downloads/SnapGene/8.x/8.1/8.1.1/snapgene_8.1.1_win.exe'
   silentArgs     = '/S'
   validExitCodes = @(0)
   softwareName   = 'Snapgene*' 
-  checksum       = 'dcce206d887200e79277fd142003430662c0c6d47329e08cecfaa2a57469d717'
+  checksum       = '320b41b50aeb3577d696245002274a7705cbed1e98f6e88a7e90abd280d8bca3'
   checksumType   = 'sha256' 
 }
 
