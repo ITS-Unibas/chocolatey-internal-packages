@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-rdm</id>
-    <version>2025.2.17.0</version>
+    <version>2025.2.20.0</version>
     <owners>ITS Unibasel</owners>
     <title>RDM</title>
     <authors>RDM</authors>
@@ -29,7 +29,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <mailingListUrl>https://community.rstudio.com/c/rstudio-ide</mailingListUrl>
     <dependencies>
-      <dependency id="unibas-msedge-webview2" version="[131.0.0,)" />
+      <dependency id="unibas-msedge-webview2" version="[,)" />
       <dependency id="unibas-dotnetdesktopruntime" version="[9.0.0,)" />
     </dependencies>
   </metadata>
