@@ -18,11 +18,32 @@ $machine_key6432 = 'HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\
 
 if ($key.Count -eq 1) {
   $key | ForEach-Object {
-    $file = "$($_.UninstallString)"
+    $uninstallString = "$($_.UninstallString)"
+    
+    # Parse the uninstall string to separate file and arguments
+    if ($uninstallString.StartsWith('"')) {
+      # Path is quoted
+      $endQuote = $uninstallString.IndexOf('"', 1)
+      $file = $uninstallString.Substring(1, $endQuote - 1)
+      $existingArgs = $uninstallString.Substring($endQuote + 1).Trim()
+    } else {
+      # Path is not quoted, split on first space
+      $spaceIndex = $uninstallString.IndexOf(' ')
+      if ($spaceIndex -gt 0) {
+        $file = $uninstallString.Substring(0, $spaceIndex)
+        $existingArgs = $uninstallString.Substring($spaceIndex + 1).Trim()
+      } else {
+        $file = $uninstallString
+        $existingArgs = ""
+      }
+    }
+    
+    # Combine existing args with our silent args, but prioritize our silent args
+    $finalArgs = if ($existingArgs) { "$existingArgs $silentArgs" } else { $silentArgs }
 
     Uninstall-ChocolateyPackage -PackageName $packageName `
       -FileType $installerType `
-      -SilentArgs "$silentArgs" `
+      -SilentArgs "$finalArgs" `
       -ValidExitCodes $validExitCodes `
       -File "$file"
   }
