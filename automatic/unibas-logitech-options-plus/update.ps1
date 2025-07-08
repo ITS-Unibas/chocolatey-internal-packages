@@ -25,10 +25,12 @@ function global:au_GetLatest {
         
         # Use the official Logitech download URL
         $url = 'https://download01.logi.com/web/ftp/pub/techsupport/optionsplus/logioptionsplus_installer.exe'
+        $checksum = Get-RemoteChecksum $url -Algorithm 'sha256'
         
         return @{
             Version = $version
             URL = $url
+            Checksum = $checksum
             ChecksumType = 'sha256'
         }
     } else {
