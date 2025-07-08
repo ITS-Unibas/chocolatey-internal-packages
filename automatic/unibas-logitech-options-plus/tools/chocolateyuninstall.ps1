@@ -4,7 +4,6 @@ $packageName = 'unibas-logitech-options-plus'
 $softwareName = 'Logi Options+*'
 $installerType = 'EXE'
 
-$silentArgs = '/quiet'
 $validExitCodes = @(0, 3010, 1605, 1614, 1641)
 
 $uninstalled = $false
@@ -38,8 +37,10 @@ if ($key.Count -eq 1) {
       }
     }
     
-    # Combine existing args with our silent args, but prioritize our silent args
-    $finalArgs = if ($existingArgs) { "$existingArgs $silentArgs" } else { $silentArgs }
+    # Use the existing arguments as-is for Logi Options+ (they include --uninstall --full --shadow)
+    $finalArgs = $existingArgs
+
+    Write-Host "Uninstalling with: $file $finalArgs"
 
     Uninstall-ChocolateyPackage -PackageName $packageName `
       -FileType $installerType `
