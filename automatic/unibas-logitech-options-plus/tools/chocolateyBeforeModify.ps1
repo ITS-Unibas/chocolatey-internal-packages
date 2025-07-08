@@ -1,0 +1,1 @@
+Get-Process "LogiOptionsPlus*" -ea 0 | Stop-Process -Force 
