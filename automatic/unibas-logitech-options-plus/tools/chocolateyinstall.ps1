@@ -9,7 +9,6 @@ $checksumType = 'sha256'
 
 $packageArgs = @{
   packageName    = $packageName
-  unzipLocation  = $toolsDir
   fileType       = 'EXE'
   url            = $url
   silentArgs     = "/quiet /analytics No /update No /dfu Yes"
@@ -20,5 +19,5 @@ $packageArgs = @{
 }
 
 &(Join-Path $PSScriptRoot InitialScript.ps1)
-Install-ChocolateyPackage @packageArgs
+Install-ChocolateyInstallPackage @packageArgs
 &(Join-Path $PSScriptRoot FinalScript.ps1) 
