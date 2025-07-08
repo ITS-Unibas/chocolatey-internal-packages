@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Do not remove this test for UTF-8: if "Ω" doesn't appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one.-->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+    <metadata>
+        <id>unibas-logitech-options-plus</id>
+        <version>0.0</version>
+        <title>Logi Options+</title>
+        <authors>Logitech Inc.</authors>
+        <owners>ITS-Unibas</owners>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <licenseUrl>https://www.logitech.com/en-us/tos/terms.html</licenseUrl>
+        <projectUrl>https://www.logitech.com/en-us/software/logi-options-plus.html</projectUrl>
+        <iconUrl>https://rawcdn.githack.com/virtualex-itv/chocolatey-packages/6e0ab2474d0021afcfdc4ae12e4561efc3cd54e8/icons/logioptionsplus.png</iconUrl>
+        <description><![CDATA[## Logi Options+
+
+[Logi Options+](https://www.logitech.com/en-us/software/logi-options-plus.html) lets you customize your [Logitech](https://www.logitech.com/) mouse and keyboard settings. It allows you to change function key shortcuts, customize mouse buttons, adjust point and scroll behavior, enable and disable touchpad gestures, and get on-screen notifications when your device's battery runs low. It is a powerful tool that can help you personalize your Logitech devices to your liking.
+
+You can find a list of supported devices for Logi Options+ at [Logitech Support](https://bit.ly/logi-options-plus-supported-devices). The list is updated regularly by Logitech.
+
+### Package Note
+This is a University of Basel package that installs Logi Options+ directly. This package is automatically updated when new versions are available.
+
+**Please Note**: This is an automatically updated package. If you find it is out of date by more than a day or two, please contact the maintainer(s) and let them know the package is no longer updating correctly.
+]]></description>
+        <summary>Enhance your experience. Logi Options+ is the powerful, easy-to-use, next-gen application that enables customization for Logitech mice and keyboards so you can work how you want.</summary>
+        <releaseNotes>https://support.logi.com/hc/en-us/articles/1500005516462-Logi-Options-Release-Notes</releaseNotes>
+        <copyright>© 2023 Logitech. All rights reserved</copyright>
+        <tags>unibas-logitech-options-plus logitech logi options mouse keyboard headset driver utility</tags>
+        <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic/unibas-logitech-options-plus</packageSourceUrl>
+    </metadata>
+    <files>
+        <file src="tools\**" target="tools" />
+    </files>
+</package>
+
+
+
+
+
