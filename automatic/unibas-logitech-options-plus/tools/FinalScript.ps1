@@ -1,1 +1,1 @@
-# This script is run prior/post to the installation. 
+Remove-Item -Path "C:\Users\Public\Desktop\Logi*.lnk" -Force -ErrorAction SilentlyContinue
