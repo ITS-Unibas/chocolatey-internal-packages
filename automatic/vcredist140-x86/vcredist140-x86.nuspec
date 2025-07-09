@@ -3,7 +3,7 @@
 <package xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <metadata>
     <id>vcredist140-x86</id>
-    <version>14.44.35208</version>
+    <version>14.44.35211</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages</packageSourceUrl>
     <owners>Microsoft</owners>
     <title>Microsoft Visual C++ Redistributable for Visual Studio 2015-2019 (x86)</title>
