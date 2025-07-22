@@ -9,8 +9,8 @@ $packageArgs = @{
   fileType      = 'MSI'
   url64bit      = $url64
 
-  checksum64    = ''
-  checksumType64= ''
+  checksum64    = 'd9e0e066ca79778c1de0dd2134755628c1f84eae0253a6790112cbaa59099ac7'
+  checksumType64= 'sha256'
 
   silentArgs    = "/qn /norestart /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`"" # ALLUSERS=1 DISABLEDESKTOPSHORTCUT=1 ADDDESKTOPICON=0 ADDSTARTMENU=0
   validExitCodes= @(0, 3010, 1641)
