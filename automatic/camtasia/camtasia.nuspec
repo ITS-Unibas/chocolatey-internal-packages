@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>camtasia</id>
-    <version>2025.2.0</version>
+    <version>2025.2.1</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/edit/master/automatic/camtasia</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <title>Camtasia (Install)</title>
