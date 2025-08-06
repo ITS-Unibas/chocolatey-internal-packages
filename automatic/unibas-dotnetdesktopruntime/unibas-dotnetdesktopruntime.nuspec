@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-dotnetdesktopruntime</id>
-    <version>9.0.7</version>
+    <version>9.0.8</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-dotnetdesktopruntime</packageSourceUrl>
     <owners>University of Basel</owners>
     <title>unibas-dotnetdesktopruntime (Install)</title>
