@@ -9,7 +9,7 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url            = 'https://update.cyberduck.io/windows/Cyberduck-Installer-9.1.7.43306.exe'
+  url            = 'https://update.cyberduck.io/windows/Cyberduck-Installer-9.2.0.43571.exe'
   #file         = $fileLocation
 
   #MSI
@@ -32,7 +32,7 @@ $packageArgs = @{
 
   # optional, highly recommended
   softwareName   = 'Cyberduck' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum       = 'fc54c390fed8c235138ca3d24314dcfb9319c93ba27d379c3dd125a3c0affd1c'
+  checksum       = 'e7da2de4990ace654714e66e4f5a40679d996460ed1b1cf53d06f141eaf04655'
   checksumType   = 'sha256' #default is md5, can also be sha1
 }
 
