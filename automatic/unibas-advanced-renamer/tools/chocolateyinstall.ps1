@@ -6,11 +6,11 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'EXE'
-  url            = 'https://www.advancedrenamer.com/down/win/advanced_renamer_setup_4_16.exe'
+  url            = 'https://www.advancedrenamer.com/down/win/advanced_renamer_setup_4_16_1.exe'
   silentArgs     = "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART"
   validExitCodes = @(0, 3010, 1641)
   softwareName   = 'unibas-advanced-renamer*'
-  checksum       = '5d4a863ff2fcba653067dbf344c1252b66f565bc6c311b03e920e272726d65a2'
+  checksum       = 'f80bc125873211d926f205d682fc6438aa2b5957f4bbe814c46832fea1d0d7f2'
   checksumType   = 'sha256'
 }
 
