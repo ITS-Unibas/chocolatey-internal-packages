@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>rstudio-automatic</id>
-    <version>2025.05.1</version>
+    <version>2025.09.0</version>
     <owners>ITS Unibasel</owners>
     <title>rstudio</title>
     <authors>RStudio</authors>
