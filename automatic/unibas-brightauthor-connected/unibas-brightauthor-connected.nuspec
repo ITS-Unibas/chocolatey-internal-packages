@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-brightauthor-connected</id>
-    <version>1.67.0</version>
+    <version>1.67.3</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-brightauthor-connected</packageSourceUrl>
     <owners>IT-Services | University of Basel</owners>
     <title>unibas-brightauthor-connected</title>
