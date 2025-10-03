@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-mobaxterm</id>
-    <version>25.2</version>
+    <version>25.3</version>
     <owners>University of Basel</owners>
     <title>unibas-mobaxterm</title>
     <authors>MobaXterm</authors>
