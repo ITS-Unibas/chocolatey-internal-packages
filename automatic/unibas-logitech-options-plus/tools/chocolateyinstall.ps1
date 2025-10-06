@@ -4,7 +4,7 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $LogPath = "$env:temp\"
 
 $url = 'https://download01.logi.com/web/ftp/pub/techsupport/optionsplus/logioptionsplus_installer.exe'
-$checksum = '7d0d1df4e3d2c8de1b7749ca9a9773d5ef4e66007af51af2cd6f9160d071926e'
+$checksum = '3586f967072090d223e1c965ba458c78bc065926eba566a715719d63990aec56'
 $checksumType = 'sha256'
 
 $packageArgs = @{
