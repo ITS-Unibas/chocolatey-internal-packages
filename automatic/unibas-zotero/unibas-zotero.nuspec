@@ -5,7 +5,7 @@
     <id>unibas-zotero</id>
     <title>Zotero</title>
     <owners>Uni Basel</owners>
-    <version>7.0.24</version>
+    <version>7.0.27</version>
     <authors>Uni Basel</authors>
     <summary>Zotero [zoh-TAIR-oh] is a free, easy-to-use tool to help you collect, organize, cite, and share your research sources. </summary>
     <!-- Do not touch the description here in the nuspec file. Description is imported during update from the Readme.md file -->
