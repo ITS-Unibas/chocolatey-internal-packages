@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-slack</id>
-    <version>4.46.101</version>
+    <version>4.46.104</version>
     <packageSourceUrl>https://github.com/mkevenaar/chocolatey-packages/tree/master/automatic/slack</packageSourceUrl>
     <owners>Maurice Kevenaar, kendaleiv</owners>
     <!-- ============================== -->
