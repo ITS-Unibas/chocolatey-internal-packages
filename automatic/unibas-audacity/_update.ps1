@@ -21,11 +21,9 @@ function global:au_SearchReplace {
 }
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $regex = '.exe$'
+  $regex = 'audacity-win-.*-64bit\.exe$'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
-  $arr = $url -split '-|.exe'
-  Write-Host $arr
-  $version = $arr[3]
+  $version = $url -replace '.*audacity-win-(.*)-64bit\.exe', '$1'
   $HTTPheaders = @{
     'Referer'    = $releases;
     'User-Agent' = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36'
@@ -33,5 +31,6 @@ function global:au_GetLatest {
 
   return @{ Version = $version; URL = $url; Options = @{ Headers = $HTTPheaders }; BaseUrl = $releases }
 }
+
 
 update -ChecksumFor none -NoCheckChocoVersion
