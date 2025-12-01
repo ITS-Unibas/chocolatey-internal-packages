@@ -27,7 +27,6 @@
     <releaseNotes></releaseNotes>
     <packageSourceUrl>https://github.com/chocolatey-community/chocolatey-coreteampackages/tree/master/automatic/audacity</packageSourceUrl>
     <dependencies>
-      <dependency id="chocolatey-core.extension" version="1.3.3" />
     </dependencies>
     <docsUrl>https://www.audacityteam.org/help/documentation</docsUrl>
     <projectSourceUrl>https://github.com/audacity/audacity</projectSourceUrl>
