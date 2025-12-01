@@ -5,7 +5,7 @@
     <id>unibas-audacity</id>
     <title>Audacity</title>
     <owners>University of Basel</owners>
-    <version>3.3.1</version>
+    <version>1.0.0</version>
     <authors>Audacity Developers</authors>
     <summary>Audacity is free, open source, cross-platform software for recording and editing sounds.</summary>
 <description><![CDATA[Audacity is free, open source, cross-platform software for recording and editing sounds.
