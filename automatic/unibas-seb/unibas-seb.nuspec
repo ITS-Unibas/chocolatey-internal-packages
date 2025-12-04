@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-seb</id>
-    <version>3.10.0.826</version>
+    <version>3.10.1.864</version>
     <owners>University of Basel</owners>
     <title>RDM</title>
     <authors>ETH Zuerich, Lehrentwicklung und -technologie (LET)</authors>
