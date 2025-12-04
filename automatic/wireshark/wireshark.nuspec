@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>wireshark</id>
-    <version>4.6.1</version>
+    <version>4.6.2</version>
     <owners>Maurice Kevenaar, kujotx</owners>
     <title>Wireshark</title>
     <authors>Gerald Combs, Wireshark team</authors>
