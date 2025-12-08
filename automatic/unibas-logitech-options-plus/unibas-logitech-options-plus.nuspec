@@ -24,7 +24,7 @@ This is a University of Basel package that installs Logi Options+ directly. This
 ]]></description>
         <summary>Enhance your experience. Logi Options+ is the powerful, easy-to-use, next-gen application that enables customization for Logitech mice and keyboards so you can work how you want.</summary>
         <releaseNotes>https://support.logi.com/hc/en-us/articles/1500005516462-Logi-Options-Release-Notes</releaseNotes>
-        <copyright>© 2023 Logitech. All rights reserved</copyright>
+        <copyright>2023 Logitech. All rights reserved</copyright>
         <tags>unibas-logitech-options-plus logitech logi options mouse keyboard headset driver utility</tags>
         <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-automatic-packages/tree/master/automatic/unibas-logitech-options-plus</packageSourceUrl>
     </metadata>
