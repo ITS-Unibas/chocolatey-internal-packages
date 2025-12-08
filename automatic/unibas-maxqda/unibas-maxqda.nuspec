@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-maxqda</id>
-    <version>24.11</version>
+    <version>26.0</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-maxqda/</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <!-- ============================== -->
