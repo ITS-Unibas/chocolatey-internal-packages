@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-usbdlm</id>
-    <version>5.7.3</version>
+    <version>5.7.4</version>
     <packageSourceUrl>https://github.com/elpatron68/my-chocolatey-packages</packageSourceUrl>
     <owners>University Basel</owners>
     <title>USBDLM</title>
