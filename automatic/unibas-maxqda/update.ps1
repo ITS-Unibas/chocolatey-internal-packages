@@ -1,6 +1,6 @@
 Import-Module chocolatey-AU
 
-$releases = 'https://www.maxqda.com/de/produkte/maxqda-release-notes'
+$releases = 'https://www.maxqda.com/products/maxqda-release-notes'
 
 function global:au_SearchReplace {
     @{
@@ -14,10 +14,11 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+    
 
     $url64 = Get-RedirectedUrl 'https://www.maxqda.com/download/maxqdademo'
 
-    $re = "Release ([\d+\.]+)"
+    $re = "MAXQDA\s+([\d\.]+)\s+\(Released"
 
     $version = ([regex]::Match($download_page.RawContent, $re)).Captures.Groups[1].value
 
