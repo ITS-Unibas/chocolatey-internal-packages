@@ -6,7 +6,9 @@ $releases = 'https://community.chocolatey.org/packages/logioptionsplus'
 function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
-            "(?i)(^\s*\`$url\s*=\s*)('.*')"           = "`$1'$($Latest.URL)'"
+            "(?i)(^\s*`$url\s*=\s*)('.*')"           = "`$1'$($Latest.URL)'"
+            "(?i)(^\s*`$checksum\s*=\s*)('.*')"      = "`$1'$($Latest.Checksum)'"
+            "(?i)(^\s*`$checksumType\s*=\s*)('.*')"  = "`$1'$($Latest.ChecksumType)'"
         }
     }
 }
@@ -24,13 +26,17 @@ function global:au_GetLatest {
         # Use the official Logitech download URL
         $url = 'https://download01.logi.com/web/ftp/pub/techsupport/optionsplus/logioptionsplus_installer.exe'
         
+        $checksum = Get-RemoteChecksum $url -Algorithm SHA256
+
         return @{
-            Version = $version
-            URL = $url
+            Version      = $version
+            URL          = $url
+            Checksum     = $checksum
+            ChecksumType = 'sha256'
         }
     } else {
         throw "Could not find version information"
     }
 }
 
-update -ChecksumFor all -NoCheckChocoVersion
+update -ChecksumFor none -NoCheckChocoVersion
