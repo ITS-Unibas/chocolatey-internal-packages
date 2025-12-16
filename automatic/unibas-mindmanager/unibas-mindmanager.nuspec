@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>unibas-mindmanager</id>
-    <version>25.0.208</version>
+    <version>25.1.154</version>
     <title>mindmanager</title>
     <authors>Corel</authors>
     <owners>ITS-Unibas</owners>
