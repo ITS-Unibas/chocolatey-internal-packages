@@ -24,7 +24,7 @@ function global:au_GetLatest {
   $url = $releaseurl + $file
   $checksum = Get-RemoteChecksum -Url $url -Algorithm 'sha256'
   if($checksum -ne $OldChecksum) {
-    Invoke-WebRequest $url -OutFile 'vmware-tools.exe'
+    Invoke-WebRequest $url -OutFile 'vmware-tools.exe' -UseBasicParsing
     $Version = Get-Item 'vmware-tools.exe' | Select-Object -ExpandProperty VersionInfo | Select-Object -ExpandProperty ProductVersion
   }
   return @{
