@@ -16,7 +16,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-  $version_page = Invoke-WebRequest -Uri $version_page
+  $version_page = Invoke-WebRequest -Uri $version_page -UseBasicParsing
 
   $re64  = '(https:\/\/)(.*)(wireshark.org\/win64\/[Ww]ire[Ss]hark-)([\d\.]+)(-x64.exe)$'
   $url64 = $version_page.links | Where-Object href -match $re64 | Select-Object -First 1 -expand href
