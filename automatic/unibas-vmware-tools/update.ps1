@@ -19,7 +19,7 @@ function global:au_GetLatest {
       $OldChecksum = $Matches[2].Replace("'", "")
     }
   }
-  $html_content = Invoke-WebRequest -Uri $releaseurl
+  $html_content = Invoke-WebRequest -Uri $releaseurl -UseBasicParsing
   $file = $html_content.Links | Where-Object href -like "*.exe" | Select-Object -ExpandProperty href
   $url = $releaseurl + $file
   $checksum = Get-RemoteChecksum -Url $url -Algorithm 'sha256'
