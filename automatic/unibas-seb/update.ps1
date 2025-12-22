@@ -24,7 +24,7 @@ function global:au_GetLatest {
 	$version = ([regex]::Match($download_page.RawContent, $re)).Captures.Groups[1].value
 	
 	$githubPage = $githubDomain + $urlPage + $version
-	$download_page = Invoke-WebRequest -Uri $githubPage
+	$download_page = Invoke-WebRequest -Uri $githubPage -UseBasicParsing
 	
 	$regex = "SetupBundle.exe$"
 	$subPage = $download_page.Links.href | Where-Object {$_ -match $regex} | Select -First 1
