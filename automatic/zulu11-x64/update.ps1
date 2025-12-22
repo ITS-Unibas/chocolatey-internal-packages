@@ -21,7 +21,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-    $release = Invoke-WebRequest -Uri $releases | ConvertFrom-Json
+    $release = Invoke-WebRequest -Uri $releases -UseBasicParsing | ConvertFrom-Json
 
     $url = $release.url
     $version = $release.zulu_version -Join '.'
