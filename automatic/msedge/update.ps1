@@ -14,7 +14,7 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
-  $download_api_content = (Invoke-WebRequest -Uri $download_api_url).Content
+  $download_api_content = (Invoke-WebRequest -Uri $download_api_url -UseBasicParsing).Content
   $json_data = $download_api_content | ConvertFrom-Json
   $releases = $json_data | Where-Object -Property Product -eq $release_branch | Select-Object Releases
   $download_url_64 = ($releases.Releases | Where-Object {$_.Platform -eq 'Windows'} | Where-Object {$_.Architecture -eq 'x64'}).Artifacts.Location
