@@ -8,7 +8,7 @@ function global:au_BeforeUpdate() {
 }
 function global:au_GetLatest {
   $ArchiveURL = 'https://repo.continuum.io/archive/'
-  $List = Invoke-WebRequest -Uri $ArchiveURL
+  $List = Invoke-WebRequest -Uri $ArchiveURL -UseBasicParsing
 
   $regex = "Anaconda3.*Windows"
   $installer = $List.links | Where-Object {$_.href -match $regex} | Select-Object -First 1 -ExpandProperty innerText
