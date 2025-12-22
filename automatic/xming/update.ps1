@@ -19,7 +19,7 @@ function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
   $download_page.Links | Where-Object href -match "projects\/xming\/files\/Xming\/(\d+\.\d+\.\d+\.\d+)"
   $version = $Matches[1]
-  $downloadLink = Invoke-WebRequest "$releases/$version"
+  $downloadLink = Invoke-WebRequest "$releases/$version" -UseBasicParsing
   $sourceforge_url = $downloadLink.Links | Where-Object href -match ".*exe/.*download" | Select-Object -ExpandProperty href
   $url = Get-RedirectedUrl $sourceforge_url
 
