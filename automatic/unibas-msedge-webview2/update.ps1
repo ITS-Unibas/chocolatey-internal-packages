@@ -14,7 +14,7 @@ function global:au_SearchReplace {
 
 function global:au_GetLatest {
     # Get the version for MicrosoftEdgeWebView2Runtime
-    $content = Invoke-WebRequest -Uri $urlEvergreenManifestMicrosoftEdgeWebView2Runtime
+    $content = Invoke-WebRequest -Uri $urlEvergreenManifestMicrosoftEdgeWebView2Runtime -UseBasicParsing
     $contentJSON = $content.Content | ConvertFrom-Json
     $uri = $contentJSON.Get.Update.Uri
     $ContentType = "application/json; charset=utf-8"
