@@ -27,9 +27,9 @@ function global:au_GetLatest {
     $version = $release.zulu_version -Join '.'
     $checksum = $release.sha256_hash
 
-    $releasejre = Invoke-WebRequest -Uri $jrerelease | ConvertFrom-Json
-    $releasejdkfx = Invoke-WebRequest -Uri $jdkfxrelease | ConvertFrom-Json
-    $releasejrefx = Invoke-WebRequest -Uri $jrefxrelease | ConvertFrom-Json
+    $releasejre = Invoke-WebRequest -Uri $jrerelease -UseBasicParsing | ConvertFrom-Json
+    $releasejdkfx = Invoke-WebRequest -Uri $jdkfxrelease -UseBasicParsing | ConvertFrom-Json
+    $releasejrefx = Invoke-WebRequest -Uri $jrefxrelease -UseBasicParsing | ConvertFrom-Json
 
     @{
         URL64            = $url
