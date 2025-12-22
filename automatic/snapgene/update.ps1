@@ -16,7 +16,7 @@ function global:au_BeforeUpdate {
  }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases
+    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $regex_latest_version = "The latest SnapGene version is<!-- --> <!-- -->([\d+\.]+)."
     $download_page.Content -match $regex_latest_version
     [version]$version = $matches[1]
