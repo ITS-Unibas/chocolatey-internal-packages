@@ -9,7 +9,7 @@ function global:au_BeforeUpdate() {
 }
 
 function global:au_GetLatest {
-  $request = Invoke-WebRequest $releaseurl
+  $request = Invoke-WebRequest $releaseurl -UseBasicParsing
   $request.Content -match "(USBDLM V)(\d+\.\d+\.\d+)( - )"
   $Version = $Matches[2]
   return @{
