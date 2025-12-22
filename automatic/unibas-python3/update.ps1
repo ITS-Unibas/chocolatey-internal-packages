@@ -16,7 +16,7 @@ function global:au_BeforeUpdate {
  }
 
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases
+    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $regex_latest_version = "(Latest Python 3 Release - Python )(\d+\.\d+\.\d+)"
     $download_page.Content -match $regex_latest_version
     $version = $matches[2]
