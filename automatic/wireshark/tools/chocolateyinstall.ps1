@@ -4,8 +4,8 @@ $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   softwareName   = 'Wireshark*'
   fileType       = 'exe'
-  url            = 'https://2.na.dl.wireshark.org/win64/Wireshark-4.6.2-x64.exe'
-  checksum       = '373a93e9b5ffa3559938424a2aabd3338786cff7bef084641c2c5e5bfb44325e'
+  url            = 'https://2.na.dl.wireshark.org/win64/Wireshark-4.6.3-x64.exe'
+  checksum       = '09db2e7365b8dc56bc293b5e2849d9d06ebd8411f5a5e72e528964fbb051f283'
   checksumType   = 'sha256'
   silentArgs     = '/S /quicklaunchicon=no'
   validExitCodes = @(0)
