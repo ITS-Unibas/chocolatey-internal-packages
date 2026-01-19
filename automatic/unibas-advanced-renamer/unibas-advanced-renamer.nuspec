@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-advanced-renamer</id>
-    <version>4.19</version>
+    <version>4.20</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages</packageSourceUrl>
     <projectSourceUrl>https://www.advancedrenamer.com/</projectSourceUrl>
     <owners>IT-Services | University of Basel</owners>
