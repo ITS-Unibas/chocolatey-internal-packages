@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-greenshot</id>
-    <version>1.2.10.6</version>
+    <version>1.3.312</version>
     <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/unibas-greenshot</packageSourceUrl>
     <owners>ITS-Unibas</owners>
     <!-- ============================== -->
