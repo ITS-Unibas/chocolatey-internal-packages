@@ -10,7 +10,7 @@ function global:au_BeforeUpdate {
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
-      "(?i)(^\s*url64bit\s*=\s*)('.*')"      = "`$1`'$($Latest.Url64)`'"
+      "(?i)(^\s*url64\s*=\s*)('.*')"      = "`$1`'$($Latest.Url64)`'"
       "(?i)(^\s*checksum64\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum64)`'"
     }
   }
@@ -26,10 +26,9 @@ function global:au_GetLatest {
     $url64 = ($urlRaw).replace('//', 'https://') + "&r=1"
 
     # Get version
-    $versionRegex = "(Eclipse\s\d{4}-\d{2}\s)(\(.*\))"
-    $content.RawContent -match $versionRegex
-    $versionRaw = $matches[2]
-    $version = ($versionRaw).replace('(', '').replace(')', '')
+    $urlVersion = "https://download.eclipse.org/eclipse/downloads/data.json"
+    $json = Invoke-Webrequest -Uri $urlVersion -UseBasicParsing | ConvertFrom-Json
+    $version = $json.releases[0].label
 
     return @{
         url64 = $url64
@@ -37,4 +36,4 @@ function global:au_GetLatest {
     }
 }
 
-Update-Package -ChecksumFor none -NoCheckChocoVersion
+Update-Package -ChecksumFor 64 -NoCheckChocoVersion
