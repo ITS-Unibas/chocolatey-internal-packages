@@ -4,9 +4,9 @@ Import-Module chocolatey-au
 $releaseurl = 'https://www.uwe-sieber.de/usbdlm_e.html'
 $downloadurl = 'https://www.uwe-sieber.de/files/usbdlm_x64.msi'
 
-function global:au_BeforeUpdate() {
-  $Latest.Checksum = Get-RemoteChecksum $downloadurl -Algorithm 'sha256'
-}
+#function global:au_BeforeUpdate() {
+#  $Latest.Checksum = Get-RemoteChecksum $downloadurl -Algorithm 'sha256'
+#}
 
 function global:au_GetLatest {
   $request = Invoke-WebRequest $releaseurl -UseBasicParsing
@@ -27,4 +27,4 @@ function global:au_SearchReplace {
   }
 }
 
-Update -ChecksumFor none -NoCheckChocoVersion
+Update -ChecksumFor all -NoCheckChocoVersion
