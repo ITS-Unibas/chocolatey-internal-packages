@@ -1,15 +1,18 @@
-﻿$ErrorActionPreference = 'Stop';
+$ErrorActionPreference = 'Stop';
+
+$packageName = 'unibas-obs-studio'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
-$file64Location = Get-Item $toolsDir\*_x64.exe
 
 $packageArgs = @{
-  packageName  = $env:ChocolateyPackageName
-  fileType     = 'EXE'
-  file64       = $file64Location
-  softwareName = 'OBS Studio'
-  silentArgs   = '/S'
+  packageName    = $packageName
+  unzipLocation  = $toolsDir
+  fileType       = 'EXE'
+  url64bit          = ''
+  silentArgs     = '/S'
+  softwareName   = 'OBS Studio*'
+  checksum64     = ''
+  checksumType   = 'sha256'
+  validExitCodes = @(0) 
 }
 
-Install-ChocolateyInstallPackage @packageArgs
-
-Remove-Item $packageArgs.file64 -Force -ea 0
+Install-ChocolateyPackage @packageArgs
