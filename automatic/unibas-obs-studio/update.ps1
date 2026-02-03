@@ -4,15 +4,16 @@ Import-Module chocolatey-au
 $releases = 'https://github.com/obsproject/obs-studio/releases/latest'
 
 function global:au_SearchReplace {
-    @{
-        ".\legal\VERIFICATION.txt" = @{
-            "(?i)(^\s*x64:).*"         = "`${1} $($Latest.URL64)"
-            "(?i)(^\s*checksum64\:).*" = "`${1} $($Latest.Checksum64)"
-        }
+  @{
+    ".\tools\chocolateyInstall.ps1" = @{
+      "(?i)(^\s*url64bit\s*=\s*)('.*')"      = "`$1`'$($Latest.URL64)`'"
+      "(?i)(^\s*checksum64\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum64)`'"
     }
+  }
 }
 function global:au_BeforeUpdate() {
     Get-RemoteFiles -Purge
+    $Latest.Checksum = Get-RemoteChecksum $Latest.URL64 -Algorithm 'sha256'
 }
 
 function global:au_GetLatest {
@@ -29,12 +30,9 @@ function global:au_GetLatest {
     $download_page -match '\d+\.\d+\.\d+'
     $version = $Matches[0]
     # Construct the URL using the version number
-    $url64 = "https://github.com/obsproject/obs-studio/releases/download/$version/OBS-Studio-$version-Windows-Installer.exe"
+     $url64 = "https://github.com/obsproject/obs-studio/releases/download/$version/OBS-Studio-$version-Windows-x64-Installer.exe"
 
     return @{ Version = $version; URL64 = $url64; }
 }
 
-if ($MyInvocation.InvocationName -ne '.') {
-    # run the update only if script is not sourced
-    Update-Package -checksumfor none -NoCheckChocoVersion
-}
+    Update-Package -NoCheckChocoVersion -checksumfor 64
