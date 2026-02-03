@@ -27,4 +27,4 @@ function global:au_SearchReplace {
   }
 }
 
-Update -ChecksumFor all -NoCheckChocoVersion
+Update -ChecksumFor all -NoCheckChocoVersion -NoCheckUrl
