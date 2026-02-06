@@ -16,7 +16,8 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
+  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing -Headers @{"Referer" = "https://www.jamovi.org/"}
+  # needs referer, otherwise will be redirected to the selection page for cloud or desktop version
   $regex = '.exe$'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   $url = $url -replace 'downloads/', ''
