@@ -18,7 +18,7 @@ function global:au_GetLatest {
     $i = 1
     while ($file -eq $null -and $i -le 3){
 	    $folder = (((Invoke-WebRequest -Uri $releases -UseBasicParsing).Links | Where-Object {$_ -match 'v[0-9].'}).href)[-$i]
-	    $file = (((Invoke-WebRequest -Uri $releases$folder -UseBasicParsing).Links | Where-Object {$_ -match ".msi"} | Select-Object -Last 1).href)
+	    $file = (((Invoke-WebRequest -Uri $releases$folder -UseBasicParsing).Links | Where-Object {$_ -match "\.msi" -and $_ -notmatch "RC\d"} | Select-Object -Last 1).href)
         $i++
     }
     $file = $file.replace('.0&','&')
@@ -36,3 +36,4 @@ function global:au_GetLatest {
 
 
 update -NoCheckChocoVersion
+
