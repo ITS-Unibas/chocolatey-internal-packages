@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>unibas-msedge-webview2</id>
-    <version>145.0.3800.58</version>
+    <version>145.0.3800.65</version>
     <owners>University of Basel</owners>
     <title>unibas-msedge-webview2</title>
     <authors>Microsoft</authors>
