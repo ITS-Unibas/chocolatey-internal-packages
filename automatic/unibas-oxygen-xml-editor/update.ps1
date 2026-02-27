@@ -17,11 +17,11 @@ function global:au_GetLatest {
 
     $url64 = 'https://mirror.oxygenxml.com/InstData/Editor/Windows64/VM/oxygen-64bit-openjdk.exe'
 
-    $re = "Version: (\d+\.\d+)"
-    $buildnumber = "Build id:\s*<[^>]+>(\d+)</a>"
+    $re = "Version: \s*<[^>]+>(\d+\.\d+)"
+    $buildnumber = "Build id:(\s*<[^>]+>){1,2}(\d+)<\/a>"
 
     $version = ([regex]::Match($download_page.RawContent, $re)).Groups[1].Value
-    $build = ([regex]::Match($download_page.RawContent, $buildnumber)).Groups[1].Value
+    $build = ([regex]::Match($download_page.RawContent, $buildnumber)).Groups[2].Value
 
     $complete_version = "$version.$build"
 
