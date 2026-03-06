@@ -22,4 +22,5 @@ function global:au_GetLatest {
         Version = $version
     }
 }
-Update-Package -NoCheckChocoVersion
+Update-Package -NoCheckChocoVersion -nocheckurl -checksumfor none
+#nocheckurl and checksumfor none needed, because github runner is blocked from downloading the file by sourceforge
