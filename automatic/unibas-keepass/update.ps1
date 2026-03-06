@@ -1,14 +1,9 @@
 Import-Module chocolatey-au
 
 $releases = 'https://keepass.info/download.html'
+$checksums = 'https://keepass.info/integrity.html'
 
 function global:au_BeforeUpdate {
-  if ($Latest.Url) {
-    $checksums = 'https://keepass.info/integrity.html'
-    (Invoke-WebRequest -Uri $checksums -UseBasicParsing).content -match "KeePass-($version)\.msi<[\s\S]+?SHA-256.*<code>([\w\s]*)"
-    $Latest.ChecksumType = 'sha256'
-    $Latest.Checksum = ($matches[2] -replace " ","")
-  }
 }
 
 
@@ -27,6 +22,8 @@ function global:au_GetLatest {
     $base_url = $download_page.Links | Where-Object href -match '2\.x/[\d\.]+/KeePass-[\d\.]+\.msi/download' | Select-Object -ExpandProperty href
     $version = ($base_url -split "/")[-3]
     $final_url = $base_url -replace '(.*)/download','$1'
+    (Invoke-WebRequest -Uri $checksums -UseBasicParsing).content -match "KeePass-($version)\.msi<[\s\S]+?SHA-256.*<code>([\w\s]*)"
+    $Latest.Checksum = ($matches[2] -replace " ","")
 
     return @{
         URL     = $final_url
