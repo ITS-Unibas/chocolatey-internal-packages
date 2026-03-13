@@ -55,4 +55,4 @@ function global:au_GetLatest {
   }
 }
 
-#update -NoCheckChocoVersion -NoCheckUrl
+update -NoCheckChocoVersion -NoCheckUrl
