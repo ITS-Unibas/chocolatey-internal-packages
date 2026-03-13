@@ -5,6 +5,7 @@ $toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   softwareName   = 'FileZilla*'
+  url64bit       = 'https://dl4.cdn.filezilla-project.org/client/FileZilla_3.69.6_win64-setup.exe'
   file64         = Join-Path $toolsDir "FileZilla_3.69.6_win64-setup.exe"
   fileType       = 'EXE'
   silentArgs     = '/S'
