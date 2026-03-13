@@ -9,7 +9,7 @@ function global:au_SearchReplace {
       "(?im)(<version>)[^<]+(</version>)" = "`${1}$($Latest.Version)`${2}"
     }
     ".\tools\chocolateyInstall.ps1" = @{
-      "(?im)(^\s*file\s*=\s*Join-Path\s+\`$toolsDir\s*).*$" = "`$1`"FileZilla_$($Latest.Version)_win64-setup.exe`""
+      "(?im)(^\s*file64\s*=\s*Join-Path\s+\`$toolsDir\s*).*$" = "`$1`"FileZilla_$($Latest.Version)_win64-setup.exe`""
     }
     ".\tools\InitialScript.ps1" = @{
       "(?i)(\`$installerUrl\s*=\s*)'[^']*'" = "`${1}'$($Latest.URL)'"
