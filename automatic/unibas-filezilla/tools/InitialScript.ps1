@@ -1,8 +1,8 @@
-# This script is run prior/post to the installation.
+﻿# This script is run prior/post to the installation.
 $ErrorActionPreference = 'Stop'
 
 $toolsDir     = Split-Path -Parent $MyInvocation.MyCommand.Definition
-$installerUrl = 'https://dl4.cdn.filezilla-project.org/client/FileZilla_3.69.1_win64-setup.exe'
+$installerUrl = 'https://dl4.cdn.filezilla-project.org/client/FileZilla_3.69.6_win64-setup.exe'
 
 $packageVersion = if ($env:ChocolateyPackageVersion) { $env:ChocolateyPackageVersion }
                   elseif ($installerUrl -match 'FileZilla_([0-9]+\.[0-9]+(\.[0-9]+)?)') { $Matches[1] }
