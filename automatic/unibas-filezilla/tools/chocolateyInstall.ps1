@@ -1,17 +1,14 @@
-$ErrorActionPreference = 'Stop'
-
-$toolsDir = Split-Path -Parent $MyInvocation.MyCommand.Definition
+﻿$ErrorActionPreference = 'Stop'
 
 $packageArgs = @{
   packageName    = $env:ChocolateyPackageName
   softwareName   = 'FileZilla*'
-  url64bit       = 'https://dl4.cdn.filezilla-project.org/client/FileZilla_3.69.6_win64-setup.exe'
-  file64         = Join-Path $toolsDir "FileZilla_3.69.6_win64-setup.exe"
+  url            = 'https://dl4.cdn.filezilla-project.org/client/FileZilla_3.69.1_win64-setup.exe?h=Dhd7YVCdeIhh6BESWeyEiA&x=1745419433'
+  checksum       = '6cbd5fdb157a7851cdd32b9a61d6136a31a5fa05fb36fd9403b920b708c9125e'
+  checksumType   = 'sha256'
   fileType       = 'EXE'
   silentArgs     = '/S'
-  validExitCodes = @(0, 3010, 1605, 1614, 1641, 1223)
+  validExitCodes = @(0, 1223)
 }
 
-&(Join-Path $PSScriptRoot InitialScript.ps1)
-Install-ChocolateyInstallPackage @packageArgs
-&(Join-Path $PSScriptRoot FinalScript.ps1)
+Install-ChocolateyPackage @packageArgs
