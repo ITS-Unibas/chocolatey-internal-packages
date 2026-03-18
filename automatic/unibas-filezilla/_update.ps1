@@ -1,3 +1,4 @@
+# 20260318ML - nach packages-manual migriert, da sich filezilla auto update wegen JS-Obfuscation auf der Download Page nicht mehr sinnvoll automatisieren lässt.
 Import-Module chocolatey-au
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
