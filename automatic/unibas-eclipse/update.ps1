@@ -23,7 +23,7 @@ function global:au_GetLatest {
     # Get URL
     $urlRegex = "eclipse-jee-\d{4}-\d{2}-R-win32-x86_64.zip$"
     $urlRaw = $content.links.href -match $urlRegex
-    $url64 = ($urlRaw).replace('//', 'https://') + "&r=1"
+    $url64 = ($urlRaw).replace("\r\n","") + "&r=1"
 
     # Get version
     $urlVersion = "https://download.eclipse.org/eclipse/downloads/data.json"
