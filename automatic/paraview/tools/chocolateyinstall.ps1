@@ -1,8 +1,8 @@
 ﻿$ErrorActionPreference = 'Stop';
 
 $packageName 	= 'paraview'
-$url            = 'https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v6.0/&type=binary&os=Windows&downloadFile=ParaView-6.0.1-Windows-Python3.12-msvc2017-AMD64.msi'
-$checksum       = '928603549b9be2b787fa2d507e00b7bc84b361bbf5e3c6a15765dd4836d9a2da'
+$url            = 'https://www.paraview.org/paraview-downloads/download.php?submit=Download&version=v6.1/&type=binary&os=Windows&downloadFile=ParaView-6.1.0-Windows-Python3.12-msvc2017-AMD64.msi'
+$checksum       = 'ccd582f55079413659d67ac0c76cb9a0778dc5dca8fbd365e9a42775f48c420e'
 $checksumType   = 'sha256'
 
 $packageArgs = @{
