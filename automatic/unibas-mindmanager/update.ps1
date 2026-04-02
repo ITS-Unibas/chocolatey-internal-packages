@@ -21,11 +21,13 @@ function global:au_BeforeUpdate() {
 }
 
 function global:au_SearchReplace {
+    $major = $Latest.Version.Split('.')[0]
     @{
-      ".\tools\chocolateyInstall.ps1" = @{
+      ".\tools\chocolateyinstall.ps1" = @{
         "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
         "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
-        "(?i)(^\s*fileLocation\s*=\s*Join-Path\s*\$toolsDir\s*'MindManager\s*)\d+(\.msi')" = "`$1$($Latest.Version.Split('.')[0])`$2"
+        "(?i)(^\s*fileLocation\s*=\s*Join-Path\s*\$toolsDir\s*'MindManager\s*)\d+(\.msi')" = "`$1$major`$2"
+        "(?i)(Join-Path\s+\$toolsDir\s+'MindManager\s+)\d+(\.msi')" = "`$1$major`$2"
       }
     }
   }
