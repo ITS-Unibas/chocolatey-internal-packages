@@ -36,7 +36,6 @@ function global:au_GetLatest {
     URL     = $url
     Version = $version
     DependencyVersion1 = $depversion1 # dotnet
-    DependencyVersion2 = $depversion2 # webview2
   }
 }
 
