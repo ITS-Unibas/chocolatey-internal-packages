@@ -7,10 +7,10 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url64            = 'https://github.com/FreeCAD/FreeCAD/releases/download/1.1.0/FreeCAD_1.1.0-Windows-x86_64-py311-installer.exe'
+  url64            = 'https://github.com/FreeCAD/FreeCAD/releases/download/1.1.1/FreeCAD_1.1.1-Windows-x86_64-py311-installer.exe'
   silentArgs     = '/S'
   softwareName   = 'FreeCAD*'
-  checksum64       = '82d769db2780c6d7b20bcb4587bcfee204219b088bbc7f2e74a0d89c8e0af674'
+  checksum64       = '3e4caf58cc1d82e4e8d726572f741ae664b6e91a77c4d3cb59102d9b8bd51feb'
   checksumType   = 'sha256'
   validExitCodes = @(0) 
 }
