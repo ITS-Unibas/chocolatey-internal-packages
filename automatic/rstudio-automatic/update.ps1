@@ -1,7 +1,7 @@
 Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = 'https://www.rstudio.com/products/rstudio/download/#download'
+$releases = 'https://live-rstudio.pantheonsite.io/download/rstudio-desktop/'
 
 function global:au_BeforeUpdate() {
     Get-RemoteFiles -Purge -FileNameBase 'rstudio-automatic'
