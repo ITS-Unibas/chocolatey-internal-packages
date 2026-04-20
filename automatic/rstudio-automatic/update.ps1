@@ -1,7 +1,7 @@
 Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = (Invoke-WebRequest https://live-rstudio.pantheonsite.io/wp-content/uploads/downloads.json -UseBasicParsing | ConvertFrom-Json)
+$releases = (Invoke-WebRequest https://www.rstudio.com/wp-content/downloads.json -UseBasicParsing | ConvertFrom-Json)
 $release = $releases.rstudio.open_source.stable.desktop.installer.windows
 
 function global:au_BeforeUpdate() {
