@@ -1,11 +1,11 @@
 Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = 'https://live-rstudio.pantheonsite.io/download/rstudio-desktop/'
+$releases = (Invoke-WebRequest https://live-rstudio.pantheonsite.io/wp-content/uploads/downloads.json -UseBasicParsing | ConvertFrom-Json)
+$release = $releases.rstudio.open_source.stable.desktop.installer.windows
 
 function global:au_BeforeUpdate() {
-    Get-RemoteFiles -Purge -FileNameBase 'rstudio-automatic'
-    $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'md5'
+    $Latest.Checksum = $release.sha256
  }
 function global:au_SearchReplace {
   @{
@@ -16,12 +16,8 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
-    $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-    $regex   = '.exe$'
-    $url     = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
-    $arr = $url -split '-|.exe'
-    $version = $arr[1]
-    return @{ Version = $version; URL = $url }
+    $version = ($release.version -split "\+")[0]
+    return @{ Version = $version; URL = $release.url }
 }
 
 update -ChecksumFor none
