@@ -1,11 +1,11 @@
-﻿Import-Module chocolatey-au
+Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releases = 'https://miktex.org/download'
 
 function global:au_BeforeUpdate() {
-  Get-RemoteFiles -Purge -FileNameBase 'unibas-miktex'
-  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
+  (Invoke-WebRequest -UseBasicParsing $releases).content -match "SHA-256:.*\n?.*>(\w*)<\/div>"
+  $Latest.Checksum = $matches[1]
 }
 function global:au_SearchReplace {
   @{
