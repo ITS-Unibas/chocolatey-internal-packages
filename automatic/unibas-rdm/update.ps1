@@ -1,11 +1,11 @@
 Import-Module chocolatey-au
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$releases = 'https://devolutions.net/remote-desktop-manager/home/download'
-$softwareName= "Remote Desktop Manager"
+$releases = 'https://devolutions.net/productinfo.htm'
 
 function global:au_BeforeUpdate() {
-  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm "sha256"
+  (Invoke-WebRequest -UseBasicParsing $releases).content -match "RDMsetup\.hash=(\w*)"
+  $Latest.Checksum = $Matches[1]
 }
 
 function global:au_SearchReplace {
@@ -18,13 +18,13 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-  $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $urltext = $download_page.ToString()
-  $regExResult = $urltext | Select-String -Pattern 'Version:(?:<\/span>)?\s*(\d+(?:\.\d+)+)' -CaseSensitive:$false
-    $version = $regExResult.Matches[0].Groups[1].Value
-  $url = "https://cdn.devolutions.net/download/Setup.RemoteDesktopManager."
-  $url += $version
-  $url += ".exe"
+  $download_page = Invoke-WebRequest -UseBasicParsing $releases
+
+  $download_page.content -match "RDMsetup\.Url=([\w:\/\.]*)"
+  $url = $matches[1]
+
+  $download_page.content -match "RDMsetup\.Version=([\d\.]*)"
+  $version = $matches[1]
 
   $deversionurl = 'https://community.chocolatey.org/packages/rdm#dependencies'
   $deversiontext = Invoke-WebRequest -Uri $deversionurl -UseBasicParsing | Select-Object -ExpandProperty Content
