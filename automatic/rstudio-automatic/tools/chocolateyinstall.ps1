@@ -7,12 +7,12 @@ $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
   fileType      = 'EXE'
-  url           = 'https://download1.rstudio.org/electron/windows/RStudio-2026.01.2-418.exe'
+  url           = 'https://download1.rstudio.org/electron/windows/RStudio-2026.04.0-526.exe'
   silentArgs   = '/S'
   validExitCodes= @(0)
  
   softwareName  = 'rstudio*'
-  checksum      = '7cf2c07079ebdac14097ca25ef9f7e8243b07e7b0b3ecc82d8549e7ec95a8c4f'
+  checksum      = '8b5da756394bc4ea7814bf6452374f1bf5a5cb842708336fe2aa70c69a93fe10'
   checksumType  = 'sha256'
 }
 
