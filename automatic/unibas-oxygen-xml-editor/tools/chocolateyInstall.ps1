@@ -9,7 +9,7 @@ $packageArgs = @{
   silentArgs     = "/silent /install"
   validExitCodes = @(0)
   softwareName   = 'unibas-oxygen-xml-editor*'
-  checksum       = 'cee5c88a07438984889bfdb6b71abafdbb61a69c4ee13de5a3745d5cb8f44cea'
+  checksum       = '01255390a17f565bf9aabdf8773ccaca2d18740bdafd12096558dda6b70541b6'
   checksumType   = 'sha256'
 }
 
