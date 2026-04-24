@@ -22,7 +22,7 @@ function global:au_GetLatest {
     $base_url = $download_page.Links | Where-Object href -match '2\.x/[\d\.]+/KeePass-[\d\.]+\.msi/download' | Select-Object -ExpandProperty href
     $version = ($base_url -split "/")[-3]
     $final_url = $base_url -replace '(.*)/download','$1'
-    (Invoke-WebRequest -Uri $checksums -UseBasicParsing).content -match "KeePass-($version)\.msi<[\s\S]+?SHA-256.*<code>([\w\s]*)"
+    (Invoke-WebRequest -Uri $checksums -UseBasicParsing).content -match "KeePass-($version)\.msi<[\s\S]+?SHA-256.*?<code>([\w ]*)<\/code>"
     $Latest.Checksum = ($matches[2] -replace " ","")
 
     return @{
