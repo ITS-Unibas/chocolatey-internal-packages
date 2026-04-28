@@ -1,7 +1,7 @@
 Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = 'https://github.com/obsproject/obs-studio/releases/latest'
+$releases = 'https://api.github.com/repos/obsproject/obs-studio/releases/latest'
 
 function global:au_SearchReplace {
   @{
@@ -17,22 +17,12 @@ function global:au_BeforeUpdate() {
 }
 
 function global:au_GetLatest {
-    Start-Sleep -Seconds 5
-    $cache_page = (Invoke-WebRequest $releases -UseBasicParsing).Links.href
-    $download_page = $cache_page | Select-String '/tag/' | Select-Object -First 1
+    $download_page = Invoke-RestMethod -Uri $releases
+    $asset = $download_page.assets | Where {$_.name -match "Windows-x64-Installer\.exe$"}
+    $url = $asset.browser_download_url
+    $version = $download_page.tag_name
 
-    if (-not $download_page) {
-        Write-Host "No new version for obs studio found"
-        return
-    }
-
-    $Matches = $null
-    $download_page -match '\d+\.\d+\.\d+'
-    $version = $Matches[0]
-    # Construct the URL using the version number
-     $url64 = "https://github.com/obsproject/obs-studio/releases/download/$version/OBS-Studio-$version-Windows-x64-Installer.exe"
-
-    return @{ Version = $version; URL64 = $url64; }
+    return @{ Version = $version; URL64 = $url; }
 }
 
     Update-Package -NoCheckChocoVersion -checksumfor 64
