@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if â€œÎ©â€ doesnâ€™t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>pymol</id>
+    <version>3.1.8</version>
+    <packageSourceUrl>https://github.com/ITS-Unibas-Choco/packages-manual/tree/main/pymol</packageSourceUrl>
+    <owners>University of Basel</owners>
+    <title>PyMOL</title>
+    <authors>schrodinger</authors>
+    <projectUrl>https://pymol.org/2/</projectUrl>
+    <licenseUrl>https://pymol.org/buy.html#divacad</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>PyMOL is a user-sponsored molecular visualization system on an open-source foundation, maintained and distributed by Schroedinger.</summary>
+    <tags>pymol molecular visualization</tags>
+    <description>PyMOL is a user-sponsored molecular visualization system on an open-source foundation, maintained and distributed by Schroedinger.</description>
+    <dependencies>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
