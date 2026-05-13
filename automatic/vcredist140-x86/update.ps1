@@ -1,10 +1,6 @@
 Import-Module chocolatey-au
-Import-Module Wormies-AU-Helpers
-Import-Module "$env:ChocolateyInstall\helpers\chocolateyInstaller.psm1"
-Import-Module "$PSScriptRoot\..\..\scripts/au_extensions.psm1"
 
-[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$x86Release = 'https://aka.ms/vs/17/release/VC_redist.x86.exe'
+$url = "https://raw.githubusercontent.com/chocolatey-community/chocolatey-packages/refs/heads/master/automatic/vcredist140/tools/data.ps1"
 
 function global:au_SearchReplace {
   @{
@@ -15,29 +11,23 @@ function global:au_SearchReplace {
   }
 }
 
-function GetResultInformation([string]$url) {
-  $url = Get-RedirectedUrl $url
-  $dest = "$env:TEMP\vcredist140.exe"
+function global:au_GetLatest {
+  $content = (Invoke-Webrequest -Uri $url -UseBasicParsing).Content
 
-  Get-WebFile $url $dest | Out-Null
-  $checksumType = 'sha256'
-  $version = Get-Version (Get-Item $dest | % { $_.VersionInfo.ProductVersion })
-  $checksum = Get-FileHash $dest -Algorithm $checksumType | % { $_.Hash.ToLowerInvariant() }
+  $urlReturn = [regex]::Matches($content, "Url\s*=\s*'(?<url>https?://[^']+)'")
+  $url = $urlReturn[0].Groups['url'].Value
+
+  $checksumReturn = [regex]::Matches($content, "Checksum\s*=\s*'(?<hash>.*)'")
+  $checksum = $checksumReturn[0].Groups['hash'].Value
+
+  $versionReturn = [regex]::Matches($content, "ThreePartVersion\s*=\s*\[version\]'(?<version>.*)'")
+  $version = $versionReturn[0].Groups['version'].Value
 
   return @{
-    URL            = $url
-    Version          = if ($version.Version.Revision -eq '0') { $version.ToString(3) } else { $version.ToString() }
-    VersionThreePart = $version.ToString(3)
-    Checksum       = $checksum
-    ChecksumType  = $checksumType
-  }
-}
-
-function global:au_GetLatest {
-  Update-OnETagChanged -execUrl $x86Release `
-    -OnEtagChanged {
-    GetResultInformation $x86Release
-  } -OnUpdated { @{ URL = $x86Release}}
+        URL          =  $url
+        Checksum     =  $checksum
+        Version      =  $version
+  } 
 }
 
 update -ChecksumFor none
