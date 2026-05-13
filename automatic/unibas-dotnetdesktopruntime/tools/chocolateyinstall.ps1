@@ -5,12 +5,12 @@ $packageName = 'unibas-dotnetdesktopruntime'
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'exe'
-  url            = 'https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/10.0.7/windowsdesktop-runtime-10.0.7-win-x64.exe'
+  url            = 'https://builds.dotnet.microsoft.com/dotnet/WindowsDesktop/10.0.8/windowsdesktop-runtime-10.0.8-win-x64.exe'
   silentArgs     = '/S'
   validExitCodes = @(0)
  
   softwareName   = 'unibas-dotnetdesktopruntime' 
-  checksum       = '752b7c81f6b10cacbe133a18a8af8d2598336e9561e651711eb3b36970299854'
+  checksum       = '378866ddbc70116f0b83e88d1f7861271172813b5f7d8a59bf12fc992bf65786'
   checksumType   = 'sha256'
 }
  
