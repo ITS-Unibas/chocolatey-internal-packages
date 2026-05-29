@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>unibas-qgis</id>
+    <version>3.34.15</version>
+    <title>QGIS</title>
+    <authors>ITS-Unibasel</authors>
+    <owners>University of Basel</owners>
+    <licenseUrl>https://www.qgis.org/</licenseUrl>
+    <projectUrl>https://www.qgis.org/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>QGIS for ITS Unibasel.</description>
+    <summary>QGIS is used for many things ;).</summary>
+    <releaseNotes>https://www.qgis.org/</releaseNotes>
+    <tags>unibas-qgis</tags>
+    <docsUrl>https://www.qgis.org/</docsUrl>
+  </metadata>
+</package>
