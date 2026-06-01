@@ -23,7 +23,7 @@ function global:au_GetLatest {
   $url = $url -replace 'downloads/', ''
   $arr = $url -split '-|.exe'
   $version = $arr[1]
-  $url = "https://dl.jamovi.org/$url"
+  $url = "https://www.jamovi.org/$url"
   return @{ Version = $version; URL = $url }
 }
 
