@@ -1,4 +1,4 @@
-﻿Import-Module chocolatey-au
+Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $releases = 'https://www.jamovi.org/download.html'
@@ -20,10 +20,10 @@ function global:au_GetLatest {
   # needs referer, otherwise will be redirected to the selection page for cloud or desktop version
   $regex = '.exe$'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
-  $url = $url -replace 'downloads/', ''
-  $arr = $url -split '-|.exe'
+  $version = $url -replace 'downloads/', ''
+  $arr = $version -split '-|.exe'
   $version = $arr[1]
-  $url = "https://www.jamovi.org/$url"
+  $url = "https://www.jamovi.org$url"
   return @{ Version = $version; URL = $url }
 }
 
