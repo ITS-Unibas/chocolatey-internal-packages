@@ -7,11 +7,11 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url64bit       = 'https://dl.jamovi.org//jamovi-2.7.30.0-win-x64.exe'
+  url64bit       = 'https://www.jamovi.org/downloads/jamovi-2.7.31.0-win-x64.exe'
   silentArgs     = '/S'
   validExitCodes = @(0)
   softwareName   = 'unibas-jamovi*'
-  checksum64     = 'be35531248edcd126e52724cd234ab7cdc979bcee9b86c2bf0b506af5a4863bf'
+  checksum64     = '1fb79a52017d3e02ddc3288cf1ec5ea7d90ea8b39edf7dc5b9e4f7afd01ca14d'
   checksumType64 = 'sha256' #default is checksumType
 }
 
