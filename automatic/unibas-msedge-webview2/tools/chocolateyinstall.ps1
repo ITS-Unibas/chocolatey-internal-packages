@@ -5,11 +5,11 @@ $packageName = 'unibas-msedge-webview2'
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'EXE'
-  url            = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/e3e5accf-401e-46e6-aa1a-c3c7e5d03b8e/MicrosoftEdgeWebView2RuntimeInstallerX64.exe'
+  url            = 'https://msedge.sf.dl.delivery.mp.microsoft.com/filestreamingservice/files/ee9caa0e-313c-4ec3-9165-ec3226dee379/MicrosoftEdgeWebView2RuntimeInstallerX64.exe'
   silentArgs     = "/silent /install"
   validExitCodes = @(0)
   softwareName   = 'unibas-msedge-webview2*'
-  checksum       = 'c8eea0a9a793d16df43beb7fe3873c6c5cab5e9119cfcbc59358f311cd8e4713'
+  checksum       = '1d43ef423bd14107962c69c5cb6bcb1c531950f88b2579502c52fb64d6b44d4a'
   checksumType   = 'sha256'
 }
 
