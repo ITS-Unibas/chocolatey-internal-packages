@@ -5,7 +5,6 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 
 $packageArgs = @{
   packageName    = $packageName
-  unzipLocation  = $toolsDir
   fileType       = 'EXE'
   url64bit       = 'https://dl-cdn.jamovi.org/jamovi-2.7.37.0-win-x64.exe'
   silentArgs     = '/S'
