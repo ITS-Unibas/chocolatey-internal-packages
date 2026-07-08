@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>unibas-qgis</id>
-    <version>3.44.11</version>
+    <version>3.44.12</version>
     <title>QGIS</title>
     <authors>ITS-Unibasel</authors>
     <owners>University of Basel</owners>
