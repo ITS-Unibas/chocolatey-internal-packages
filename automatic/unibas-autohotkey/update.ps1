@@ -1,7 +1,7 @@
 ﻿Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = 'https://autohotkey.com/download/1.1'
+$releases = 'https://www.autohotkey.com/download/2.0'
 
 function global:au_BeforeUpdate() {
   Get-RemoteFiles -Purge -FileNameBase 'unibas-autohotkey'
@@ -16,8 +16,8 @@ function global:au_SearchReplace {
   }
 }
 function global:au_GetLatest {
-  $version = Invoke-WebRequest -Uri "$releases\version.txt" -UseBasicParsing | ForEach-Object Content
-  $url = "https://github.com/Lexikos/AutoHotkey_L/releases/download/v${version}/AutoHotkey_${version}_setup.exe"
+  $version = (Invoke-WebRequest -Uri "$releases/version.txt" -UseBasicParsing).Content.Trim()
+  $url = "https://github.com/AutoHotkey/AutoHotkey/releases/download/v${version}/AutoHotkey_${version}_setup.exe"
   @{
     Version  = $version
     URL      = $url
