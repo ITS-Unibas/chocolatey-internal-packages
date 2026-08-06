@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>unibas-sublimemerge</id>
+    <version>0.0.2123</version>
+    <packageSourceUrl>https://github.com/chtof/chocolatey-packages/tree/master/automatic/sublimemerge</packageSourceUrl>
+    <owners>chtof</owners>
+    <title>Sublime Merge</title>
+    <authors>Sublime HQ Pty Ltd</authors>
+    <projectUrl>https://www.sublimemerge.com</projectUrl>
+	<iconUrl>https://cdn.jsdelivr.net/gh/chtof/chocolatey-packages/automatic/sublimemerge/sublimemerge.png</iconUrl>
+    <copyright>© Sublime HQ Pty Ltd</copyright>
+    <licenseUrl>https://www.sublimehq.com/eula</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <!--<projectSourceUrl>Software Source Location - is the software FOSS somewhere? Link to it with this</projectSourceUrl>-->
+    <!--<docsUrl>At what url are the software docs located?</docsUrl>-->
+    <mailingListUrl>https://forum.sublimetext.com/c/sublime-merge</mailingListUrl>
+    <bugTrackerUrl>https://github.com/sublimehq/sublime_merge/issues</bugTrackerUrl>
+    <tags>sublimemerge git client merge tool development syntax highlighting</tags>
+    <summary>Git Client, done Sublime.</summary>
+    <description><![CDATA[___Meet a new Git Client, from the makers of Sublime Text.___
+
+A snappy UI, three-way merge tool,
+side-by-side diffs, syntax highlighting, and more. Evaluate for free – no account, tracking, or time limits.
+Interested? Read the [release announcement](https://www.sublimetext.com/blog/articles/sublime-merge).
+
+## Feature Highlights
+### INTEGRATED MERGE TOOL
+The Integrated Merge Tool allows you to resolve any merge conflicts directly in Sublime Merge, rather than having to open up your editor of choice.
+
+Conflicts are presented with a 3-pane view. On the left are your changes and on the right are theirs. In the center pane is the resolved text, with buttons to choose between your changes or theirs. The same text editing functionality as Sublime Text is also available for more complicated merges.
+
+Clicking on the header in the middle pane will switch between the editable merge results and the base file.
+
+Use Ctrl+S or the Save button to save your merged file.
+
+### POWERFUL SEARCH
+Use find-as-you-type search to dig up the exact commit you're looking for.
+
+Search for commit messages, commit authors, file names, and wildcard patterns. Complex search queries can be constructed using and, or and () symbols.
+
+For example min-parents:2 author:jskinner path:tests/* (bug fix or test) will search for a merge commit from jskinner inside the tests directory that contain the words bug and fix or the word test.
+
+You can open search with Ctrl+F or through the menu: Navigate ▶ Search.
+
+### UNMATCHED PERFORMANCE
+Sublime Merge is built on the same custom platform as Sublime Text, providing unmatched responsiveness. With a powerful, cross-platform UI toolkit, an unmatched syntax highlighting engine, and a custom high-performance Git reading library, Sublime Merge sets the bar for performance.
+
+### BLAME
+Open the Blame of a file through the Command Palette or when viewing a commit to see exactly which lines of the file were added by which commits.
+
+Easily view the age, author, and commit hash of every line of code and see which lines come from the same commit with our commit color coding. Click a line in the gutter to highlight all other lines from the same commit.
+
+The blame tool will also detect when a piece of code was moved from another place in your repository, so you can truly follow the history of your code.
+
+### ADVANCED DIFFS
+Where it makes sense we will show you exactly which individual characters have been changed for a commit.
+
+This includes when you rename or move a file, when you're resolving conflicts or just viewing commit history.
+
+Select any two commits in Sublime Merge with Ctrl+Left Mouse to show the diff between them.
+
+### FILE AND HUNK HISTORY
+From any file or hunk in the history use … ▶ File History or the Hunk History button to view the full history of that source code. This will also follow any file moves or renames throughout the repository.
+
+### COMMAND PALETTE AND KEY BINDINGS
+Keyboard usage is important to us. Use Tab to navigate through parts of the application, Space to toggle expansion, and Enter to stage/unstage hunks. When writing a commit message, use Ctrl+Enter to commit.
+
+The Command Palette is triggered by Ctrl+P and allows quick access to a large set of Git commands as well as other Sublime Merge functionality.
+
+### LIGHT AND DARK THEMES
+Choose between a light and a dark theme to suit your tastes. You can preview these themes above.
+
+Open the Preferences ▶ Preferences… menu to change theme.
+
+The dark theme is only available with a valid license key.
+
+### EXTENSIBILITY
+Just like Sublime Text, just about everything in Sublime Merge is extensible. Key bindings, menus, theming, and the command palette are all customizable with simple JSON files.
+
+And more... See all features on https://www.sublimemerge.com.
+
+![screenshot](https://cdn.jsdelivr.net/gh/chtof/chocolatey-packages/automatic/sublimemerge/screenshot.png)
+]]></description>
+    <releaseNotes>https://www.sublimemerge.com/download</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
