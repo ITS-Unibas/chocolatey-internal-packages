@@ -8,7 +8,7 @@ function global:au_SearchReplace {
     @{
         ".\tools\chocolateyInstall.ps1" = @{
             "(?i)(^\s*url64\s*=\s*)('.*')"         = "`$1'$($Latest.URL)'"
-            "(?i)(^\s*checksum64\s*=\s*)('.*')"    = "`$1'$($Latest.Checksum)'"
+            "(?i)(^\s*checksum64\s*=\s*)('.*')"    = "`$1'$($Latest.Checksum64)'"
         }
     }
 }
@@ -18,8 +18,8 @@ function global:au_GetLatest {
     $buildNumber = $releaseInformation.latest_version
 
 	@{
-		$Version = $versionFormat -f $buildNumber
-		$URL     = $downloadUrlFormat -f $buildNumber
+		Version = $versionFormat -f $buildNumber
+		URL     = $downloadUrlFormat -f $buildNumber
 	}
 }
 
