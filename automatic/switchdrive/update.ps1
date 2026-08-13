@@ -1,7 +1,7 @@
 Import-Module chocolatey-au
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-$releases = 'https://help.switch.ch/drive/downloads/#collapse-80e712df-6688-11e4-b6ef-5254009dc73c-1'
+$releases = 'https://drive.switch.ch/index.php/s/XHwU3XqC7mpAh4S'
 
 function global:au_BeforeUpdate() {
   $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm 'sha256'
