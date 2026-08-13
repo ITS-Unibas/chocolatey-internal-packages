@@ -6,7 +6,7 @@ $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $packageArgs = @{
   packageName    = $packageName
   fileType       = 'msi'
-  url            = 'https://drive.switch.ch/index.php/s/XHwU3XqC7mpAh4S/download?path=%2F&files=switchdrive-Windows-33.0.7-build-40838-x64.msi'
+  url            = 'https://drive.switch.ch/index.php/s/Sfb9ybAntNJsbZ4/download'
   silentArgs     = 'MSIRESTARTMANAGERCONTROL=Disable ALLUSERS=1 REBOOT=ReallySuppress /qn'
   validExitCodes = @(0)
   softwareName   = 'SWITCHdrive*'
