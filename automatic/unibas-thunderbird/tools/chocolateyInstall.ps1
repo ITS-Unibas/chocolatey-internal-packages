@@ -10,9 +10,9 @@ $packageArgs = @{
   fileType = 'exe'
   softwareName = "$softwareName*"
 
-  Checksum       = 'f2f88fe574d59a087eab41d4b84220548b6b8a7dd00fb91dc60aed76fa936c58'
+  Checksum       = '0e26aa6d0ca69e964e342d5863e31e0e0431da865b4631e7dcabcf2f0f95a075'
   ChecksumType = 'sha256'
-  Url = 'https://download-installer.cdn.mozilla.net/pub/thunderbird/releases/153.0.3esr/win64/en-US/Thunderbird%20Setup%20153.0.3esr.exe'
+  Url = 'https://download-installer.cdn.mozilla.net/pub/thunderbird/releases/153.1.0esr/win64/en-US/Thunderbird%20Setup%20153.1.0esr.exe'
   silentArgs     = '-ms'
   validExitCodes = @(0)
 }
