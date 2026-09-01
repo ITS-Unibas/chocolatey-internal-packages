@@ -1,7 +1,7 @@
 Import-Module chocolatey-au
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$releases = 'https://www.veracrypt.fr/en/Downloads.html'
+$releases = 'https://veracrypt.jp/en/Downloads.html'
 
 function global:au_BeforeUpdate() {
   Get-RemoteFiles -Purge -FileNameBase 'unibas-veracrypt'
@@ -21,8 +21,7 @@ function global:au_GetLatest {
   $regex = '.msi$'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   
-  $arr = $url -split '/'
-  $version = $arr[5]
+  $version = ((($url -split '/')[-2]) -split '_')[-1]
  
   return @{ Version = $version; URL = $url }
 }
