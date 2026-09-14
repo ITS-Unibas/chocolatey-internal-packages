@@ -3,8 +3,8 @@
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
     
-  url64         = 'https://download.sublimetext.com/sublime_merge_build_2125_x64_setup.exe'
-  checksum64    = 'e237fb46018ff4f5182ba464cf4ad81147900b812dd801f0e01bc8c8547f494e'
+  url64         = 'https://download.sublimetext.com/sublime_merge_build_2130_x64_setup.exe'
+  checksum64    = '53681b4a2ce0d48b2ff3e07d35ddec5a7913ccb54be719802bb79d333ea24fb5'
   checksumType  = 'sha256'
   validExitCodes = @(0, 3010, 1605, 1614, 1641)
   silentArgs	= "/VERYSILENT /SUPPRESSMSGBOXES /NORESTART /SP-"
