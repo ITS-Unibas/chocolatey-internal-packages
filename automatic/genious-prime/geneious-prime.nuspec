@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>geneious-prime</id>
+    <version>2020.0.0</version>
+    <owners>ITS-Unibas</owners>
+    <title>Geneious Prime</title>
+    <authors>Geneious</authors>
+    <projectUrl>https://www.geneious.com/prime</projectUrl>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/genious-prime</packageSourceUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <summary>Geneious Prime</summary>
+    <description>Geneious Prime for Windows 64-bit, installed with the standard installer including Java.</description>
+    <tags>geneious-prime geneious bioinformatics admin x64</tags>
+    <releaseNotes>https://www.geneious.com/updates</releaseNotes>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
