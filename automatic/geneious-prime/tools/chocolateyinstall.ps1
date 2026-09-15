@@ -1,4 +1,4 @@
-$ErrorActionPreference = 'Stop'
+﻿$ErrorActionPreference = 'Stop'
 
 if ((Get-OSArchitectureWidth) -ne 64) {
   throw 'Geneious Prime requires 64-bit Windows.'

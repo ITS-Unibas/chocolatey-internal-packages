@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>geneious-prime</id>
-    <version>2020.0.0</version>
+    <version>2026.1.3</version>
     <owners>ITS-Unibas</owners>
     <title>Geneious Prime</title>
     <authors>Geneious</authors>
