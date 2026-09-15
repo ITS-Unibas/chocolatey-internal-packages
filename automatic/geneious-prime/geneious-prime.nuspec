@@ -7,7 +7,7 @@
     <title>Geneious Prime</title>
     <authors>Geneious</authors>
     <projectUrl>https://www.geneious.com/prime</projectUrl>
-    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/genious-prime</packageSourceUrl>
+    <packageSourceUrl>https://github.com/ITS-Unibas/chocolatey-internal-packages/tree/master/automatic/geneious-prime</packageSourceUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <summary>Geneious Prime</summary>
     <description>Geneious Prime for Windows 64-bit, installed with the standard installer including Java.</description>
