@@ -4,16 +4,18 @@ $ErrorActionPreference = 'Stop';
 
 $packageName = 'unibas-audacity'
 $toolsDir = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
+$LogFile = Join-Path $env:temp "Install_$($env:ChocolateyPackageName)_$($env:ChocolateyPackageVersion).log"
 
 $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
-  fileType       = 'EXE'
-  url            = 'https://github.com/audacity/audacity/releases/download/Audacity-3.7.9/audacity-win-3.7.9-64bit.exe'
+  fileType       = 'MSI'
+  url            = ''
+  silentArgs	 = "ALLUSERS=1 REBOOT=ReallySuppress /qn /L*v `"$Logfile`""
   #OTHERS
   # Uncomment matching EXE type (sorted by most to least common)
   #silentArgs   = '/S'           # NSIS
-  silentArgs     = '/VERYSILENT' # Inno Setup
+  #silentArgs     = '/VERYSILENT' # Inno Setup
   #silentArgs   = '/s'           # InstallShield
   #silentArgs   = '/s /v"/qn"' # InstallShield with MSI
   #silentArgs   = '/s'           # Wise InstallMaster
@@ -23,11 +25,11 @@ $packageArgs = @{
   # Note that some installers, in addition to the silentArgs above, may also need assistance of AHK to achieve silence.
   #silentArgs   = ''             # none; make silent with input macro script like AutoHotKey (AHK)
   #       https://chocolatey.org/packages/autohotkey.portable
-  validExitCodes = @(0) #please insert other valid exit codes here
+  validExitCodes = @(0, 3010, 1605, 1614, 1641) #please insert other valid exit codes here
 
   # optional, highly recommended
   softwareName   = 'Audacity' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum       = 'e3096847ac4270d304e9b112d153642a72b66b42e13f83a32f06eecfb4ce7e48'
+  checksum       = ''
   checksumType   = 'sha256' #default is md5, can also be sha1
 }
 
