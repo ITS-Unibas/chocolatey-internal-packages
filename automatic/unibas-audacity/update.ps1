@@ -21,7 +21,7 @@ function global:au_SearchReplace {
 }
 function global:au_GetLatest {
   $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
-  $regex = 'audacity-win-((\d\.?){2,})-x86_64.msi$'
+  $regex = 'audacity-win-(\d+(\.\d+){1,})-x86_64.msi$'
   $url = $download_page.links | Where-Object href -match $regex | Select-Object -First 1 -expand href
   $version = $Matches[1]
   $HTTPheaders = @{
