@@ -7,7 +7,7 @@ $packageArgs = @{
   packageName   = $packageName
   unzipLocation = $toolsDir
   fileType      = 'EXE'
-  url           = 'https://github.com/greenshot/greenshot/releases/download/v1.3.315/Greenshot-INSTALLER-1.3.315-RELEASE.exe'
+  url           = 'https://github.com/greenshot/greenshot/releases/download/v1.3.323/Greenshot-INSTALLER-1.3.323-RELEASE.exe'
   #OTHERS
   # Uncomment matching EXE type (sorted by most to least common)
   silentArgs    = '/S'           # NSIS
@@ -25,7 +25,7 @@ $packageArgs = @{
 
   # optional, highly recommended
   softwareName  = 'Greenshot*' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum      = '9bb4971e729a2ad1612e8aa2fa490b69c33af7f42515f9b642c7d0f80f8c0fd3'
+  checksum      = '5ee8bdc558c0b54f07c656bf0ab802e4d835b190e63fbaeb07fb12f6bd09975c'
   checksumType  = 'sha256' #default is md5, can also be sha1
 }
 
