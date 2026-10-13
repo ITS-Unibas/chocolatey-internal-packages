@@ -21,9 +21,9 @@ function global:au_GetLatest {
     $download_page = Invoke-WebRequest -Uri $releases -UseBasicParsing
     $base_url = $download_page.Links | Where-Object href -match '2\.x/[\d\.]+/KeePass-[\d\.]+\.msi/download' | Select-Object -ExpandProperty href
     $version = ($base_url -split "/")[-3]
-    $final_url = $base_url -replace '(.*)/download','$1'
-    (Invoke-WebRequest -Uri $checksums -UseBasicParsing).content -match "KeePass-($version)\.msi<[\s\S]+?SHA-256.*?<code>([\w ]*)<\/code>"
-    $Latest.Checksum = ($matches[2] -replace " ","")
+    $final_url = $base_url -replace '/download$',''
+    (Invoke-WebRequest -Uri $checksums -UseBasicParsing).content -match "KeePass-($version)\.msi<[\s\S]+?SHA-256.*?<code>(?<checksum>[\w ]*)<\/code>"
+    $Latest.Checksum = ($matches['checksum'] -replace " ","")
 
     return @{
         URL     = $final_url
