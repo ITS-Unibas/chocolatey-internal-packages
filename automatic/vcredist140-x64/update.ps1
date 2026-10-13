@@ -1,33 +1,31 @@
 Import-Module chocolatey-au
 
-$url = "https://raw.githubusercontent.com/chocolatey-community/chocolatey-packages/refs/heads/master/automatic/vcredist140/tools/data.ps1"
+$releases = "https://raw.githubusercontent.com/aaronparker/VcRedist/master/VcRedist/VisualCRedistributables.json"
+$vcrelease = '14'
+$architecture = 'x64'
+
+function global:au_BeforeUpdate {
+  $Latest.Checksum = Get-RemoteChecksum $Latest.URL -Algorithm $Latest.ChecksumType
+}
 
 function global:au_SearchReplace {
   @{
     ".\tools\chocolateyInstall.ps1" = @{
       "(?i)(^\s*url\s*=\s*)('.*')"      = "`$1`'$($Latest.URL)`'"
       "(?i)(^\s*checksum\s*=\s*)('.*')" = "`$1`'$($Latest.Checksum)`'"
+      '(?i)(^\s*checksumType\s*=\s*)(''.*'')' = "`$1'$($Latest.ChecksumType)'"
     }
   }
 }
 
 function global:au_GetLatest {
-  $content = (Invoke-Webrequest -Uri $url -UseBasicParsing).Content
-
-  $urlReturn = [regex]::Matches($content, "Url64\s*=\s*'(?<url>https?://[^']+)'")
-  $url = $urlReturn[0].Groups['url'].Value
-
-  $checksumReturn = [regex]::Matches($content, "Checksum64*\s*=\s*'(?<hash>.*)'")
-  $checksum = $checksumReturn[0].Groups['hash'].Value
-
-  $versionReturn = [regex]::Matches($content, "ThreePartVersion\s*=\s*\[version\]'(?<version>.*)'")
-  $version = $versionReturn[0].Groups['version'].Value
+  $release = (Invoke-WebRequest -UseBasicParsing -Uri $releases | ConvertFrom-Json).Supported | ?{$_.release -eq $vcrelease -and $_.Architecture -eq $architecture}
 
   return @{
-        URL          =  $url
-        Checksum     =  $checksum
-        Version      =  $version
+        URL          =  $release.URI
+        Version      =  $release.Version
+        ChecksumType =  'sha256'
   } 
 }
 
-update -ChecksumFor none
+update -ChecksumFor none -NoCheckChocoVersion
