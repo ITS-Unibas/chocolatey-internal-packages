@@ -29,10 +29,11 @@ function global:au_GetLatest {
   $url64 = [uri]::new([uri]$releases, [string]$download)
   # use the full installer version (2026.1.3), not the heading (2026.1)
   $version = [regex]::Match($url64.AbsolutePath, $installerPattern).Groups['version'].Value -replace '_', '.'
+  $url = $url64.AbsoluteUri -replace '\.exe$','.msi'
 
   return @{
     Version        = $version
-    URL64          = $url64.AbsoluteUri
+    URL64          = $url
     ChecksumType64 = 'sha256'
   }
 }
