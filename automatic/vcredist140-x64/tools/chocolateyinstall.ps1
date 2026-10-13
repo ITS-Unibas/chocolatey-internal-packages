@@ -3,7 +3,7 @@
 $packageArgs = @{
   packageName    = 'vcredist140-x64'
   fileType       = 'exe'
-  url            = 'https://download.visualstudio.microsoft.com/download/pr/ebdab8e5-1d7b-4d9f-a11b-cbb1720c3b12/843068991DAAA1F73AD9F6239BCE4D0F6A07A51F18C37EA2A867E9BECA71295C/VC_redist.x64.exe'
+  url            = 'https://aka.ms/vc14/vc_redist.x64.exe'
   silentArgs     = '/quiet /norestart'
   validExitCodes = @(0, 1638, 3010)
   softwareName   = 'Microsoft Visual C++ v14 Redistributable (x64)*'
