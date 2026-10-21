@@ -6,9 +6,9 @@ $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $packageArgs = @{
   packageName   = $env:ChocolateyPackageName
   fileType      = 'EXE'
-  url     = 'https://www.python.org/ftp/python/3.15.0/python-3.15.0-amd64.exe'
+  url     = 'https://www.python.org/ftp/python/3.15.1/python-3.15.1-amd64.exe'
 
-  checksum    = '67d9a63eb145a34aa939f02eadbf8c57f21fcdd6decb901ccac578d2d1f01d6f'
+  checksum    = '8b23839c6b2f3076fdff44c78d219a5393c7205f666cd95bd0c9a562bf8ea5db'
   checksumType= 'SHA256'
 
   silentArgs    = "/quiet"
