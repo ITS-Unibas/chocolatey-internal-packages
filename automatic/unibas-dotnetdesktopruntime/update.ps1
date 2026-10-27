@@ -20,7 +20,16 @@ function global:au_GetLatest {
     [version]$sdk_version = ((($sdk_download_page.Links.href | ? {$_ -match "runtime-desktop"}) | select-object -First 1) -split("/"))[-1] -replace "runtime-desktop-", "" -replace "-windows-x64-installer", ""
 
     $ddrt_download_page = Invoke-WebRequest -Uri $sdk_download_url -UseBasicParsing
-    $ddrt_url_part = $ddrt_download_page.Links.href | ? {$_ -match "(runtime-desktop-)(.*)(-windows-x64-installer)$"} | ? {$_ -notmatch "preview|rc."} | Sort-Object -Descending | Select -First 1
+    $ddrt_url_part = $ddrt_download_page.Links.href | ? {$_ -match "(runtime-desktop-)(.*)(-windows-x64-installer)$"} | ? {$_ -notmatch "preview|rc."} | Sort-Object -Descending
+    
+    #extract all version numbers from url parts, cast as [version] for correct sorting
+    $versions = @()
+    foreach ($urlpart in $ddrt_url_part) { 
+        $versions += [version](($urlpart -split '-')[-4])
+    }
+    $version = $versions | Sort-Object -Descending | select -First 1
+    $ddrt_url_part = $ddrt_url_part | ? {$_ -match [string]$version}
+    
     $dotnet_main_url = $sdk_download_url -split '(?<=//.+)/' | select -First 1
     $ddrt_download_url_latest = $dotnet_main_url + $ddrt_url_part
 
