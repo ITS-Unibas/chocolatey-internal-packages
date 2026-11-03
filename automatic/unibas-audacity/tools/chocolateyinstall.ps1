@@ -10,7 +10,7 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'MSI'
-  url            = 'https://github.com/audacity/audacity/releases/download/Audacity-4.0.1/audacity-win-4.0.1-x86_64.msi'
+  url            = 'https://github.com/audacity/audacity/releases/download/Audacity-4.0.2/audacity-win-4.0.2-x86_64.msi'
   silentArgs	 = "ALLUSERS=1 REBOOT=ReallySuppress /qn /L*v `"$Logfile`""
   #OTHERS
   # Uncomment matching EXE type (sorted by most to least common)
@@ -29,7 +29,7 @@ $packageArgs = @{
 
   # optional, highly recommended
   softwareName   = 'Audacity' #part or all of the Display Name as you see it in Programs and Features. It should be enough to be unique
-  checksum       = 'efb652bf04168f5d4893f28b7cefaaf5ef385d9251544540ac774e3bf54793a3'
+  checksum       = 'ff6cad670befee96fee563056965fa5e17bfa8c7ea3aba10c461c18799409e22'
   checksumType   = 'sha256' #default is md5, can also be sha1
 }
 
