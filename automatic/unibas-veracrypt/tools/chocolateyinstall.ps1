@@ -3,11 +3,11 @@
 $packageArgs = @{
   packageName    = 'unibas-veracrypt'
   fileType       = 'msi'
-  url            = 'https://github.com/veracrypt/VeraCrypt/releases/download/VeraCrypt_1.26.30/VeraCrypt_Setup_x64_1.26.30.msi'
+  url            = 'https://github.com/veracrypt/VeraCrypt/releases/download/VeraCrypt_1.26.31/VeraCrypt_Setup_x64_1.26.31.msi'
   silentArgs     = '/qb /l*v `"$($env:TEMP)\$($packageName).$($env:chocolateyPackageVersion).MsiInstall.log`" ACCEPTLICENSE=YES'
   validExitCodes = @(0)
   softwareName   = 'VeraCrypt*'
-  checksum       = '6164d4e4e8d8e600003f6cf14fafe7f50ce23b3452cae02ea19e5ad6f0cc41ad'
+  checksum       = '6b0dbcc1d6910ec9f045689dd29172b4ae825b5fdcdae1a2d5f1e5b692782265'
   checksumType   = 'sha256'
 }
 
