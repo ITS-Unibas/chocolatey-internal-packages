@@ -18,8 +18,8 @@ Get-ChocolateyWebFile -PackageName 'zulu11-x32' -FileFullPath "$toolsDir\FX\JRE\
 $packageArgs = @{
     packageName    = 'zulu11-x86'
     fileType       = 'msi'
-    url64bit       = 'https://cdn.azul.com/zulu/bin/zulu11.92.113-ca-jdk11.0.33-win_i686.msi'
-    checksum64     = '7eb5327b45e94f085fa20b2792d4e5f84b4b9de84bdd697eebd7e2a75381a1e2'
+    url64bit       = 'https://cdn.azul.com/zulu/bin/zulu11.92.201-ca-jdk11.0.33.1-win_i686.msi'
+    checksum64     = '2ebc0754407ff21e9ee4fe7d730f024c4b1c050dfc9cf9c9b530cebda330aa56'
     checksumType64 = 'sha256'
     silentArgs     = '/qn /norestart'
     validExitCodes = @(0)
