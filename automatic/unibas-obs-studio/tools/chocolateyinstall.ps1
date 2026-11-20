@@ -7,10 +7,10 @@ $packageArgs = @{
   packageName    = $packageName
   unzipLocation  = $toolsDir
   fileType       = 'EXE'
-  url64bit          = 'https://github.com/obsproject/obs-studio/releases/download/33.0.1/OBS-Studio-33.0.1-Windows-x64-Installer.exe'
+  url64bit          = 'https://github.com/obsproject/obs-studio/releases/download/33.0.2/OBS-Studio-33.0.2-Windows-x64-Installer.exe'
   silentArgs     = '/S'
   softwareName   = 'OBS Studio*'
-  checksum64     = '37ECDE4D9A28E8AEEB07623C8469B5D558EB264E02CCF435BB859891C401758B'
+  checksum64     = '45BDACAE241B3773BBF546CEA11EBAB219DEB8C58F8B0CCD5B9FDAE2E35966BC'
   checksumType   = 'sha256'
   validExitCodes = @(0) 
 }
