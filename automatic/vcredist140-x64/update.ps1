@@ -19,7 +19,7 @@ function global:au_SearchReplace {
 }
 
 function global:au_GetLatest {
-  $release = (Invoke-WebRequest -UseBasicParsing -Uri $releases | ConvertFrom-Json).Supported | ?{$_.release -eq $vcrelease -and $_.Architecture -eq $architecture}
+  $release = (Invoke-WebRequest -UseBasicParsing -Uri $releases | ConvertFrom-Json).Entries  | ?{$_.release -eq $vcrelease -and $_.Architecture -eq $architecture -and $_.Supported -like "True"}
 
   return @{
         URL          =  $release.URI
